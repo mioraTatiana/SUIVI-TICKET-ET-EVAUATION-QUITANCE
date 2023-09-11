@@ -1,7 +1,7 @@
 # SUIVI-TICKET-ET-EVAUATION-QUITANCE
 PROJET DE STAGE EN L2:
-Lieu: La mairie de la commune urbaine de Fianarantsoa
-Date:Semptembre - Octobre 2023
-Intitulé: suivie de ticket et évaluation de quitance
-Acteur: RANDRIANIRINA Hasimiora Tatiana et
+Lieu: La mairie de la commune urbaine de Fianarantsoa </br>
+Date:Semptembre - Octobre 2023 </br>
+Intitulé: suivie de ticket et évaluation de quitance </br>
+Acteur: RANDRIANIRINA Hasimiora Tatiana et </br>
         RASAVOLATAHINA Sarobidy Emérentienne Nardine
