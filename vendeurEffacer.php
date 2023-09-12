@@ -4,7 +4,7 @@
         require 'connexionBase.php';
 
         $cin=$_GET['CIN'];
-        $req=mysqli_query($con,"DELETE * FROM vendeur WHERE CIN='$cin' ;");
+        $req=mysqli_query($con,"DELETE FROM vendeur WHERE CIN='$cin' ;");
         if($req){
          echo ' Vendeur bien effacé';
         }else{
