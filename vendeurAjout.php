@@ -8,7 +8,7 @@
     $Adresse=$_GET['Adresse'];
     $Carte=$_GET['CarteProfessionnelle'];
 
-    $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle) VALUES ('$cin','$Nom','$Prenom',$Telephone,'$Adresse','$Carte')");
+    $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle) VALUES ($cin,'$Nom','$Prenom',$Telephone,'$Adresse','$Carte')");
 
     if($req){
         echo 'Un étudiant ajouté';
