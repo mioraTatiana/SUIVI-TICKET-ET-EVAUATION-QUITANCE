@@ -15,7 +15,7 @@
         echo '<br>';
     
         while ($data = mysqli_fetch_assoc($requette)) {
-            echo $data['numPavillon']  . '    ' .$data['Localite']  . '    ' . $data['PlaceDuMarche'] . '    ' .$data['TypeDeProduits']  . '    ' .$data['CIN']  . '<br>';
+            echo $data['numPavillon']  . '    ' .$data['Localite']  . '    ' . $data['PlaceDuMarche'] . '    ' .$data['TypeDeProduits']  . '  <br>';
         }
     
     }
@@ -25,9 +25,14 @@
         $Localite=$_GET['Localite'];
         $PlaceDuMarche=$_GET['PlaceDuMarche'];
         $TypeDeProduits=$_GET['TypeDeProduits'];
+        $TypeDePavillon=$_GET['TypeDePavillon'];
+        $numAutorisation=$_GET['numAutorisation'];
+        $DateDautorisation=$_GET['DateDautorisation'];
+        $numDeDeliberation=$_GET['numDeliberation'];
+        $DateDeDeliberation=$_GET['DateDeDeliberation'];
         
     
-        $inserer="INSERT INTO pavillon (numPavillon, Localite, PlaceDuMarche, TypeDeProduits, CIN) VALUES ('$numPavillon', '$Localite', '$PlaceDuMarche', $TypeDeProduits,'$CIN');";
+        $inserer="INSERT INTO pavillon (numPavillon, Localite, PlaceDuMarche, TypeDeProduits, TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation) VALUES ('$numPavillon', '$Localite', '$PlaceDuMarche', $TypeDeProduits , '$TypeDePavillon',' $numAutorisation',' $DateDautorisation','$numDeDeliberation',' $DateDeDeliberation');";
         $req=mysqli_query($con,$inserer);
         if($req){
             listerPavillon();
@@ -42,8 +47,14 @@
         $numPavillon=$_GET['numPavillon'];
         $Localite=$_GET['Localite'];
         $PlaceDuMarche=$_GET['PlaceDuMarche'];
-        $TypeDeProduits=$_GET['TypeDeProduits'];  
-        $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', Localite='$Localite', PlaceDuMarche='$PlaceDuMarche', TypeDeProduits=$TypeDeProduits WHERE numPavillon='$numPavillon';";
+        $TypeDeProduits=$_GET['TypeDeProduits']; 
+        $TypeDePavillon=$_GET['TypeDePavillon'];
+        $numAutorisation=$_GET['numAutorisation'];
+        $DateDautorisation=$_GET['DateDautorisation'];
+        $numDeDeliberation=$_GET['numDeliberation'];
+        $DateDeDeliberation=$_GET['DateDeDeliberation'];
+ 
+        $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', Localite='$Localite', PlaceDuMarche='$PlaceDuMarche', TypeDeProduits=$TypeDeProduits, TypeDePavillon='$TypeDePavillon', numAutorisation='$numAutorisation',DateDautorisation='$DateDautorisation',numDeliberation='$numDeDeliberation' WHERE numPavillon='$numPavillon';";
         $req=mysqli_query($con,$modifier);
         if($req){
             listerPavillon();

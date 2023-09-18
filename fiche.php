@@ -6,7 +6,7 @@ require('fpdf/fpdf.php');
 class PDF extends FPDF
 {
 
-    
+   
 // Page header
 function Header()
 {
@@ -38,18 +38,24 @@ public $CIN;
 public $numPavillon; 
 public $Localite; 
 public $PlaceDuMarche;
-public $TypeDeProduits; 
+public $NomDuProduits; 
 public $Nom;
 public $Prenom;
 public $Telephone; 
 public $Adresse; 
-public $CarteProfessionnelle;  
-
+public $CarteProfessionnelle;
+public $TypeDePavillon;
+public $numAutorisation;
+public $DateDautorisation;
+public $numDeDeliberation;
+public $DateDeDeliberation;  
+public $Quitance;
 function body(){
 
     include 'connexionBase.php';
     $numPavillon=$_GET['numPavillon'];
-    $requette="SELECT `numFiche`, `Mois`, `Annee`, `DateDePaiement`, `Tarif`, vendeur.`CIN`, pavillon.numPavillon, `Localite`, `PlaceDuMarche`, `TypeDeProduits`, `Nom`, `Prenom`, `Telephone`, `Adresse`, vendeur.CarteProfessionnelle FROM vendeur, pavillon, registre WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon';";
+    $Quitance=$_GET['Quitance'];
+    $requette="SELECT `numFiche`, `Mois`, `Annee`, `DateDePaiement`, `Tarif`, vendeur.`CIN`, pavillon.numPavillon, `Localite`, `PlaceDuMarche`,TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, pavillon.`TypeDeProduits`,NomDuProduits, `Nom`, `Prenom`, `Telephone`, `Adresse`, vendeur.CarteProfessionnelle, registre.idMois, Mois FROM vendeur, pavillon, registre, produit, mois WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon' AND pavillon.`TypeDeProduits`= produit.`TypeDeProduits` AND registre.idMois=mois.idMois;";
     $rec=mysqli_query($con, $requette);
    
 
@@ -64,12 +70,18 @@ function body(){
         $this->numPavillon=$data['numPavillon']; 
         $this->Localite =$data['Localite']; 
         $this->PlaceDuMarche =$data['PlaceDuMarche'];
-        $this->TypeDeProduits =$data['TypeDeProduits']; 
+        $this->NomDuProduits =$data['NomDuProduits']; 
         $this->Nom=$data['Nom'];
         $this->Prenom=$data['Prenom'];
         $this->Telephone =$data['Telephone']; 
         $this->Adresse=$data['Adresse']; 
-        $this->CarteProfessionnelle=$data['CarteProfessionnelle'];  
+        $this->CarteProfessionnelle=$data['CarteProfessionnelle']; 
+        $this->TypeDePavillon=$data['TypeDePavillon'];
+        $this->numAutorisation=$data['numAutorisation'];
+        $this->DateDautorisation=$data['DateDautorisation'];
+        $this->numDeDeliberation=$data['numDeliberation'];
+        $this->DateDeDeliberation=$data['DateDeDeliberation'];
+
     }
     
 
@@ -82,65 +94,120 @@ function body(){
     $this->Cell(5,10,'',0,0,'C');    
     $this->Cell(45,10,'FIANARANTSOA',0,0,'L');
     $this->Image('C:\Users\WINDOWS 10\Pictures\Saved Pictures\MIORA.JPG', 18, 66, 30, 35);
-    $this->Cell(30,30,'',0,0,'L'); 
-    $this->MultiCell(50,10,'FICHE DE CONTROLE DE LOYER PAVILLON',1,0,'C', true);
-    $this->Ln(48); 
+    $this->Cell(70,30,'',0,0,'L'); 
+    $this->Cell(20,10,'FICHE DE CONTROLE DE LOYER PAVILLON',0,0,'C');
+    $this->Ln(48);
     $this->Cell(60,8,'BUREAU ECONOMIQUE',0,0,'L');
     $this->Ln(13);
     $this->SetFont('Arial','B',12);
    
-    $this->Cell(50,10,'N°: CU/F/SDU/B.ECO',0,0,'L');
-    $this->SetFont('Arial','',12);
-    $this->Cell(30,10,''.$this->numFiche,1);
-    $this->Cell(70,10,'',0,0,'L');
+    $this->Cell(10,10,'N:',0,0,'L');
+    $this->SetFont('Arial','I',12);
+    $this->Cell(15,10,''.$this->numFiche,0);
     $this->SetFont('Arial','B',12); 
+    $this->Cell(30,10,'CU/F/SDU/B.ECO',0,0,'L');
+    $this->Cell(70,10,'',0,0,'L');
     $this->Cell(20,10,'ANNEE: '.$this->Annee,0,0, 'C');
     $this->Ln(15);
     
+
     $this->SetFont('Arial','B',14);
     $this->Cell(30,10,'OCCUPANT',0,0,'L');
     $this->Line(11,  140, 39,  140);
     $this->Ln(8);
+
     $this->SetFont('Arial','',12);
-    $this->Cell(20,10,'Nom et prénoms:'.$this->Nom.' '.$this->Prenom,0,0,'L');
+    $this->Cell(40,10,'Nom et prenoms:',0,0,'L');
+    $this->SetFont('Arial','I',12);
+    $this->Cell(30,10,''.$this->Nom.' '.$this->Prenom,0,0,'L');
     $this->Ln(8);
-    $this->Cell(20,10,'Adresse: '.$this->Adresse,0,0,'L');
-    $this->Cell(70,10,'',0,0,'L'); 
-    $this->Cell(50,10,'N Téléphone: '.$this->Telephone,0,0,'L'); 
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(20,10,'Adresse: ',0,0,'L');
+    $this->SetFont('Arial','I',12);
+    $this->Cell(70,10,''.$this->Adresse,0,0,'L'); 
+    $this->SetFont('Arial','',12);
+    $this->Cell(35,10,'N Telephone: ',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(50,10,''.$this->Telephone,0,0,'L');
     $this->Ln(8);
-    $this->Cell(50,10,'Carte profesionnellle:'.$this->CarteProfessionnelle,0,0,'L');
-    $this->Cell(40,10,'',0,0,'L'); 
-    $this->Cell(50,10,'Quitance',0,0,'L');
-    $this->Cell(15,10,'',0,0,'L'); 
-    $this->Cell(40,10,'du',0,0,'L'); 
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(50,10,'Carte profesionnellle:',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(40,10,''.$this->CarteProfessionnelle,0,0,'L');
+    $this->SetFont('Arial','',12);
+    $this->Cell(25,10,'Quitance:',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(20,10,''.$Quitance,0,0,'L');     
+    $this->SetFont('Arial','',12);
+    $this->Cell(25,10,'du',0,0,'L');
+    $this->SetFont('Arial','I',12);
+    $this->Cell(30,10,''.date('y-m-d'),0,0,'L');
+ 
     $this->Ln(13);
+
     $this->SetFont('Arial','B',14);
-    
     $this->Cell(30,10,'PAVILLON',0,0,'L');
     $this->Line(11,  177, 36,  177);
     $this->Ln(8);
     $this->SetFont('Arial','',12);
     $this->Cell(50,10,'Type de Pavillon:',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(50,10,''.$this->TypeDePavillon,0,0,'L');
     $this->Ln(8);
-    $this->Cell(20,10,'N pavillon:'.$this->numPavillon,0,0,'L');
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(40,10,'N pavillon:',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(35,10,''.$this->numPavillon,0,0,'L');
     $this->Ln(8);
-    $this->Cell(20,10,'Localité:'.$this->Localite,0,0,'L');
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(40,10,'Localite:',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(40,10,''.$this->Localite,0,0,'L');
     $this->Ln(8);
-    $this->Cell(20,10,'Type de produits:'.$this->TypeDeProduits,0,0,'L');
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(40,10,'Type de produits:',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(40,10,''.$this->NomDuProduits,0,0,'L');
     $this->Ln(8);
+
+    $this->SetFont('Arial','',12);
     $this->Cell(50,10,'Autorisation N:',0,0,'L');
-    $this->Cell(70,10,'',0,0,'L'); 
-    $this->Cell(30,10,'du',0,0,'L'); 
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(70,10,''.$this->numAutorisation,0,0,'L');
+    $this->SetFont('Arial','',12); 
+    $this->Cell(30,10,'du',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(30,10,''.$this->DateDautorisation,0,0,'L'); 
     $this->Ln(8);
+
+    $this->SetFont('Arial','',12);
     $this->Cell(50,10,'Deliberation N:',0,0,'L');
-    $this->Cell(70,10,'',0,0,'L'); 
-    $this->Cell(20,10,'du',0,0,'L');
+    $this->SetFont('Arial','I',12); 
+    $this->Cell(70,10,''.$this->numDeDeliberation,0,0,'L'); 
+    $this->SetFont('Arial','',12);
+    $this->Cell(30,10,'du',0,0,'L');
+    $this->SetFont('Arial','I',12);
+    $this->Cell(30,10,''.$this->DateDeDeliberation,0,0,'L');
     $this->Ln(8);
-    $this->Cell(20,10,'Loyer mensuel du'.$this->Mois,0,0,'L');
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(50,10,'Loyer mensuel du',0,0,'L');
+    $this->SetFont('Arial','I',12);
+    $this->Cell(20,10,''.$this->Mois,0,0,'L');
+
     $this->Ln(8);
+
+    $this->SetFont('Arial','I',12,);
     $this->Cell(70,10,'Fianarantsoa, le '.date('Y-m-d'),0,0,'C');
     $this->Ln(8);
-    $this->Cell(0,10,' Le Chef de Bureau écomomique',0,0,'C');
+
+    $this->SetFont('Arial','',12);
+    $this->Cell(0,10,' Le Chef de Bureau ecomomique',0,0,'C');
     $this->Ln(8);
 
 

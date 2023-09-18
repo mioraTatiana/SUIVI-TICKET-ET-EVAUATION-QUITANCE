@@ -26,7 +26,7 @@
     }
 
     if($crud=='c'){
-        $cin=$_GET['CIN'];
+        $CIN=$_GET['CIN'];
         $Nom=$_GET['Nom'];
         $Prenom=$_GET['Prenom'];
         $Telephone=$_GET['Telephone'];
@@ -34,7 +34,7 @@
         $Carte=$_GET['CarteProfessionnelle'];
         $numPavillon=$_GET['numPavillon'];
     
-        $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle, numPavillon) VALUES ($cin,'$Nom','$Prenom',$Telephone,'$Adresse','$Carte','$numPavillon')");
+        $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle, numPavillon) VALUES ('$CIN','$Nom','$Prenom',$Telephone,'$Adresse','$Carte','$numPavillon')");
     
         if($req){
             listerVendeur();
@@ -47,7 +47,7 @@
     }elseif($crud=='r'){
         listerVendeur();
     }elseif($crud=='u'){
-        $cin=$_GET['CIN'];
+        $CIN=$_GET['CIN'];
         $Nom=$_GET['Nom'];
         $Prenom=$_GET['Prenom'];
         $Telephone=$_GET['Telephone'];
@@ -55,7 +55,7 @@
         $Carte=$_GET['CarteProfessionnelle'];
         $numPavillon=$_GET['numPavillon'];
     
-        $req=mysqli_query($con,"UPDATE vendeur SET CIN='$cin', Nom='$Nom', Prenom='$Prenom', Telephone=$Telephone, Adresse='$Adresse', CarteProfessionnelle='$Carte', numPavillon='$numPavillon' WHERE CIN='$cin';");
+        $req=mysqli_query($con,"UPDATE vendeur SET CIN='$CIN', Nom='$Nom', Prenom='$Prenom', Telephone=$Telephone, Adresse='$Adresse', CarteProfessionnelle='$Carte', numPavillon='$numPavillon' WHERE CIN='$CIN';");
         if($req){
             listerVendeur();
             echo 'Modification bien enregistrée';
@@ -65,8 +65,8 @@
     
     }elseif($crud=='d'){
 
-        $cin=$_GET['CIN'];
-        $req=mysqli_query($con,"DELETE FROM vendeur WHERE CIN='$cin' ;");
+        $CIN=$_GET['CIN'];
+        $req=mysqli_query($con,"DELETE FROM vendeur WHERE CIN='$CIN' ;");
         if($req){
             listerVendeur();
             echo ' Vendeur bien effacé';
