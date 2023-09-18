@@ -25,7 +25,7 @@
         $Localite=$_GET['Localite'];
         $PlaceDuMarche=$_GET['PlaceDuMarche'];
         $TypeDeProduits=$_GET['TypeDeProduits'];
-        $CIN=$_GET['CIN'];
+        
     
         $inserer="INSERT INTO pavillon (numPavillon, Localite, PlaceDuMarche, TypeDeProduits, CIN) VALUES ('$numPavillon', '$Localite', '$PlaceDuMarche', $TypeDeProduits,'$CIN');";
         $req=mysqli_query($con,$inserer);
@@ -42,9 +42,8 @@
         $numPavillon=$_GET['numPavillon'];
         $Localite=$_GET['Localite'];
         $PlaceDuMarche=$_GET['PlaceDuMarche'];
-        $TypeDeProduits=$_GET['TypeDeProduits'];
-        $CIN=$_GET['CIN'];
-        $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', Localite='$Localite', PlaceDuMarche='$PlaceDuMarche', TypeDeProduits=$TypeDeProduits, CIN=$CIN WHERE numPavillon='$numPavillon';";
+        $TypeDeProduits=$_GET['TypeDeProduits'];  
+        $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', Localite='$Localite', PlaceDuMarche='$PlaceDuMarche', TypeDeProduits=$TypeDeProduits WHERE numPavillon='$numPavillon';";
         $req=mysqli_query($con,$modifier);
         if($req){
             listerPavillon();

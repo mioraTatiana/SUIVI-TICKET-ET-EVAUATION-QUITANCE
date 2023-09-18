@@ -3,6 +3,7 @@
 
     $crud=$_GET['crud'];
 
+
     function listerVendeur(){
         require 'connexionBase.php';
 
@@ -16,7 +17,7 @@
         echo '<br>';
      
         while ($data = mysqli_fetch_assoc($requette)) {
-            echo $data['CIN']  . '    ' .$data['Nom']  . '    ' . $data['Prenom'] . '    ' .$data['Telephone']. '    ' .$data['Adresse']  . '    ' .$data['CarteProfessionnelle']  . '<br>';
+            echo $data['CIN']  . '    ' .$data['Nom']  . '    ' . $data['Prenom'] . '    ' .$data['Telephone']. '    ' .$data['Adresse']  . '    ' .$data['CarteProfessionnelle']  . '  ' .$data['numPavillon']  . '<br>';
         }
         if($requette){
            echo ' afficher';
@@ -31,8 +32,9 @@
         $Telephone=$_GET['Telephone'];
         $Adresse=$_GET['Adresse'];
         $Carte=$_GET['CarteProfessionnelle'];
+        $numPavillon=$_GET['numPavillon'];
     
-        $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle) VALUES ($cin,'$Nom','$Prenom',$Telephone,'$Adresse','$Carte')");
+        $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle, numPavillon) VALUES ($cin,'$Nom','$Prenom',$Telephone,'$Adresse','$Carte','$numPavillon')");
     
         if($req){
             listerVendeur();
@@ -51,8 +53,9 @@
         $Telephone=$_GET['Telephone'];
         $Adresse=$_GET['Adresse'];
         $Carte=$_GET['CarteProfessionnelle'];
+        $numPavillon=$_GET['numPavillon'];
     
-        $req=mysqli_query($con,"UPDATE vendeur SET CIN='$cin', Nom='$Nom', Prenom='$Prenom', Telephone=$Telephone, Adresse='$Adresse', CarteProfessionnelle='$Carte' WHERE CIN='$cin';");
+        $req=mysqli_query($con,"UPDATE vendeur SET CIN='$cin', Nom='$Nom', Prenom='$Prenom', Telephone=$Telephone, Adresse='$Adresse', CarteProfessionnelle='$Carte', numPavillon='$numPavillon' WHERE CIN='$cin';");
         if($req){
             listerVendeur();
             echo 'Modification bien enregistrée';
