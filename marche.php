@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produit back</title>
+    <title>marche back</title>
 </head>
 <body>
     <?php
-        include_once 'connexionBase.php';
+        include 'connexionBase.php';
 
         $crud=$_GET['crud'];
-
-        function tableauProduit($requette){
-    ?>
+        
+        function tableauMarche($requette){
+            ?>
             <table>
                 <thead>
-                    <th>N°Produit</th>
-                    <th>Nom Du Produits</th>
+                    <th>N°Marché</th>
+                    <th>Place de marché</th>
                 </thead>
                
     <?php    
@@ -24,8 +24,8 @@
     ?>
                 <tbody>
                     <tr>
-                        <td><?=$data['IdProduit']?></td>
-                        <td><?=$data['NomDuProduits']?></td>
+                        <td><?=$data['idMarche']?></td>
+                        <td><?=$data['PlaceDuMarche']?></td>
                     </tr>
                 </tbody>
     <?php        
@@ -35,39 +35,38 @@
     <?php     
 
         }
-        function listerProduits(){
+        function listerMarche(){
             require 'connexionBase.php';
 
-            $req=mysqli_query($con,"SELECT * FROM produit ;");
-            tableauProduit($req);
+            $req=mysqli_query($con,"SELECT * FROM marche ;");
+            tableauMarche($req);
         }
 
         if($crud=='c'){
-            $IdProduit=$_GET['IdProduit'];
-            $NomDuProduits=$_GET['NomDuProduits'];
-            $req=mysqli_query($con,"INSERT INTO produit  VALUES ($IdProduit,'$NomDuProduits');");
+            $PlaceDuMarche=$_GET['PlaceDuMarche'];
+            $req=mysqli_query($con,"INSERT INTO `marche`(`PlaceDuMarche`) VALUES (' $PlaceDuMarche');");
             
             if($req){
-                listerProduits();
+                listerMarche();
                 echo 'Bien enregistré';
             }else{
                 echo 'Ajout non effectué';
             }    
 
         }elseif($crud=='r'){
-            listerProduits();
+            listerMarche();
         }elseif($crud=='s'){
             $rec=$_GET['recherche'];
-            $reqRec=mysqli_query($con,"SELECT * FROM produit WHERE IdProduit='".$rec."' ;");
-            tableauProduit($reqRec);
+            $reqRec=mysqli_query($con,"SELECT * FROM marche WHERE idMarche=".$rec." OR PlaceDuMarche='".$rec."';");
+            tableauMarche($reqRec);
 
         }elseif($crud=='u'){
-            $IdProduit=$_GET['IdProduit'];
-            $NomDuProduits=$_GET['NomDuProduits'];
-            $req=mysqli_query($con,"UPDATE produit SET IdProduit=$IdProduit,NomDuProduits='$NomDuProduits' WHERE IdProduit=$IdProduit;");
+            $idMarche=$_GET['idMarche'];
+            $PlaceDuMarche=$_GET['PlaceDuMarche'];
+            $req=mysqli_query($con,"UPDATE marche SET idMarche=$idMarche, PlaceDuMarche='$PlaceDuMarche' WHERE idMarche=$idMarche;");
             
             if($req){
-                listerProduits();
+                listerMarche();
                 echo 'Modification bien enregistré';
             }else{
                 echo 'Modification non effectué';
@@ -75,11 +74,11 @@
         
             
         }elseif($crud=='d'){
-            $IdProduit=$_GET['IdProduit'];
-            $req=mysqli_query($con,"DELETE FROM produit WHERE  IdProduit='$IdProduit';");
+            $idMarche=$_GET['idMarche'];
+            $req=mysqli_query($con,"DELETE FROM marche WHERE  idMarche='$idMarche';");
             
             if($req){
-                listerProduits();
+                listerMarche();
                 echo ' effacé';
             }else{
                 echo'non effacé';

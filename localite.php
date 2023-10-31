@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produit back</title>
+    <title>localie back</title>
 </head>
 <body>
     <?php
-        include_once 'connexionBase.php';
+        include 'connexionBase.php';
 
         $crud=$_GET['crud'];
-
-        function tableauProduit($requette){
-    ?>
+        
+        function tableauLocalite($requette){
+            ?>
             <table>
                 <thead>
-                    <th>N°Produit</th>
-                    <th>Nom Du Produits</th>
+                    <th>N°Localité</th>
+                    <th>Localité</th>
                 </thead>
                
     <?php    
@@ -24,8 +24,8 @@
     ?>
                 <tbody>
                     <tr>
-                        <td><?=$data['IdProduit']?></td>
-                        <td><?=$data['NomDuProduits']?></td>
+                        <td><?=$data['idLocalite']?></td>
+                        <td><?=$data['Localite']?></td>
                     </tr>
                 </tbody>
     <?php        
@@ -35,39 +35,38 @@
     <?php     
 
         }
-        function listerProduits(){
+        function listerLocalite(){
             require 'connexionBase.php';
 
-            $req=mysqli_query($con,"SELECT * FROM produit ;");
-            tableauProduit($req);
+            $req=mysqli_query($con,"SELECT * FROM localite ;");
+            tableaulocalite($req);
         }
 
         if($crud=='c'){
-            $IdProduit=$_GET['IdProduit'];
-            $NomDuProduits=$_GET['NomDuProduits'];
-            $req=mysqli_query($con,"INSERT INTO produit  VALUES ($IdProduit,'$NomDuProduits');");
+            $Localite=$_GET['Localite'];
+            $req=mysqli_query($con,"INSERT INTO `localite`(`Localite`) VALUES (' $Localite');");
             
             if($req){
-                listerProduits();
+                listerLocalite();
                 echo 'Bien enregistré';
             }else{
                 echo 'Ajout non effectué';
             }    
 
         }elseif($crud=='r'){
-            listerProduits();
+            listerLocalite();
         }elseif($crud=='s'){
             $rec=$_GET['recherche'];
-            $reqRec=mysqli_query($con,"SELECT * FROM produit WHERE IdProduit='".$rec."' ;");
-            tableauProduit($reqRec);
+            $reqRec=mysqli_query($con,"SELECT * FROM localite WHERE idLocalite=".$rec." OR Localite='$rec';");
+            tableaulocalite($reqRec);
 
         }elseif($crud=='u'){
-            $IdProduit=$_GET['IdProduit'];
-            $NomDuProduits=$_GET['NomDuProduits'];
-            $req=mysqli_query($con,"UPDATE produit SET IdProduit=$IdProduit,NomDuProduits='$NomDuProduits' WHERE IdProduit=$IdProduit;");
+            $idLocalite=$_GET['idLocalite'];
+            $Localite=$_GET['Localite'];
+            $req=mysqli_query($con,"UPDATE localite SET idLocalite=$idLocalite,Localite='$Localite' WHERE idLocalite=$idLocalite;");
             
             if($req){
-                listerProduits();
+                listerLocalite();
                 echo 'Modification bien enregistré';
             }else{
                 echo 'Modification non effectué';
@@ -75,11 +74,11 @@
         
             
         }elseif($crud=='d'){
-            $IdProduit=$_GET['IdProduit'];
-            $req=mysqli_query($con,"DELETE FROM produit WHERE  IdProduit='$IdProduit';");
+            $idLocalite=$_GET['idLocalite'];
+            $req=mysqli_query($con,"DELETE FROM localite WHERE  idLocalite='$idLocalite';");
             
             if($req){
-                listerProduits();
+                listerLocalite();
                 echo ' effacé';
             }else{
                 echo'non effacé';

@@ -1,79 +1,118 @@
-<?php
-    include_once 'connexionBase.php';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pavillon back</title>
+</head>
+<body>
+    <?php
+        include_once 'connexionBase.php';
 
-    $crud=$_GET['crud'];
-
-    function listerPavillon(){
-        include 'connexionBase.php';
-        $lister="SELECT * FROM pavillon;";
-        $requette=mysqli_query($con,$lister);
-        
-        $colonnes = mysqli_fetch_fields($requette);
-        for ($i = 0; $i < count($colonnes); $i++) {
-            echo ' - ' .$colonnes[$i]->name . ' - ';
+        $crud=$_GET['crud'];
+        function tableauPavillon($requette){
+            ?>        
+            <table>
+                <thead>
+                    <th>N°Pavillon</th>
+                    <th>Localité</th>
+                    <th>Place du marché</th>
+                    <th>Type de pavillon</th>
+                    <th>Produits</th>
+                </thead>
+        <?php    
+                while ($data = mysqli_fetch_assoc($requette)) {
+        ?>          
+                    <tbody>
+                        <tr>
+                            <td><?=$data['numPavillon']?></td> 
+                            <td><?=$data['Localite']?></td>
+                            <td><?=$data['PlaceDuMarche']?></td>
+                            <td><?=$data['TypeDePavillon']?></td> 
+                            <td><?=$data['NomDuProduits']?></td>
+                        </tr>
+                    </tbody>            
+        <?php                        
+                }
+        ?>
+            </table>
+        <?php
+    
         }
-        echo '<br>';
-    
-        while ($data = mysqli_fetch_assoc($requette)) {
-            echo $data['numPavillon']  . '    ' .$data['Localite']  . '    ' . $data['PlaceDuMarche'] . '    ' .$data['TypeDeProduits']  . '  <br>';
-        }
-    
-    }
 
-    if($crud=='c'){
-        $numPavillon=$_GET['numPavillon'];
-        $Localite=$_GET['Localite'];
-        $PlaceDuMarche=$_GET['PlaceDuMarche'];
-        $TypeDeProduits=$_GET['TypeDeProduits'];
-        $TypeDePavillon=$_GET['TypeDePavillon'];
-        $numAutorisation=$_GET['numAutorisation'];
-        $DateDautorisation=$_GET['DateDautorisation'];
-        $numDeDeliberation=$_GET['numDeliberation'];
-        $DateDeDeliberation=$_GET['DateDeDeliberation'];
+        function listerPavillon(){
+            include 'connexionBase.php';
+            $lister="SELECT numPavillon, Localite, PlaceDuMarche, pavillon.IdProduit, TypeDePavillon, NomDuProduits  FROM pavillon, produit,marche, localite WHERE pavillon.IdProduit=produit.IdProduit AND pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=localite.idLocalite;";
+            $req=mysqli_query($con,$lister);
+
+            tableauPavillon($req);
+        }
+
+        if($crud=='c'){
+            $numPavillon=$_GET['numPavillon'];
+            $Localite=$_GET['Localite'];
+            $idMarche=$_GET['idMarche'];
+            $IdProduit=$_GET['IdProduit'];
+            $TypeDePavillon=$_GET['TypeDePavillon'];
+            $numAutorisation=$_GET['numAutorisation'];
+            $DateDautorisation=$_GET['DateDautorisation'];
+            $numDeDeliberation=$_GET['numDeliberation'];
+            $DateDeDeliberation=$_GET['DateDeDeliberation'];
+            
         
-    
-        $inserer="INSERT INTO pavillon (numPavillon, Localite, PlaceDuMarche, TypeDeProduits, TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation) VALUES ('$numPavillon', '$Localite', '$PlaceDuMarche', $TypeDeProduits , '$TypeDePavillon',' $numAutorisation',' $DateDautorisation','$numDeDeliberation',' $DateDeDeliberation');";
-        $req=mysqli_query($con,$inserer);
-        if($req){
+            $inserer="INSERT INTO pavillon (numPavillon, Localite, idMarche, IdProduit, TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation) VALUES ('$numPavillon', '$Localite', '$idMarche', $IdProduit , '$TypeDePavillon',' $numAutorisation',' $DateDautorisation','$numDeDeliberation',' $DateDeDeliberation');";
+            $req=mysqli_query($con,$inserer);
+            if($req){
+                listerPavillon();
+                echo 'Ajout bien enregistré';
+            }else{
+                echo 'Erreur d\'enregistrement';
+            }
+        
+        }elseif($crud=='r'){
             listerPavillon();
-            echo 'Ajout bien enregistré';
-        }else{
-            echo 'Erreur d\'enregistrement';
-        }
-    
-    }elseif($crud=='r'){
-        listerPavillon();
-    }elseif($crud=='u'){
-        $numPavillon=$_GET['numPavillon'];
-        $Localite=$_GET['Localite'];
-        $PlaceDuMarche=$_GET['PlaceDuMarche'];
-        $TypeDeProduits=$_GET['TypeDeProduits']; 
-        $TypeDePavillon=$_GET['TypeDePavillon'];
-        $numAutorisation=$_GET['numAutorisation'];
-        $DateDautorisation=$_GET['DateDautorisation'];
-        $numDeDeliberation=$_GET['numDeliberation'];
-        $DateDeDeliberation=$_GET['DateDeDeliberation'];
+
+        }elseif($crud=='s'){
+            $rec=$_GET['recherche'];
+            $lister="SELECT numPavillon, Localite, PlaceDuMarche, pavillon.IdProduit, TypeDePavillon, NomDuProduits FROM pavillon, produit, marche, localite WHERE pavillon.IdProduit=produit.IdProduit AND pavillon.idMarche=marche.IdMarche AND pavillon.idLocalite=Localite.idLocalite AND pavillon.numPavillon='".$rec."';";
+            $reqRec=mysqli_query($con,$lister);
+            tableauPavillon($reqRec);
+
  
-        $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', Localite='$Localite', PlaceDuMarche='$PlaceDuMarche', TypeDeProduits=$TypeDeProduits, TypeDePavillon='$TypeDePavillon', numAutorisation='$numAutorisation',DateDautorisation='$DateDautorisation',numDeliberation='$numDeDeliberation' WHERE numPavillon='$numPavillon';";
-        $req=mysqli_query($con,$modifier);
-        if($req){
-            listerPavillon();
-            echo'Modification reussie';
-        }else{
-            echo'Modification annulée';
-        }
+        }elseif($crud=='u'){
+            $numPavillon=$_GET['numPavillon'];
+            $idLocalite=$_GET['idLocalite'];
+            $idMarche=$_GET['idMarche'];
+            $IdProduit=$_GET['IdProduit']; 
+            $TypeDePavillon=$_GET['TypeDePavillon'];
+            $numAutorisation=$_GET['numAutorisation'];
+            $DateDautorisation=$_GET['DateDautorisation'];
+            $numDeDeliberation=$_GET['numDeliberation'];
+            $DateDeDeliberation=$_GET['DateDeDeliberation'];
     
-    }elseif($crud=='d'){
-        $numPavillon=$_GET['numPavillon'];
-        $req=mysqli_query($con,"DELETE FROM pavillon WHERE numPavillon='$numPavillon' ;");
-        if($req){
-            listerPavillon();
-           echo ' pavillon bien effacé';
-        }else{
-           echo' non effacé';
-        }
+            $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', Localite='$Localite', idMarche='$idMarche', IdProduit=$IdProduit, TypeDePavillon='$TypeDePavillon', numAutorisation='$numAutorisation',DateDautorisation='$DateDautorisation',numDeliberation='$numDeDeliberation' WHERE numPavillon='$numPavillon';";
+            $req=mysqli_query($con,$modifier);
+            if($req){
+                listerPavillon();
+                echo'Modification reussie';
+            }else{
+                echo'Modification annulée';
+            }
+        
+        }elseif($crud=='d'){
+            $numPavillon=$_GET['numPavillon'];
+            $req=mysqli_query($con,"DELETE FROM pavillon WHERE numPavillon='$numPavillon' ;");
+            if($req){
+                listerPavillon();
+            echo ' pavillon bien effacé';
+            }else{
+            echo' non effacé';
+            }
 
-    }else{
-        echo'vous devez choisir entre c-r-u-d, veuillez reessayer';
-    }
-?>
+        }else{
+            echo'vous devez choisir entre c-r-u-d, veuillez reessayer';
+        }
+    ?>
+    
+</body>
+</html>
