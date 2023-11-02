@@ -20,10 +20,11 @@
                     <th>Type de pavillon</th>
                     <th>Produits</th>
                 </thead>
+                <tbody>
         <?php    
                 while ($data = mysqli_fetch_assoc($requette)) {
         ?>          
-                    <tbody>
+                    
                         <tr>
                             <td><?=$data['numPavillon']?></td> 
                             <td><?=$data['Localite']?></td>
@@ -31,10 +32,11 @@
                             <td><?=$data['TypeDePavillon']?></td> 
                             <td><?=$data['NomDuProduits']?></td>
                         </tr>
-                    </tbody>            
+                                
         <?php                        
                 }
         ?>
+               </tbody>
             </table>
         <?php
     

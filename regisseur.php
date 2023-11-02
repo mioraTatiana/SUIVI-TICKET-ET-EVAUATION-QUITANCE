@@ -10,20 +10,50 @@
         include_once 'connexionBase.php';
 
         $crud=$_GET['crud'];
-        
-        function listerregisseur(){
-            include 'connexionBase.php';
-            $lister="SELECT * FROM regisseur;";
-            $requette=mysqli_query($con,$lister);
-        
 
-        
-            while ($data = mysqli_fetch_assoc($requette)) {
-                echo $data['CIN']  . '    ' .$data['Nom']  . '    ' . $data['Prenom'] . '    ' .$data['Adresse']  . '    ' .$data['Telephone']  . '<br>';
-            }
-        
+        function tableauRegisseur($requette){
+        ?>
+
+            <table>
+                <thead>
+                    <th>CIN</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
+                </thead>
+                <tbody>
+            
+        <?php
+                while ($data = mysqli_fetch_assoc($requette)) {
+        ?>
+                
+                    <tr>
+                        <td><?=$data['CIN']?></td>
+                        <td><?=$data['Nom']?></td>
+                        <td><?=$data['Prenom']?></td>
+                        <td><?=$data['Adresse']?></td>
+                        <td><?=$data['Telephone']?></td>
+                    </tr>
+                
+        <?php
+                }
+        ?>
+            </tbody>
+            </table>
+        <?php    
+    
         }
 
+        
+        function listerRegisseur(){
+            include 'connexionBase.php';
+            $lister="SELECT * FROM regisseur;";
+            $req=mysqli_query($con,$lister);
+            tableauRegisseur($req);
+        
+        }
+    
         if($crud=='c'){
             $CIN=$_GET['CIN'];
             $Nom=$_GET['Nom'];
@@ -43,6 +73,12 @@
         
         }elseif($crud=='r'){
             listerregisseur();
+        }elseif($crud=='s'){
+            $rec=$_GET['recherche'];
+            $lister="SELECT * FROM regisseur WHERE CIN='".$rec."';";
+            $req=mysqli_query($con,$lister);
+            tableauRegisseur($req);
+
         }elseif($crud=='u'){
             $CIN=$_GET['CIN'];
             $Nom=$_GET['Nom'];

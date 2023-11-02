@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Identification</title>
+    <script src="popup.js"></script>
 </head>
 <body>
+    <iframe src="header.html" frameborder="0"></iframe>
     <div class="Login">
         <img src="" alt="">
         <h3>COMMUNE URBAINE DE FIANARANTSOA</h3>
@@ -19,11 +21,12 @@
             <label for="name">Mot de passe</label><br>
             <input type="text" name="passWord"><br><br>
 
-            <button name="connecterButton">Connecter</button>
+            <button name="connecterButton" onclick="openPopup()" >Connecter</button>
         </form>
 
         <h4><a href="login.php">Vous n'êtes pas encore inscrit</a></h4>
     </div>
+    <iframe src="footer.html" frameborder="0"></iframe>
     
 </body>
 </html>

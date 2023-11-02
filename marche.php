@@ -18,19 +18,20 @@
                     <th>N°Marché</th>
                     <th>Place de marché</th>
                 </thead>
-               
+                <tbody>
     <?php    
             while ($data = mysqli_fetch_assoc($requette)) {
     ?>
-                <tbody>
+                
                     <tr>
                         <td><?=$data['idMarche']?></td>
                         <td><?=$data['PlaceDuMarche']?></td>
                     </tr>
-                </tbody>
+                
     <?php        
             }
-    ?> 
+    ?>     
+                </tbody>
             </table>       
     <?php     
 

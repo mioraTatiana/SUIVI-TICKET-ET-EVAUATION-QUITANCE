@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>produit front</title>
+    <title>ticket front</title>
 </head>
 <body>
     <iframe src="header.html" frameborder="0"></iframe>
@@ -23,8 +23,8 @@
     </div>
     <div>
         <?php
-            include '../produit.php';
-            listerProduits();
+            include '../ticket.php';
+            listerTicket();
         ?>
     </div>
     <iframe src="footer.html" frameborder="0"></iframe>

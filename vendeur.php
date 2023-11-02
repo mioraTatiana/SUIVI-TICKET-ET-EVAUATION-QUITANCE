@@ -23,11 +23,12 @@
                     <th>Carte Professionnelle</th>
                     <th>N°pavillon</th>
                 </thead>
+                <tbody>
           
     <?php    
             while ($data = mysqli_fetch_assoc($requette)) {
     ?>          
-                <tbody>
+                
                     <tr>
                         <td><?=$data['CIN']?></td>
                         <td><?=$data['Nom']?></td>
@@ -37,11 +38,12 @@
                         <td><?=$data['CarteProfessionnelle']?></td>
                         <td><?=$data['numPavillon']?></td>
                     </tr>
-                </tbody>
+                
                
     <?php
             }
     ?> 
+               </tbody>
             </table>
     <?php     
 

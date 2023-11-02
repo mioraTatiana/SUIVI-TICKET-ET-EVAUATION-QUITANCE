@@ -18,19 +18,20 @@
                     <th>N°Produit</th>
                     <th>Nom Du Produits</th>
                 </thead>
-               
+                <tbody>
     <?php    
             while ($data = mysqli_fetch_assoc($requette)) {
     ?>
-                <tbody>
+                
                     <tr>
                         <td><?=$data['IdProduit']?></td>
                         <td><?=$data['NomDuProduits']?></td>
                     </tr>
-                </tbody>
+                
     <?php        
             }
     ?> 
+                </tbody>
             </table>       
     <?php     
 

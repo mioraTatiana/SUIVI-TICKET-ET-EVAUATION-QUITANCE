@@ -6,6 +6,9 @@
     <title>Pavillon front</title>
 </head>
 <body>
+    <iframe src="header.html" frameborder="0"></iframe>
+    <iframe src="side_bar.html" frameborder="0"></iframe>
+
     <div>
         <img src="" alt="ajouter">
         <img src="" alt="modifier">
@@ -24,5 +27,7 @@
             listerPavillon();
         ?>
     </div>
+    <iframe src="footer.html" frameborder="0"></iframe>
+
 </body>
 </html>

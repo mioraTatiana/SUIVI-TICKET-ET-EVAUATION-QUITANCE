@@ -23,8 +23,8 @@
     </div>
     <div>
         <?php
-            include '../produit.php';
-            listerProduits();
+            include '../marche.php';
+            listerMarche();
         ?>
     </div>
     <iframe src="footer.html" frameborder="0"></iframe>

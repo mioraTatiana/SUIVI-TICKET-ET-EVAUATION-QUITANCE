@@ -23,8 +23,8 @@
     </div>
     <div>
         <?php
-            include '../produit.php';
-            listerProduits();
+            include '../localite.php';
+            listerLocalite();
         ?>
     </div>
     <iframe src="footer.html" frameborder="0"></iframe>

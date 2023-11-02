@@ -18,19 +18,21 @@
                     <th>N°Localité</th>
                     <th>Localité</th>
                 </thead>
+                <tbody>
                
     <?php    
             while ($data = mysqli_fetch_assoc($requette)) {
     ?>
-                <tbody>
+               
                     <tr>
                         <td><?=$data['idLocalite']?></td>
                         <td><?=$data['Localite']?></td>
                     </tr>
-                </tbody>
+                
     <?php        
             }
     ?> 
+                </tbody>
             </table>       
     <?php     
 

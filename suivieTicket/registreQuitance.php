@@ -6,6 +6,9 @@
     <title>Registre des loyers des pavillons</title>
 </head>
 <body>
+    <iframe src="header.html" frameborder="0"></iframe>
+    <iframe src="side_bar.html" frameborder="0"></iframe>
+
     <div class="actions">
         <a href=""><img src="" alt="create button"></a> <!-- ajout --> 
         <a href=""><img src="" alt="update button"></a> <!-- modification -->
@@ -24,7 +27,7 @@
             listerRegistre();
         ?>
     </div>
- 
-    
+    <iframe src="footer.html" frameborder="0"></iframe>
+
 </body>
 </html>

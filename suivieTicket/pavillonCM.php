@@ -7,6 +7,9 @@
 </head>
 <body>
     <!-- Create -->
+    <iframe src="header.html" frameborder="0"></iframe>
+    <iframe src="side_bar.html" frameborder="0"></iframe>
+
     <span>
         Veuillez insérer les informations à propros de votre pavillon
     </span>
@@ -23,9 +26,9 @@
 
             <label for="IdProduits"></label><br>
             <select name="" id="">
-<?php                
-            include             
-?>
+               
+                        
+
             <option value=""></option>
             </select>
             
@@ -42,5 +45,6 @@
 
         </form>
     </div>
+    <iframe src="footer.html" frameborder="0"></iframe>
 </body>
 </html>
