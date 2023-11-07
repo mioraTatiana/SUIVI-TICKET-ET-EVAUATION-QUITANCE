@@ -21,6 +21,7 @@
                     <th>Prenom</th>
                     <th>Adresse</th>
                     <th>Telephone</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
             
@@ -34,6 +35,7 @@
                         <td><?=$data['Prenom']?></td>
                         <td><?=$data['Adresse']?></td>
                         <td><?=$data['Telephone']?></td>
+                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
                     </tr>
                 
         <?php

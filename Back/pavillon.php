@@ -19,6 +19,7 @@
                     <th>Place du marché</th>
                     <th>Type de pavillon</th>
                     <th>Produits</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
         <?php    
@@ -31,6 +32,8 @@
                             <td><?=$data['PlaceDuMarche']?></td>
                             <td><?=$data['TypeDePavillon']?></td> 
                             <td><?=$data['NomDuProduits']?></td>
+                            <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
+
                         </tr>
                                 
         <?php                        

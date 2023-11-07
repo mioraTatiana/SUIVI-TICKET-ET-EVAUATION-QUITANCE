@@ -17,6 +17,7 @@
                 <thead>
                     <th>N°Marché</th>
                     <th>Place de marché</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
     <?php    
@@ -26,6 +27,8 @@
                     <tr>
                         <td><?=$data['idMarche']?></td>
                         <td><?=$data['PlaceDuMarche']?></td>
+                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
+
                     </tr>
                 
     <?php        

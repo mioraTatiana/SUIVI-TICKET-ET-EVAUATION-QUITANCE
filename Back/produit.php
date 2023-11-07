@@ -17,6 +17,7 @@
                 <thead>
                     <th>N°Produit</th>
                     <th>Nom Du Produits</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
     <?php    
@@ -26,6 +27,8 @@
                     <tr>
                         <td><?=$data['IdProduit']?></td>
                         <td><?=$data['NomDuProduits']?></td>
+                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
+
                     </tr>
                 
     <?php        

@@ -23,7 +23,7 @@
     </div>
     <div>
         <?php
-            include '../regisseur.php';
+            include '../Back/regisseur.php';
             listerRegisseur();
         ?>
     </div>

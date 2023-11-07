@@ -19,6 +19,7 @@
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>NombreDeTicket</th>
+                <th>Actions</th>
             </thead>
             <tbody>
         
@@ -31,6 +32,7 @@
                     <td><?=$data['Nom']?></td>
                     <td><?=$data['Prenom']?></td>
                     <td><?=$data['NombreDeTicket']?></td>
+                    <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
                 </tr>
             
 <?php                    

@@ -23,7 +23,7 @@
     </div>
     <div>
         <?php
-            include '../pavillon.php';
+            include '../Back/pavillon.php';
             listerPavillon();
         ?>
     </div>

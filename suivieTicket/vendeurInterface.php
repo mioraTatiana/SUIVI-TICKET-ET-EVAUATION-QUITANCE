@@ -22,7 +22,7 @@
     </div>
     <div>
         <?php
-            include '../vendeur.php';
+            include '../Back/vendeur.php';
             listerVendeur();
         ?>
     </div>

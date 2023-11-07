@@ -22,6 +22,7 @@
                     <th>Adresse</th> 
                     <th>Carte Professionnelle</th>
                     <th>N°pavillon</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
           
@@ -37,6 +38,7 @@
                         <td><?=$data['Adresse']?></td>
                         <td><?=$data['CarteProfessionnelle']?></td>
                         <td><?=$data['numPavillon']?></td>
+                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
                     </tr>
                 
                

@@ -23,7 +23,7 @@
     </div>
     <div>
         <?php
-            include '../produit.php';
+            include '../Back/produit.php';
             listerProduits();
         ?>
     </div>

@@ -25,6 +25,7 @@
                     <th>Noms et prénoms</th>
                     <th>CIN</th>
                     <th>N°Quitance</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
     <?php
@@ -40,6 +41,8 @@
                         <td><?php echo '' .$data['Nom']. ' ' .$data['Prenom'] ?></td>
                         <td><?= $data['CIN']?></td>
                         <td><?=$data['numQuitance']?></td>
+                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
+
                     </tr>
     <?php           
                 }

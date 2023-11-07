@@ -17,6 +17,7 @@
                 <thead>
                     <th>N°Localité</th>
                     <th>Localité</th>
+                    <th>Actions</th>
                 </thead>
                 <tbody>
                
@@ -27,6 +28,11 @@
                     <tr>
                         <td><?=$data['idLocalite']?></td>
                         <td><?=$data['Localite']?></td>
+                        <td>
+                            <a href="../suivieTicket/localiteM.php"><img src="" alt="modifier"></a> 
+                            <img src="" alt="supprimer">
+                        </td>
+
                     </tr>
                 
     <?php        

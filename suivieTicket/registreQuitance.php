@@ -23,7 +23,7 @@
 
     <div>
         <?php
-            include 'c:\wamp64\www\SUIVI-TICKET-ET-EVAUATION-QUITANCE\registre.php';
+            include '../Back/registre.php';
             listerRegistre();
         ?>
     </div>
