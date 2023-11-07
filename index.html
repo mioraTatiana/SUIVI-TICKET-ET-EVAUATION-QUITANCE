@@ -15,16 +15,20 @@
         <h3>Bureau économique</h3>
         <h2>BIENVENUE</h2>
 
-        <form action="POST">
-            <label for="name">Nom de l'utilisateur</label><br>
-            <input type="text" name="name"><br><br>
+        <form action="Back/loginBack.php" method="POST">
+            <label for="email">Adresse mail</label><br>
+            <input type="email" name="email" id=""><br><br>
+
             <label for="name">Mot de passe</label><br>
             <input type="text" name="passWord"><br><br>
+            
+            <input type="submit" value="Connecter" name="connecterButton">
+            <input type="reset" value="Réinitialiser">
 
-            <button name="connecterButton" ><a href="Back/loginBack.php">Connecter</a></button>
+            
         </form>
 
-        <h4><a href="login.php">Vous n'êtes pas encore inscrit</a></h4>
+        <h4><a href="suivieTicket/login.html">Vous n'êtes pas encore inscrit</a></h4>
     </div>
     <iframe src="suivieTicket/footer.html" frameborder="0"></iframe>
     

@@ -27,7 +27,10 @@
                     <tr>
                         <td><?=$data['idMarche']?></td>
                         <td><?=$data['PlaceDuMarche']?></td>
-                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
+                        <td>
+                            <a href="../suivieTicket/marcheModifier.php"><img src="" alt="modifier"></a> 
+                            <a href=""></a><img src="" alt="supprimer">
+                        </td>
 
                     </tr>
                 

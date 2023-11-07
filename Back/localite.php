@@ -29,8 +29,8 @@
                         <td><?=$data['idLocalite']?></td>
                         <td><?=$data['Localite']?></td>
                         <td>
-                            <a href="../suivieTicket/localiteM.php"><img src="" alt="modifier"></a> 
-                            <img src="" alt="supprimer">
+                            <a href="../suivieTicket/localiteModifier.php?idLocalite=<?php echo $data['idLocalite']; ?>"><img src="" alt="modifier"></a> 
+                            <a href="localite.php?idLocalite=<?php echo $data['idLocalite']; ?>"><img src="" alt="supprimer" name="supprimerLocalite" ></a>
                         </td>
 
                     </tr>
@@ -50,6 +50,18 @@
             tableaulocalite($req);
         }
 
+        if(isset($_GET["supprimerLocalite"])){
+            $idLocalite=$_GET['idLocalite'];
+            $req=mysqli_query($con,"DELETE FROM localite WHERE  idLocalite='$idLocalite';");
+            
+            if($req){
+                listerLocalite();
+                echo ' effacé';
+            }else{
+                echo'non effacé';
+            }
+        }
+        
         if($crud=='c'){
             $Localite=$_GET['Localite'];
             $req=mysqli_query($con,"INSERT INTO `localite`(`Localite`) VALUES (' $Localite');");
@@ -68,9 +80,9 @@
             $reqRec=mysqli_query($con,"SELECT * FROM localite WHERE idLocalite=".$rec." OR Localite='$rec';");
             tableaulocalite($reqRec);
 
-        }elseif($crud=='u'){
-            $idLocalite=$_GET['idLocalite'];
-            $Localite=$_GET['Localite'];
+        }elseif(isset($_POST["modifierLocalite"])){
+            $idLocalite=$_POST['idLocalite'];
+            $Localite=$_POST['Localite'];
             $req=mysqli_query($con,"UPDATE localite SET idLocalite=$idLocalite,Localite='$Localite' WHERE idLocalite=$idLocalite;");
             
             if($req){
@@ -81,16 +93,16 @@
             }
         
             
-        }elseif($crud=='d'){
-            $idLocalite=$_GET['idLocalite'];
-            $req=mysqli_query($con,"DELETE FROM localite WHERE  idLocalite='$idLocalite';");
+        // }elseif(isset($_GET["supprimerLocalite"])){
+        //     $idLocalite=$_GET['idLocalite'];
+        //     $req=mysqli_query($con,"DELETE FROM localite WHERE  idLocalite='$idLocalite';");
             
-            if($req){
-                listerLocalite();
-                echo ' effacé';
-            }else{
-                echo'non effacé';
-            }
+        //     if($req){
+        //         listerLocalite();
+        //         echo ' effacé';
+        //     }else{
+        //         echo'non effacé';
+        //     }
         
         }else{
             echo'vous devez choisir entre c-r-u-d, veuillez reessayer';
