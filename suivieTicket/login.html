@@ -4,26 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cssConstruite/suivi1.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+
+
     <title>login</title>
 </head>
 <body>
-    <div class="Login">
-        <img src="" alt="">
-        <h3>COMMUNE URBAINE DE FIANARANTSOA</h3>
-        <h3>Bureau économique</h3>
-        <h2>BIENVENUE</h2>
-        <h3> Veuillez vous inscrire </h3>
-
+    <div class="login">
+        <div class="imageArmoirie">
+            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt="armoirie" class="armoirie">
+            <h3 class="titreLogin">COMMUNE URBAINE DE FIANARANTSOA</h3><br>
+            <h3 class="bienvenu"> Veuillez vous inscrire </h3>
+    
+        </div>
         <form action="../Back/loginBack.php" method="POST">
-            <label for="name">Adresse mail</label><br>
-            <input type="text" name="email"><br><br>
-            <label for="name">Mot de passe</label><br>
-            <input type="text" name="passWord"><br><br>
-            <input type="submit" name="inscrireButton" value="Inscrire">
+            <div class="connexion">
+                <label for="name">Adresse mail</label><br>
+                <input type="text" name="email" class="email"><br>
+
+                <label for="name">Mot de passe</label><br>
+                <input type="text" name="passWord" class="passWord"><br>
+                <div id="Inscrire">
+                    <input type="submit" name="inscrireButton" value="Inscrire" class="btn btn-warning">
+
+                </div>
+    
+            </div>
 
         </form>
 
-        <h4><a href="../index.html"> Se connecter </a></h4>
+        <h4><a href="../index.html" class="pasInscrit"> Se connecter </a></h4>
     </div>
     
 </body>

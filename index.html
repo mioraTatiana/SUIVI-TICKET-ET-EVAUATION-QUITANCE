@@ -4,33 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cssConstruite/suivi1.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
     <title>Identification</title>
     <script src="popup.js"></script>
 </head>
 <body>
     <!-- <iframe src="header.html" frameborder="0"></iframe> -->
-    <div class="Login">
-        <img src="" alt="">
-        <h3>COMMUNE URBAINE DE FIANARANTSOA</h3>
-        <h3>Bureau économique</h3>
-        <h2>BIENVENUE</h2>
+    <div  class="login">
+        <div class="imageArmoirie" class="container-sm">
+            <img src="image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt="Armoirie de la CUF" class="armoirie"  >
+            <h2  class=" titreLogin">COMMUNE URBAINE DE FIANARANTSOA</h2>
+            <h1  class="bienvenu">BIENVENUE</h1>
+        </div>
 
-        <form action="Back/loginBack.php" method="POST">
-            <label for="email">Adresse mail</label><br>
-            <input type="email" name="email" id=""><br><br>
-
-            <label for="name">Mot de passe</label><br>
-            <input type="text" name="passWord"><br><br>
-            
-            <input type="submit" value="Connecter" name="connecterButton">
-            <input type="reset" value="Réinitialiser">
-
+        <form action="Back/loginBack.php" method="POST" >
+           
+            <div class="connexion" class="">
+                <label for="email">Adresse mail</label><br>
+                <input type="email" name="email" class="email"  ><br>
+    
+                <label for="name">Mot de passe</label><br>
+                <input type="password" name="passWord" class="passWord"  ><br><br>
+                
+                <div class="bouttonConnexion">
+                    <input type="submit" value="Connecter" name="connecterButton" class=" btn btn-warning">
+                    <input type="reset" value="Réinitialiser" class="btn btn-warning">
+    
+                </div>
+            </div>    
+        
             
         </form>
 
-        <h4><a href="suivieTicket/login.html">Vous n'êtes pas encore inscrit</a></h4>
+        <h4><a href="suivieTicket/login.html" class="pasInscrit">Vous n'êtes pas encore inscrit</a></h4>
     </div>
-    <iframe src="suivieTicket/footer.html" frameborder="0"></iframe>
     
 </body>
 </html>

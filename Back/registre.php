@@ -3,47 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+
     <title>Registre</title>
 </head>
 <body>
     <?php
-        include_once 'connexionBase.php';
+        include 'connexionBase.php';
 
-        $crud=$_GET['crud'];
 
-        function tableauRegitre($requette){
+
+        function tableauRegitre($lister){
+            include 'connexionBase.php';
+
+            $query=mysqli_query($con,$lister);
     ?>
-
-            <table class="registre">
-                <thead>
-                    <th>Numéro de la fiche</th>
-                    <th>Mois</th>
-                    <th>Année</th>
-                    <th>Date de paiement</th>
-                    <th>Tarifs</th>
-                    <th>N°pavillon</th>
-                    <th>Noms et prénoms</th>
-                    <th>CIN</th>
-                    <th>N°Quitance</th>
-                    <th>Actions</th>
+            
+            <table class="table table-bordered table-sm table-responsive-md">
+                <thead class="bg-success">
+                    <th scope="col" >Numéro de la fiche</th>
+                    <th scope="col">Année</th>
+                    <th scope="col">Mois</th>
+                    <th scope="col">Date de paiement</th>
+                    <th scope="col">Tarifs</th>
+                    <th scope="col">N°pavillon</th>
+                    <th scope="col">Vendeur</th>
+                    <th scope="col">N°Quitance</th>
+                    <th scope="col">Actions</th>
+                    
                 </thead>
                 <tbody>
     <?php
-                while ($data = mysqli_fetch_assoc($requette)) {
+            $i=0;
+                while ($data = mysqli_fetch_assoc($query)) {
+                    $i++;
+
     ?>
                     <tr>
                         <td><?=$data['numFiche']?></td>
-                        <td><?=$data['Mois']?></td> 
                         <td><?=$data['Annee']?></td>
+                        <td><?=$data['Mois']?></td> 
                         <td><?=$data['DateDePaiement'] ?></td>
                         <td><?=$data['Tarif']?></td> 
                         <td><?=$data['numPavillon'] ?></td> 
                         <td><?php echo '' .$data['Nom']. ' ' .$data['Prenom'] ?></td>
-                        <td><?= $data['CIN']?></td>
                         <td><?=$data['numQuitance']?></td>
-                        <td><img src="" alt="modifier"> <img src="" alt="supprimer"></td>
+                        <td >
+                            <a class="btn m-0" href="../suivieTicket/registreModifier.php?numFiche=<?=$data['numFiche']?>"><img src="../image/modifierTab.png" alt="modifier"></a> 
+                            <button class="btn m-0" type="button" data-bs-toggle="modal" data-bs-target="#registreModalS<?=$i?>">
+                                <img src="../image/supprimerTab.png" alt="supprimer" >
+                            </button>
+                            <a href="../Back/fiche.php?numPavillon=<?=$data['numPavillon']?>" class="btn m-0"><img src="../image/pdfRose.png" alt="PDF"></a>
+                        </td>
 
                     </tr>
+
+                    <div class="modal fade" id="registreModalS<?=$i?>" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <span><img src="../image/supprimer.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
+
+                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <form action="../Back/registre.php" method="POST">
+                                        <div class="modal-body">
+                                            <label for="numFiche">N°Fiche</label><br>
+                                            <input type="text" name="numFiche" id="" value="<?=$data['numFiche']?>" class="form-control"><br>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <input type="submit" value="Supprimer" name="supprimerRegistre" class="btn btn-danger" >
+                                        </div>
+                                        
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     <?php           
                 }
                             
@@ -55,75 +101,54 @@
     <?php
 
         }
-        function listerRegistre(){
-            include 'connexionBase.php';
-            $lister="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN, Nom, Prenom, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN=vendeur.CIN AND registre.idMois=mois.idMois GROUP BY registre.numPavillon, Annee, registre.idMois ORDER BY Annee, registre.idMois; ";
-            $req=mysqli_query($con,$lister);
-            tableauRegitre($req);
-                    
-        
-        }
 
-        if($crud=='c'){
-            $numFiche=$_GET['numFiche'];
-            $Mois=$_GET['Mois'];
-            $Annee=$_GET['Annee'];
-            $DateDePaiement=$_GET['DateDePaiement'];
-            $Tarif=$_GET['Tarif'];
-            $numPavillon=$_GET['numPavillon'];
-            $CIN=$_GET['CIN'];
+        if(isset($_POST["ajouterRegistre"])){
+            // $numFiche=$_POST['numFiche'];
+            $Mois=$_POST['idMois'];
+            $Annee=$_POST['Annee'];
+            $DateDePaiement=$_POST['DateDePaiement'];
+            $Tarif=$_POST['Tarif'];
+            $numPavillon=$_POST['numPavillon'];
+            $CIN=$_POST['CIN'];
+            $numQuitance=$_POST['numQuitance'];
         
-            $req=mysqli_query($con,"INSERT INTO registre (numFiche, Mois, Annee, DateDePaiement, Tarif,numPavillon, CIN) VALUES ('$numFiche','$Mois',$Annee,'$DateDePaiement',$Tarif,'$numPavillon',$CIN)");
+            $req=mysqli_query($con,"INSERT INTO registre ( idMois, Annee, DateDePaiement, Tarif,numPavillon, CIN,numQuitance) VALUES ('$Mois',$Annee,'$DateDePaiement',$Tarif,'$numPavillon',$CIN,$numQuitance)");
         
             if($req){
-                listerRegistre();
-                echo 'Bien enregistré';
+                header('location: ../suivieTicket/registreInterface.php') ;
             }else{
                 echo 'Ajout non effectué';
             }
+
+
+        }elseif(isset($_POST["modifierRegistre"])){
+            $numFiche=$_POST['numFiche'];
+            $Mois=$_POST['idMois'];
+            $Annee=$_POST['Annee'];
+            $DateDePaiement=$_POST['DateDePaiement'];
+            $Tarif=$_POST['Tarif'];
+            $numPavillon=$_POST['numPavillon'];
+            $CIN=$_POST['CIN'];
+            $numQuitance=$_POST['numQuitance'];
         
-            
-        }elseif($crud=='r'){
-            listerRegistre();
-        }elseif($crud=='s'){
-            $rec=$_GET['recherche'];
-            $lister="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN, Nom, Prenom, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN=vendeur.CIN AND registre.idMois=mois.idMois AND ( registre.CIN='".$rec."' OR registre.numFiche ='".$rec."' OR registre.Annee=".$rec." OR registre.idMois=".$rec.") GROUP BY registre.numPavillon, Annee, registre.idMois ORDER BY Annee, registre.idMois;";
-            $reqRec=mysqli_query($con,$lister);
-            tableauRegitre($reqRec);
-
-
-
-        }elseif($crud=='u'){
-            $numFiche=$_GET['numFiche'];
-            $Mois=$_GET['Mois'];
-            $Annee=$_GET['Annee'];
-            $DateDePaiement=$_GET['DateDePaiement'];
-            $Tarif=$_GET['Tarif'];
-            $numPavillon=$_GET['numPavillon'];
-            $CIN=$_GET['CIN'];
-        
-            $req=mysqli_query($con,"UPDATE registre SET numFiche='$numFiche', Mois='$Mois', Annee=$Annee, DateDePaiement='$DateDePaiement', Tarif=$Tarif,numPavillon='$numPavillon', CIN=$CIN WHERE  numFiche='$numFiche' ;");
+            $req=mysqli_query($con,"UPDATE registre SET numFiche=$numFiche, idMois='$Mois', Annee=$Annee, DateDePaiement='$DateDePaiement', Tarif=$Tarif,numPavillon='$numPavillon', CIN=$CIN, numQuitance=$numQuitance WHERE  numFiche='$numFiche' ;");
         
             if($req){
-                listerRegistre();
-                echo 'Bien modifié';
+                header('location: ../suivieTicket/registreInterface.php') ;
             }else{
                 echo 'Modification non effectué';
             }
         
-        }elseif($crud=='d'){
-            $numFiche=$_GET['numFiche'];
-            $req=mysqli_query($con,"DELETE FROM registre WHERE  numFiche='$numFiche';");
+        }elseif(isset($_POST['supprimerRegistre'])){
+            $numFiche=$_POST['numFiche'];
+            $req=mysqli_query($con,"DELETE FROM registre WHERE  numFiche=$numFiche;");
             
             if($req){
-                listerRegistre();
-                echo ' effacé';
+                header('location: ../suivieTicket/registreInterface.php') ;
             }else{
                 echo'non effacé';
             }
         
-        }else{
-            echo'vous devez choisir entre c-r-u-d, veuillez reessayer';
         }  
 
         

@@ -38,7 +38,7 @@ public $CIN;
 public $numPavillon; 
 public $Localite; 
 public $PlaceDuMarche;
-public $NomDuProduits; 
+public $NomDuProduit; 
 public $Nom;
 public $Prenom;
 public $Telephone; 
@@ -54,8 +54,7 @@ function body(){
 
     include 'connexionBase.php';
     $numPavillon=$_GET['numPavillon'];
-    $Quitance=$_GET['Quitance'];
-    $requette="SELECT `numFiche`, `Mois`, `Annee`, `DateDePaiement`, `Tarif`, vendeur.`CIN`, pavillon.numPavillon, `Localite`, `PlaceDuMarche`,TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, pavillon.`TypeDeProduits`,NomDuProduits, `Nom`, `Prenom`, `Telephone`, `Adresse`, vendeur.CarteProfessionnelle, registre.idMois, Mois FROM vendeur, pavillon, registre, produit, mois WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon' AND pavillon.`TypeDeProduits`= produit.`TypeDeProduits` AND registre.idMois=mois.idMois;";
+    $requette="SELECT `numFiche`, `Mois`, `Annee`, `DateDePaiement`, `Tarif`, vendeur.`CIN`, pavillon.numPavillon, `Localite`,`PlaceDuMarche`,TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, pavillon.`idProduit`,NomDuProduit, `Nom`, `Prenom`, `Telephone`, `Adresse`, vendeur.CarteProfessionnelle, registre.idMois, Mois, numQuitance FROM vendeur, pavillon, registre, produit, mois, localite,marche WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon' AND pavillon.`idProduit`= produit.`idProduit` AND registre.idMois=mois.idMois AND pavillon.idLocalite=localite.idLocalite AND pavillon.idMarche=marche.idMarche;";
     $rec=mysqli_query($con, $requette);
    
 
@@ -70,7 +69,7 @@ function body(){
         $this->numPavillon=$data['numPavillon']; 
         $this->Localite =$data['Localite']; 
         $this->PlaceDuMarche =$data['PlaceDuMarche'];
-        $this->NomDuProduits =$data['NomDuProduits']; 
+        $this->NomDuProduit =$data['NomDuProduit']; 
         $this->Nom=$data['Nom'];
         $this->Prenom=$data['Prenom'];
         $this->Telephone =$data['Telephone']; 
@@ -81,6 +80,7 @@ function body(){
         $this->DateDautorisation=$data['DateDautorisation'];
         $this->numDeDeliberation=$data['numDeliberation'];
         $this->DateDeDeliberation=$data['DateDeDeliberation'];
+        $this->Quitance=$data['numQuitance'];
 
     }
     
@@ -93,7 +93,7 @@ function body(){
     $this->Ln(8);
     $this->Cell(5,10,'',0,0,'C');    
     $this->Cell(45,10,'FIANARANTSOA',0,0,'L');
-    $this->Image('C:\Users\WINDOWS 10\Pictures\Saved Pictures\MIORA.JPG', 18, 66, 30, 35);
+    $this->Image('C:\Dossier de sauvegarde\LOGO ARMOIRIE DE FIANARANTSOA.jpg', 18, 66, 30, 35);
     $this->Cell(70,30,'',0,0,'L'); 
     $this->Cell(20,10,'FICHE DE CONTROLE DE LOYER PAVILLON',0,0,'C');
     $this->Ln(48);
@@ -125,9 +125,9 @@ function body(){
     $this->SetFont('Arial','',12);
     $this->Cell(20,10,'Adresse: ',0,0,'L');
     $this->SetFont('Arial','I',12);
-    $this->Cell(70,10,''.$this->Adresse,0,0,'L'); 
+    $this->Cell(80,10,''.$this->Adresse,0,0,'L'); 
     $this->SetFont('Arial','',12);
-    $this->Cell(35,10,'N Telephone: ',0,0,'L');
+    $this->Cell(25,10,'Telephone: ',0,0,'L');
     $this->SetFont('Arial','I',12); 
     $this->Cell(50,10,''.$this->Telephone,0,0,'L');
     $this->Ln(8);
@@ -139,11 +139,11 @@ function body(){
     $this->SetFont('Arial','',12);
     $this->Cell(25,10,'Quitance:',0,0,'L');
     $this->SetFont('Arial','I',12); 
-    $this->Cell(20,10,''.$Quitance,0,0,'L');     
+    $this->Cell(20,10,''.$this->Quitance,0,0,'L');     
     $this->SetFont('Arial','',12);
     $this->Cell(25,10,'du',0,0,'L');
     $this->SetFont('Arial','I',12);
-    $this->Cell(30,10,''.date('y-m-d'),0,0,'L');
+    $this->Cell(30,10,''.$this->DateDePaiement,0,0,'L');
  
     $this->Ln(13);
 
@@ -172,7 +172,7 @@ function body(){
     $this->SetFont('Arial','',12);
     $this->Cell(40,10,'Type de produits:',0,0,'L');
     $this->SetFont('Arial','I',12); 
-    $this->Cell(40,10,''.$this->NomDuProduits,0,0,'L');
+    $this->Cell(40,10,''.$this->NomDuProduit,0,0,'L');
     $this->Ln(8);
 
     $this->SetFont('Arial','',12);
@@ -203,7 +203,7 @@ function body(){
     $this->Ln(8);
 
     $this->SetFont('Arial','I',12,);
-    $this->Cell(70,10,'Fianarantsoa, le '.date('Y-m-d'),0,0,'C');
+    $this->Cell(70,10,'Fianarantsoa, le '.$this->DateDePaiement,0,0,'C');
     $this->Ln(8);
 
     $this->SetFont('Arial','',12);

@@ -3,77 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>registre create update</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/cssConstruite/interface.css">
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+
+    <title>registre create </title>
 </head>
 <?php
         include '../Back/connexionBase.php';
 ?>
 
 <body>
-   <div>
-        <div>
-            <img src="" alt="ajouter">
-            <span>Registre</span>
-        </div>
-        <form action="">
-            <label for="numFiche">N°Fiche</label><br>
-            <input type="text" name="numFiche" id=""><br><br>
+    <div class="" id="registreModalA" >
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                                <img src="../image/ajouterFiche.png" alt="Ajouter" style=" width: 50px; height:50px" >
+                                                <button type="button" class="btn-close bg-danger" aria-label="Close"><a href="registreInterface"></a></button>
 
-            <label for="idMois">Mois</label><br>
-            <select name="idMois" id="">
-<?php
-            $query=mysqli_query($con,'SELECT * FROM mois');
-            while($data=mysqli_fetch_array($query)){
-?>
-                <option value="<?=$data['idMois']?>"><?=$data['Mois']?></option>
-<?php
-            }
-?>                
+                                        </div>
 
-</select><br><br>
+                                        <div class="form-group">
+                                            <div class="modal-body">
+                                                <div class="row" style="display:flex; flex-direction:row;">
+                                                    <form action="../Back/registre.php" method="POST">
 
-            <label for="annee">Annee</label><br>
-            <input type="number" name="annee" id=""><br><br>
+                                                        <div class="">
+                                                                <label for="idMois" class="form-label" >Mois</label><br>
+                                                                <select name="idMois" id="" class="form-select">
+                                                            <?php
+                                                                $query=mysqli_query($con,'SELECT * FROM mois');
+                                                                while($data=mysqli_fetch_array($query)){
+                                                            ?>
+                                                                    <option value="<?=$data['idMois']?>"><?=$data['Mois']?></option>
+                                                            <?php
+                                                                }
+                                                            ?>                
 
-            <label for="dateDePaiement">date De paiement</label><br>
-            <input type="date" name="dateDePaiement" id=""><br><br>
+                                                                </select><br>
 
-            <label for="tarif">Tarif</label><br>
-            <input type="number" name="tarif" id=""><br><br>
+                                                                <label for="Annee" class="form-label">Annee</label><br>
+                                                                <input type="number" name="Annee" id="" class="form-control"><br>
 
-            <label for="numPavillon">N°pavillon</label><br>
-            <select name="numPavillon" id="">
-<?php
-            $query2=mysqli_query($con,'SELECT numPavillon FROM pavillon');
-            while($data=mysqli_fetch_array($query2)){
-?>
-                <option value="<?=$data['numPavillon']?>"><?=$data['numPavillon']?></option>
-<?php
-        }
-?>                
-            </select><br><br>
+                                                                <label for="DateDePaiement" class="form-label">Date De paiement</label><br>
+                                                                <input type="date" name="DateDePaiement" id="" class="form-control"><br>
 
-            <label for="CIN">Vendeur</label><br>
-            <select name="CIN" id="">
-<?php   
-            $query3=mysqli_query($con,'SELECT * FROM vendeur');
-            while($data=mysqli_fetch_array($query3)){
-?>
-                 <option value="<?= $data['CIN']?>"><?= $data['Nom']?> <?= $data['Prenom']?> </option>
-<?php
-            }
-?>
-            </select><br><br>
+                                                                <label for="Tarif" class="form-label">Tarif</label><br>
+                                                                <input type="number" name="Tarif" id="" class="form-control" ><br>
 
-            <label for="numQuitance">N°Quitance</label><br>
-            <input type="text" name="numQuitance" id="">
+                                                        </div>
 
-            <img src="" alt="retour">
-            <button><a href="../Back/registre.php">Ajouter</a></button>
+                                                        <div class="c">
+                                                                <label for="numPavillon" class="form-label">N°pavillon</label><br>
+                                                                <select name="numPavillon" id="" class="form-select" >
+                                                            <?php
+                                                                $query2=mysqli_query($con,'SELECT numPavillon FROM pavillon');
+                                                                while($data=mysqli_fetch_array($query2)){
+                                                            ?>
+                                                                    <option value="<?=$data['numPavillon']?>"><?=$data['numPavillon']?></option>
+                                                            <?php
+                                                            }
+                                                            ?>                
+                                                                </select><br>
 
-            
+                                                                <label for="CIN" class="form-label">Vendeur</label><br>
+                                                                <select name="CIN" id="" class="form-select">
+                                                            <?php   
+                                                                $query3=mysqli_query($con,'SELECT * FROM vendeur');
+                                                                while($data=mysqli_fetch_array($query3)){
+                                                            ?>
+                                                                    <option value="<?= $data['CIN']?>"><?= $data['Nom']?> <?= $data['Prenom']?> </option>
+                                                            <?php
+                                                                }
+                                                            ?>
+                                                                </select><br>
 
-        </form>
-   </div> 
+                                                                <label for="numQuitance" class="form-label">N°Quitance</label><br>
+                                                                <input type="text" name="numQuitance" id="" class=" form-control mb-3">
+
+                                                            </div>
+
+                                                        
+
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                    <input type="submit" value="Ajouter" name="ajouterRegistre" class="btn btn-primary" >
+                                                    <input type="reset" value="Réinitialiser" class="btn bg-light" style="border: 2px solid grey ;">
+
+                                                </div>
+                                                    </form>
+                                            </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
 </body>
 </html>

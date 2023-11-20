@@ -1,0 +1,21 @@
+img{
+    width: 16px;
+    height: 16px;
+}
+ul{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: #1a237e ;
+    text-align: start;
+    
+}
+style{
+    width: 30%;
+    border: 2px solid rgba(128, 128, 128, 0.377);
+   border-top: 1px solid grey; 
+   border-right: 1px solid grey; 
+   border-bottom: 1px solid rgb(0, 140, 255);
+   background-color: #b0f2b5d8;
+}
