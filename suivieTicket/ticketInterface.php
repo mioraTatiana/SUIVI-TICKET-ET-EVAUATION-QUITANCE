@@ -8,7 +8,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
 
-    <title>ticket front</title>
+    <title>Registre de tickets</title>
 </head>
 <body>
 
@@ -94,14 +94,13 @@
                         </span>
                 </div>
 
-                    <div class=" border rounded border-2 p-3 shadow mt-3" style="display: flex; background-color: #81d4fa; flex-direction:row;" >
-
+                    <div class=" border rounded border-2 p-3 shadow mt-3 " style="padding-left: 100px; display: flex; background-color: #81d4fa; flex-direction:row;" >
                         <form action="../Back/ticket.php" method="POST" >
-                            <div class="form-group row border border-2 rounded ms-2" >
+                            <div class="form-group row border border-2 rounded ms-2 ps-3 pe-3 pt-3" >
                                 <div>
                                     <h6><u>Formulaire</u></h6>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6  ">
                                     <label for="DateDeDistribution" class="form-label">Date De Distribution</label><br>
                                     <input type="date" name="DateDeDistribution" id="" value="<?php echo date('y-m-d')?>" class="form-control"><br>
 
@@ -119,7 +118,7 @@
 
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-6 p-3">
                                     <label for="NombreDeTicket" class="form-label" >Nombre De Tickets</label><br>
                                     <input type="number" name="NombreDeTicket" id=""  class="form-control"><br>
 
@@ -142,7 +141,7 @@
                                     <label for="search" class="form-label text-decoration-underline me-1" >Recherche</label><br>
 
                                     <div  style="display:flex;  flex-direction: row; justify-content:center; text-align:center;">
-                                        <input type="search" name="search" id="" class="form-control d-inline "  placeholder="date distribution">
+                                        <input type="date" name="search" id="" class="form-control d-inline "  placeholder="date distribution">
                                         <button type="submit"  name="rechercheTicket" class=" btn  btn-sm d-inline border border-dark ms-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                     </div>
@@ -168,7 +167,7 @@
                             $lister="SELECT numEnregistrement ,DateDeDistribution, NombreDeTicket, Nom, Prenom,regisseur.CIN FROM registreticket, regisseur WHERE regisseur.CIN= registreticket.CIN AND (DateDeDistribution LIKE '%".$rec."%')";
                             $req=mysqli_query($con,$lister);
                         }else{       
-                        $lister="SELECT DateDeDistribution, NombreDeTicket, Nom, Prenom, numEnregistrement,regisseur.CIN FROM registreticket, regisseur WHERE regisseur.CIN= registreticket.CIN ORDER BY numEnregistrement";
+                        $lister="SELECT DateDeDistribution, NombreDeTicket, Nom, Prenom, numEnregistrement,regisseur.CIN FROM registreticket, regisseur WHERE regisseur.CIN= registreticket.CIN ORDER BY numEnregistrement DESC";
                         $req=mysqli_query($con,$lister);
                         }
                         tableauTicket($req);

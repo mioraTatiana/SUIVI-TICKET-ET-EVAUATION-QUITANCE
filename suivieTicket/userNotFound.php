@@ -11,8 +11,8 @@
             Non connété!  
         </span>
         <ul>
-            <li><a href="login.html">Information érronée!</a></li>
-            <li><a href="login1.html">Veuillez vous inscrire</a></li>
+            <li><a href="../index.html">Information érronée!</a></li>
+            <li><a href="login.html">Veuillez vous inscrire</a></li>
         </ul>
     </div>
 </body>

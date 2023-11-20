@@ -2,6 +2,7 @@
     include("../Back/connexionBase.php");
     $timeS=time();
     $rech=date("Y-m-d",$timeS);
+    $Nombre=0;
     $requette=mysqli_query($con,"SELECT NombreDeTicket, sum(NombreDeTicket) as somme FROM registreTicket WHERE DateDeDistribution= '$rech' ;");
     while($row=mysqli_fetch_array($requette)){
         $Nombre=$row['somme']. " " ;

@@ -50,7 +50,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                    <span><img src="../image/modifier.png" alt="Modifier" style=" width: 50px; height:50px"></span>
+                                    <span><img src="../image/modifier1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
                                     <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
 
@@ -105,12 +105,13 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                    <span><img src="../image/supprimer.png" alt="Modifier" style=" width: 50px; height:50px"></span>
+                                    <span><img src="../image/supprimer1.png" alt="Supprimer" style=" width: 50px; height:50px"></span>
                                     <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
 
+                            <div class="form-group" >
                             <div class="modal-body">
-                                <div class="form-group" >
+                               
                                     <form action="../Back/ticket.php" method="POST">
                                         <label  class="form-label" for="numEnregistrement">N°Enregistrement</label><br>
                                         <input  class="form-control" type="number" name="numEnregistrement" id="" value="<?=$data['numEnregistrement']?>" ><br>
@@ -120,8 +121,9 @@
                             <div class="modal-footer">
                                 <input  class="btn btn-danger" type="submit" value="Supprimer" name="supprimerTicket">
                             </div>
-
+                            
                             </form>
+                            </div>
 
                         </div>
                     </div>
