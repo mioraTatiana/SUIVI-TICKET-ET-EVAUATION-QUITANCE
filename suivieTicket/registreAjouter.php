@@ -17,10 +17,10 @@
 <body>
     <div class="" id="registreModalA" >
                                 <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
+                                    <div class="modal-content border border-2 border-primary ">
+                                        <div class="modal-header bg-primary">
                                                 <img src="../image/ajouterFiche.png" alt="Ajouter" style=" width: 50px; height:50px" >
-                                                <button type="button" class="btn-close bg-danger" aria-label="Close"><a href="registreInterface"></a></button>
+                                                <a href="registreInterface.php" class="btn-close" aria-label="Close"></a>
 
                                         </div>
 
@@ -31,7 +31,7 @@
 
                                                         <div class="">
                                                                 <label for="idMois" class="form-label" >Mois</label><br>
-                                                                <select name="idMois" id="" class="form-select">
+                                                                <select name="idMois" id="" class="form-select border border-primary">
                                                             <?php
                                                                 $query=mysqli_query($con,'SELECT * FROM mois');
                                                                 while($data=mysqli_fetch_array($query)){
@@ -44,19 +44,19 @@
                                                                 </select><br>
 
                                                                 <label for="Annee" class="form-label">Annee</label><br>
-                                                                <input type="number" name="Annee" id="" class="form-control"><br>
+                                                                <input type="number" name="Annee" id="" class="form-control border border-primary"><br>
 
                                                                 <label for="DateDePaiement" class="form-label">Date De paiement</label><br>
-                                                                <input type="date" name="DateDePaiement" id="" class="form-control"><br>
+                                                                <input type="date" name="DateDePaiement" id="" class="form-control border border-primary"><br>
 
                                                                 <label for="Tarif" class="form-label">Tarif</label><br>
-                                                                <input type="number" name="Tarif" id="" class="form-control" ><br>
+                                                                <input type="number" name="Tarif" id="" class="form-control border border-primary" ><br>
 
                                                         </div>
 
                                                         <div class="c">
                                                                 <label for="numPavillon" class="form-label">N°pavillon</label><br>
-                                                                <select name="numPavillon" id="" class="form-select" >
+                                                                <select name="numPavillon" id="" class="form-control border border-primary" >
                                                             <?php
                                                                 $query2=mysqli_query($con,'SELECT numPavillon FROM pavillon');
                                                                 while($data=mysqli_fetch_array($query2)){
@@ -68,7 +68,7 @@
                                                                 </select><br>
 
                                                                 <label for="CIN" class="form-label">Vendeur</label><br>
-                                                                <select name="CIN" id="" class="form-select">
+                                                                <select name="CIN" id="" class="form-control border border-primary">
                                                             <?php   
                                                                 $query3=mysqli_query($con,'SELECT * FROM vendeur');
                                                                 while($data=mysqli_fetch_array($query3)){
@@ -80,17 +80,17 @@
                                                                 </select><br>
 
                                                                 <label for="numQuitance" class="form-label">N°Quitance</label><br>
-                                                                <input type="text" name="numQuitance" id="" class=" form-control mb-3">
+                                                                <input type="text" name="numQuitance" id="" class=" form-control border border-primary mb-3">
 
-                                                            </div>
+                                                        </div>
 
                                                         
 
                                                 </div>
 
-                                                <div class="modal-footer">
+                                                <div class="modal-footer border-top border-2 border-primary">
                                                     <input type="submit" value="Ajouter" name="ajouterRegistre" class="btn btn-primary" >
-                                                    <input type="reset" value="Réinitialiser" class="btn bg-light" style="border: 2px solid grey ;">
+                                                    <input type="reset" value="Réinitialiser" class="btn bg-light  border border-primary"  >
 
                                                 </div>
                                                     </form>

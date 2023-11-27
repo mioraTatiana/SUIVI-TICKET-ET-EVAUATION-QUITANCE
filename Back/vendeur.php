@@ -52,36 +52,36 @@
 
                     <div class="modal fade " id="vendeurModalM<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <span><img src="../image/modifier.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                            <div class="modal-content border  border-2 border-success">
+                                <div class="modal-header bg-success">
+                                    <span><img src="../image/modifier1.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
 
                                 <div class="modal-body">
                                     <div class="form-group" >
                                         <form action="../Back/vendeur.php" method="POST" >
                                             <label class="form-label" for="CIN">CIN</label><br>
-                                            <input class="form-control" type="number" name="CIN" id="" value="<?=$data['CIN']?>"><br><br>
+                                            <input class="form-control border border-success" type="number" name="CIN" id="" value="<?=$data['CIN']?>"><br><br>
 
                                             <label class="form-label" for="Nom">Nom</label><br>
-                                            <input class="form-control" type="text" name="Nom" id="" value="<?=$data['Nom']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="Nom" id="" value="<?=$data['Nom']?>" ><br><br>
 
                                             <label class="form-label" for="Prenom">Prenom</label><br>
-                                            <input class="form-control" type="text" name="Prenom" id="" value="<?=$data['Prenom']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="Prenom" id="" value="<?=$data['Prenom']?>" ><br><br>
 
                                             <label class="form-label" for="Adresse">Adresse</label><br>
-                                            <input class="form-control" type="text" name="Adresse" id="" value="<?=$data['Adresse']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="Adresse" id="" value="<?=$data['Adresse']?>" ><br><br>
 
                                             <label class="form-label" for="CarteProfessionnelle">Carte Professionnelle</label><br>
-                                            <input class="form-control" type="text" name="CarteProfessionnelle" id="" value="<?=$data['CarteProfessionnelle']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="CarteProfessionnelle" id="" value="<?=$data['CarteProfessionnelle']?>" ><br><br>
 
                                             <label class="form-label" for="Telephone">Telephone</label><br>
-                                            <input class="form-control" type="tel" name="Telephone" id="" value="<?=$data['Telephone']?>" ><br><br>
+                                            <input class="form-control border border-success" type="tel" name="Telephone" id="" value="<?=$data['Telephone']?>" ><br><br>
 
 
                                             <label class="form-label" for="numPavillon">numPavillon</label><br>
-                                            <select class="form-select" name="numPavillon" id="">
+                                            <select class="form-select border border-success" name="numPavillon" id="">
                                 <?php
                                             include 'connexionBase.php';
                                             $query2=mysqli_query($con,"SELECT numPavillon FROM pavillon ");
@@ -101,13 +101,14 @@
                                 ?>
                                             </select>
                                 </div>
+                                </div>
 
-                                <div class="modal-footer">
+                                <div class="modal-footer  border-top border-2 border-success">
                                     <input  class="btn btn-success" type="submit" value="Modifier" name="modifierVendeur"  style="background-color:green;" >
                                 </div>
 
                                 </form>
-                                </div>
+                               
 
                             </div>
                         </div>
@@ -115,27 +116,27 @@
 
                     <div class="modal fade " id="vendeurModalS<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
+                            <div class="modal-content border border-2 border-danger">
+                                <div class="modal-header bg-danger">
                                     <span><img src="../image/supprimer1.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
 
                                 <div class="modal-body">
                                     <div class="form-group" >
                                         <form action="../Back/vendeur.php" method="POST" >
                                             <label class="form-label" for="CIN">CIN</label><br>
-                                            <input class="form-control" type="number" name="CIN" id="" value="<?=$data['CIN']?>"><br><br>
-
+                                            <input class="form-control border border-danger" type="number" name="CIN" id="" value="<?=$data['CIN']?>"><br><br>
+                                            </div>
                                 </div>
 
-                                <div class="modal-footer">
+                                <div class="modal-footer border-top border-2 border-danger">
                                     <input class="btn bn-danger" type="submit" value="Supprimer" name="supprimerVendeur" style="background-color:red;" >
                                 </div>
 
+                                
+                               
                                 </form>
-                                </div>
-
                             </div>
                         </div>
                     </div>

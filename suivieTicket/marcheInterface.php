@@ -9,7 +9,7 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <title>produit front</title>
 </head>
-<body>
+<body class="bg-success" >
     <div class="container-fluid h-100">
         <div class="row">
             <div class="col-3 bg-success p-3" >
@@ -72,33 +72,43 @@
                    </li>
                </ul>
 
+               <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
+
+
             </div>
 
 
             <div class="col-9 bg-light">
-                <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+                <div class="row border-bottom border-2 border-light p-2 bg-success"  >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="text-decoration-none" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
-                </div>
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
 
-                <div class="row mb-3 " style=" display: flex; justify-content:center; align-items:center">
-                    <div class="col-5   rounded shadow  mt-3" style=" border:  2px solid rgba(128, 128, 128, 0.377); background-color: #b0f2b5d8;"  >
+                            </div>
+                    </div>
+
+                <div class="row mb-3 " style=" display: flex; justify-content:center; align-items:center;  border-radius: 5px;">
+                    <div class="col-5   rounded shadow  mt-3 border border-success" style="  background-color: #b0f2b5d8;"  >
                         <div class="form-group" >
                             <span><img src="../image/ajouter1.png" alt="Ajouter marche" style="width:40px; height:40px; " ></span>
                             
                             <form action="../Back/marche.php" method="POST" >
 
                                 <label for="PlaceDuMarche" class="form-label">Place Du Marche</label><br>
-                                <input type="text" name="PlaceDuMarche" id="" class="form-control"><br>
+                                <input type="text" name="PlaceDuMarche" id="" class="form-control border border-success"><br>
 
                                 <div class="d-flex justify-content-end">
                                     <input type="submit"  value="Ajouter" class="btn btn-primary mb-2" name="ajouterMarche" >
@@ -109,16 +119,16 @@
 
                     </div>
                     <div class="col-1"></div>
-                    <div class="col-5 rounded   shadow" style=" border:  2px solid rgba(128, 128, 128, 0.377); background-color: #B0F2B6;" >
+                    <div class="col-5 rounded   shadow border border-success" style="  background-color: #B0F2B6;" >
                         <div class="form-group" >
                             <form action="marcheInterface.php" method="post" >
                                 <label for="search" class="form-label text-decoration-underline" >Recherche</label><br>
                                 <div class="d-flex mb-2">
                                     <div class="w-100">
-                                        <input type="search" name="search" id="" class="form-control" >
+                                        <input type="search" name="search" id="" class="form-control border border-success" >
                                     </div>
                                     <div class="flex-shrink-1 ms-2">
-                                        <button type="submit"  name="rechercheMarche" class="border border-1 " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche" style="width: 30px; height: 30px;;" ></button>
+                                        <button type="submit"  name="rechercheMarche" class=" border border-success border border-1 rounded " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche" style="width: 30px; height: 30px;;" ></button>
 
                                     </div>
                                 </div>                                

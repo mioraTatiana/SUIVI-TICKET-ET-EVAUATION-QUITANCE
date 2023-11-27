@@ -41,15 +41,15 @@
                     <td><?=$data['Prenom']?></td>
                     <td><?=$data['NombreDeTicket']?></td>
                     <td>
-                            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#produitModalM<?php echo $i; ?>"><img src="../image/modifierTab.png" alt="modifier"></button>
-                            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#produitModalS<?php echo $i; ?>"><img src="../image/supprimerTab.png" alt="supprimer"></button>
+                            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#ticketModalM<?php echo $i; ?>"><img src="../image/modifierTab.png" alt="modifier"></button>
+                            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#ticketModalS<?php echo $i; ?>"><img src="../image/supprimerTab.png" alt="supprimer"></button>
                     </td>
                 </tr>
 
-                <div class="modal fade" id="produitModalM<?php echo $i; ?>">
+                <div class="modal fade" id="ticketModalM<?php echo $i; ?>">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
+                        <div class="modal-content border border-success">
+                            <div class="modal-header bg-success">
                                     <span><img src="../image/modifier1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
                                     <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
@@ -58,13 +58,13 @@
                                 <div class="form-group" >
                                     <form action="../Back/ticket.php" method="POST">
                                         <label  class="form-label" for="numEnregistrement">N°Enregistrement</label><br>
-                                        <input  class="form-control" type="number" name="numEnregistrement" id="" value="<?=$data['numEnregistrement']?>" ><br>
+                                        <input  class="form-control border border-success" type="number" name="numEnregistrement" id="" value="<?=$data['numEnregistrement']?>" ><br>
 
                                         <label  class="form-label" for="DateDeDistribution">Date De Distribution</label><br>
-                                        <input  class="form-control" type="date" name="DateDeDistribution" id="" value="<?=$data['DateDeDistribution']?>" ><br>
+                                        <input  class="form-control border border-success" type="date" name="DateDeDistribution" id="" value="<?=$data['DateDeDistribution']?>" ><br>
 
                                         <label  class="form-label" for="CIN">Regisseur</label><br>
-                                        <select name="CIN" id="" class="form-select">
+                                        <select name="CIN" id="" class="form-select border border-success">
                                         <?php 
                                         include "connexionBase.php";  
                                         $query3=mysqli_query($con,'SELECT * FROM regisseur');
@@ -83,7 +83,7 @@
                                         </select><br>
 
                                         <label  class="form-label" for="NombreDeTicket">Nombre De Tickets</label><br>
-                                        <input  class="form-control" type="number" name="NombreDeTicket" id="" value="<?=$data['NombreDeTicket']?>" ><br>
+                                        <input  class="form-control border border-success" type="number" name="NombreDeTicket" id="" value="<?=$data['NombreDeTicket']?>" ><br>
 
 
                                     
@@ -91,7 +91,7 @@
 
 
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer border-top border-2 border-success">
                                 <input  class="btn btn-success" type="submit" value="Modifier" name="modifierTicket">
                             </div>
 
@@ -101,24 +101,24 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="produitModalS<?php echo $i; ?>">
+                <div class="modal fade" id="ticketModalS<?php echo $i; ?>">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
+                        <div class="modal-content border border-danger">
+                            <div class="modal-header bg-danger">
                                     <span><img src="../image/supprimer1.png" alt="Supprimer" style=" width: 50px; height:50px"></span>
                                     <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
                             </div>
 
                             <div class="form-group" >
-                            <div class="modal-body">
+                            <div class="modal-body ">
                                
                                     <form action="../Back/ticket.php" method="POST">
                                         <label  class="form-label" for="numEnregistrement">N°Enregistrement</label><br>
-                                        <input  class="form-control" type="number" name="numEnregistrement" id="" value="<?=$data['numEnregistrement']?>" ><br>
+                                        <input  class="form-control border border-danger" type="number" name="numEnregistrement" id="" value="<?=$data['numEnregistrement']?>" ><br>
 
 
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer border-top border-2 border-danger ">
                                 <input  class="btn btn-danger" type="submit" value="Supprimer" name="supprimerTicket">
                             </div>
                             

@@ -9,7 +9,7 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <title>Pavillon</title>
 </head>
-<body>
+<body class="bg-success" >
     <?php include '../Back/connexionBase.php' ?>
     <div class="container-fluid h-100">
             <div class="row">
@@ -72,45 +72,55 @@
                         </li>
                     </ul>
 
+                    <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
+
+
                 </div>
 
 
                 <div class="col-9 bg-light">
-                <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+                    <div class="row border-bottom border-2 border-light p-2 bg-success">
+                        <span class=" col-2 " >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="text-decoration-none" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
-                </div>
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
 
-                        <div class="row">
-                            <div style="display:flex;   flex-direction:row ; justify-content:center; align-items:center;" class="pt-2 pb-2">
+                            </div>
+                    </div>
+
+                        <div class="row " style=" border-radius: 5px;">
+                            <div style="display:flex;   flex-direction:row ; justify-content:center; align-items:center; " class=" col-9 pt-2 pb-2 form-group">
                                 <form action="pavillonInterface.php" method="post" >
 
-                                    <div class="form-group border border-2 rounded-end   p-2"    style="display:flex;  flex-direction: row; background-color: #B0F2B6;" >
-                                        <label for="search" class="form-label text-decoration-underline me-1" >Recherche</label><br>
+                                    <div class=" border border-1 border-success  p-2"  style="display:flex;  flex-direction: row; background-color: #B0F2B6;" >
 
-                                        <input type="search" placeholder="N°pavillon" name="search" id="" class="form-control d-inline">
-                                        <button type="submit"   name="recherchePavillon" class=" btn  btn-sm d-inline " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                        <input type="search" placeholder="N°pavillon" name="search" id="" class="form-control d-inline" style="width: 400px;" >
+                                        <button type="submit"   name="recherchePavillon" class=" btn  btn-sm d-inline bg-light ms-2" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                     </div>
 
-                                    <div class="text-center border ">
-                                        <button type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#pavillonModalAjouter" >
+                                </form>
+
+                                <div class="text-center border border-success col-3 "  style="background-color:#B0F2B6;" ;>
+                                        <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#pavillonModalAjouter" >
                                             <img src="../bootstrap-icons-1.11.1/person-add.svg" alt="">
                                             Nouveau
                                         </button>
                                     </div>
 
-
-                                </form>
                             </div>
 
                             <div>

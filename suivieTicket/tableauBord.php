@@ -10,7 +10,7 @@
 
     <title>Interface</title>
 </head>
-<body>
+<body class="bg-success" >
    <div class="container-fluid  h-100">
         <div class="row">
             <div class="col-3 bg-success p-3" >

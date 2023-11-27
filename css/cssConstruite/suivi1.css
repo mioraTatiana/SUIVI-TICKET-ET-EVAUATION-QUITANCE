@@ -4,7 +4,7 @@
     margin-top: 20px;
 }
 body{
-    background-color: white;
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,8 +24,7 @@ body{
     margin-top: 40px;
     padding-bottom: 30px;
     padding: auto;
-    background-color: white;
-    border: 3px solid gray;
+    border: 3px solid rgba(128, 128, 128, 0.247);
     border-radius: 15px;
     box-shadow: 3px 3px 3px darkgrey;
 

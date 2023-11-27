@@ -22,15 +22,15 @@
         <form action="../Back/pavillon.php" method="POST" >
                         <div class="mt-1" id="pavillonModalM" >
                             <div class="modal-dialog ">
-                                <div class="modal-content">
+                                <div class="modal-content bordrer border-success border-2">
                                 <form action="../Back/pavillon.php" method="post">
 
-                                    <div class="modal-header">
-                                        <span><img src="../image/modifier.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
+                                    <div class="modal-header bg-success">
+                                        <span><img src="../image/modifier1.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
                                        
-                                        <div class="border border-3 p-1 rounded ">
+                                        <div class=" bg-success border  border-warning border-3 p-1 rounded ">
                                             <label for="numPavillon" class="" >N°pavillon</label>
-                                            <input type="text" class="form-control " name="numPavillon" id="" value="<?=$data['numPavillon'] ?>" style="width: 200px;">
+                                            <input type="text" class="form-control border-warning " name="numPavillon" id="" value="<?=$data['numPavillon'] ?>" style="width: 200px;">
 
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@
 
                                            <div class="col-6">
                                                 <label for="idLocalite" class="form-label">Localite</label><br>
-                                                <select class="form-select" name="idLocalite" id="">
+                                                <select class="form-select border border-success border border-success" name="idLocalite" id="">
     <?php
                                                 include 'connexionBase.php';
                                                 $req=mysqli_query($con,'SELECT * FROM localite');
@@ -60,7 +60,7 @@
                                                 </select><br>
 
                                                 <label for="idMarche" class="form-label">Place Du Marche</label><br>
-                                                <select  class="form-select" name="idMarche" id="">
+                                                <select  class="form-select border border-success" name="idMarche" id="">
     <?php
                                                 $requette=mysqli_query($con,'SELECT * FROM marche');
                                                 while($row=mysqli_fetch_assoc($requette)){
@@ -79,7 +79,7 @@
                                                 </select><br>
                                                 
                                                 <label for="idProduit" class="form-label">Produits</label><br>
-                                                <select name="idProduit"  class="form-select" id="">
+                                                <select name="idProduit"  class="form-select border border-success" id="">
     <?php
             
                                                 $query=mysqli_query($con,'SELECT * FROM produit');
@@ -100,7 +100,7 @@
 
                                                 <label for="TypeDePavillon" class="form-label">Type De Pavillon</label><br>
                                                 
-                                                <select name="TypeDePavillon"  id="" class="form-select">
+                                                <select name="TypeDePavillon"  id="" class="form-select border border-success">
                                                     <option value="<?=$data['TypeDePavillon']?>" ><?=$data['TypeDePavillon']?> </option>
                                                     <option value="Bois">Bois</option>
                                                     <option value="Brique">Brique</option>
@@ -115,28 +115,26 @@
                                             <div class="col-6">
 
                                                 <label for="numAutorisation" class="form-label">N°Autorisation</label><br>
-                                                <input type="text" class="form-control" name="numAutorisation" id="" value="<?=$data['numAutorisation']?>"><br>
+                                                <input type="text" class="form-control border border-success" name="numAutorisation" id="" value="<?=$data['numAutorisation']?>"><br>
 
                                                 <label for="DateDautorisation" class="form-label">Date d' autorisation</label><br>
-                                                <input type="text" class="form-control" name="DateDautorisation" id="" value="<?=$data['DateDautorisation']?>"><br>
+                                                <input type="text" class="form-control border border-success" name="DateDautorisation" id="" value="<?=$data['DateDautorisation']?>"><br>
 
                                                 <label for="numDeliberation" class="form-label">N°Deliberation</label><br>
-                                                <input type="text" class="form-control" name="numDeliberation" id="" value="<?=$data['numDeliberation']?>"><br>
+                                                <input type="text" class="form-control border border-success" name="numDeliberation" id="" value="<?=$data['numDeliberation']?>"><br>
 
                                                 <label for="DateDeDeliberation" class="form-label">Date de Deliberation</label><br>
-                                                <input type="text" class="form-control" name="DateDeDeliberation" id="" value="<?=$data['DateDeDeliberation']?>"><br>
+                                                <input type="text" class="form-control border border-success" name="DateDeDeliberation" id="" value="<?=$data['DateDeDeliberation']?>"><br>
 
                                             </div>
                                             
 
                                         </div>
 
-                                        <div class="modal-footer row ">
-                                            <div class="col-8" >
-                                                <a href="../suivieTicket/pavillonInterface.php"><img src="../image/retour.png" alt=""  style="width:30px ; height: 30px;"></a>
+                                        <div class="modal-footer border border-2 border-success">
+                                            <a href="../suivieTicket/pavillonInterface.php" class=""><img src="../image/retour.png" alt=""  style="width:30px ; height: 30px;"></a>
+                                            <input type="submit" value="Modifier" name="modifierPavillon" style="width:50px;"class="btn btn-success col-3 me-3">
 
-                                            </div>
-                                            <input type="submit" value="Modifier" name="modifierPavillon" class="btn btn-success col-3 me-3">
 
                                         </div>
 

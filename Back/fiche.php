@@ -223,5 +223,12 @@ $pdf->AddPage();
 $pdf->body();
 $pdf->SetFont('Times','',12);
 $pdf->Output('C:\Users\WINDOWS 10\Desktop\FicheDeControle.pdf','F');
+// if( ($pdf->Output('C:\Users\WINDOWS 10\Desktop\FicheDeControle.pdf','F'))>0){
+//     echo 'Bien Imprimer';
+// }else{
+//     echo 'Non';
+// }
+echo 'Bien Imprimer';
+
 
 ?>

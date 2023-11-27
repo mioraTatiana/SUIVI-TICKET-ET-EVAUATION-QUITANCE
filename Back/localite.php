@@ -19,8 +19,8 @@
 
 
             ?>
-            <table class="table table-bordered table-sm table-responsive-md">
-                <thead class="bg-success">
+            <table class="table table-bordered table-sm table-responsive-md m-2">
+                <thead class="bg-success rounded">
                     <th scope="col">N°Localité</th>
                     <th scope="col">Localité</th>
                     <th scope="col">Actions</th>
@@ -45,28 +45,28 @@
                 
         <div class="modal fade border border-3 border-success" id="localiteModalM<?php echo $i; ?>" aria-hidden="TRUE">
             <div class="modal-dialog modal-dialog-center">
-                <div class="modal-content">
+                <div class="modal-content  border border-success border-2">
 
-                    <div class="modal-header">
-                        <span><img src="../image/modifier.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
-                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                    <div class="modal-header bg-success">
+                        <span><img src="../image/modifier1.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
+                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                     </div>
 
                     <div class="modal-body">
                         <div class="form-group">
                             <form action="../Back/localite.php" method="POST">
                                 <label for="idLocalite" class="form-label">N°Localite</label><br>
-                                <input type="text" name="idLocalite" id="" value="<?=$data['idLocalite'] ?>" class="form-control">
+                                <input type="text" name="idLocalite" id="" value="<?=$data['idLocalite'] ?>" class="form-control border border-success">
     
                                 <label for="Localite" class="form-label">Localite</label><br>
-                                <input type="text" name="Localite" id="" value="<?=$data['Localite'] ?>" class="form-control">
+                                <input type="text" name="Localite" id="" value="<?=$data['Localite'] ?>" class="form-control border border-success">
     
                             </form>
     
                         </div>
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer border-top border-success border-2">
                         <input type="submit" value="Modifier" name="modifierLocalite" class="btn btn-success">
             
 
@@ -77,23 +77,23 @@
 
         <div class="modal fade " id="localiteModalS<?php echo $i; ?>" aria-hidden="true">
             <div class="modal-dialog modal-dialog-center">
-                <div class="modal-content">
-                    <div class="modal-header">
+                <div class="modal-content border border-2 border-danger">
+                    <div class="modal-header bg-danger">
                         <span><img src="../image/supprimer1.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
-                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
                             <form action="../Back/localite.php" method="POST">
                                 <label for="idLocalite" class="form-label">N°Localite</label><br>
-                                <input type="text" name="idLocalite" id="" value="<?=$data['idLocalite'] ?>" class="form-control"><br>
+                                <input type="text" name="idLocalite" id="" value="<?=$data['idLocalite'] ?>" class="form-control border border-danger"><br>
     
                             
                         </div>
 
                     </div>
 
-                    <div class="modal-footer">
+                    <div class="modal-footer border-top border-2 border-danger">
                         <input type="submit" value="Supprimer" name="supprimerLocalite" class="btn btn-danger">
 
                     </div>

@@ -10,7 +10,7 @@
 
     <title>Vendeur front</title>
 </head>
-<body>
+<body class="bg-success" >
     <div class="container-fluid h-100">
             <div class="row">
                 <div class="col-3 bg-success p-3" >
@@ -72,26 +72,36 @@
                             <a href="marcheInterface.php" style="text-decoration: none; color: #1a237e ;">Marché</a>
                     </li>
                 </ul>
+                <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
+
 
                 </div>
 
 
                 <div class="col-9 bg-light">
-                <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+                    <div class="row border-bottom border-2 border-light p-2 bg-success" >
+                        <span class=" col-2 " >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="text-decoration-none" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
-                </div>
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
 
-                    <div class=" row text-center rounded  mt-3 mb-3 p-2 shadow" style="width: 300px; margin-left: 250px; border: 3px solid grey ; background-color: #B0F2B6;" >
+                            </div>
+                    </div>
+
+                    <div class=" row text-center   mt-3 mb-3 p-2 shadow  border border-1 border-success" style="width: 300px; margin-left: 250px;  border-radius: 5px; background-color: #B0F2B6; " >
                         <div class="w-100" >
                             <div>
                                 <form action="vendeurInterface.php" method="post">
@@ -103,7 +113,7 @@
                                 </form>
                             </div>
 
-                            <div style="height: 10px; background-color: grey;" class=" border border-2  w-100 mb-3 mt-3"></div>
+                            <div style="height: 5px" class=" border border-success border-2  bg-success w-100 mb-3 mt-3"></div>
 
                             <div class=" ">
                                 <button type="button"  class="btn btn-primary postion-absolute bottom-0 end-0 mb-0" data-bs-toggle="modal" data-bs-target="#vendeurModalA"><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter"> Nouveau</button>

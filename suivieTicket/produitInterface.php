@@ -12,7 +12,7 @@
 
     <title>produit front</title>
 </head>
-<body>
+<body class="bg-success" >
     <div class="container-fluid h-100">
             <div class="row">
                 <div class="col-3 bg-success p-3" >
@@ -74,25 +74,36 @@
                     </li>
                 </ul>
 
+                <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
+
+
                 </div>
 
 
                 <div class="col-9 bg-light">
-                <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+                    <div class="row border-bottom border-2 border-light p-2 bg-success" >
+                        <span class=" col-2 " >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="text-decoration-none" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
-                </div>
-                    <div class="row">
-                    <div class="col-3 border rounded border-2 m-2 p-3 " id="" style="background-color: #fff9c4;">   
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
+
+                            </div>
+                    </div>
+                    <div class="row  border-radius: 5px;">
+                    <div class="col-3 border border-success rounded border-2 m-2 p-3 " id="" style="background-color: #B0F2B6;">   
                         <div>
                             <span>
                                 <h6 class="text-decoration-underline">Formulaire pour les nouveaux produits</h6>
@@ -111,7 +122,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="border border-2 border-black mt-3">
+                        <div class="border border-2 border-success mt-3">
 
                         </div>
 

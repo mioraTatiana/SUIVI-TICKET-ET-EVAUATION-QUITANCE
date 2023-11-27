@@ -47,20 +47,20 @@
 
                         <div class="modal fade" id="pavillonModalS<?php echo $i; ?>" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-cente">
-                                <div class="modal-content">
-                                    <div class="modal-header">
+                                <div class="modal-content border border-2 border-danger">
+                                    <div class="modal-header bg-danger">
                                         <span><img src="../image/supprimer1.png" alt="supprimer localite" style=" width: 50px; height:50px"></span>
-                                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                                     </div>
 
                                     <form action="../Back/pavillon.php" method="post">
                                         <div class="modal-body">
                                             <label for="numPavillon" class="form-label" >N°pavillon</label><br>
-                                            <input type="text" class="form-control" name="numPavillon" id="" value="<?=$data['numPavillon'] ?>"><br><br>
+                                            <input type="text" class="form-control border border-danger" name="numPavillon" id="" value="<?=$data['numPavillon'] ?>"><br><br>
 
                                         </div>
 
-                                        <div class="modal-footer">
+                                        <div class="modal-footer border-top border-2 border-danger">
                                             <input type="submit" value="Supprimer" name="supprimerPavillon" class="btn btn-danger">
                                         </div>
 

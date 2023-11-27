@@ -37,20 +37,20 @@
 
                     <div class="modal fade" id="produitModalM<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <span><img src="../image/modifier.png" alt="Modifier" style=" width: 50px; height:50px"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                            <div class="modal-content border border-2 border-success">
+                                <div class="modal-header bg-success">
+                                    <span><img src="../image/modifier1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
 
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <form action="../Back/produit.php" method="POST">
                                             <label for="idProduit" class="form-label" >N°Produit</label><br>
-                                            <input type="text" name="idProduit" id="" value="<?=$data['idProduit']?>" class="form-control" ><br>
+                                            <input type="text" name="idProduit" id="" value="<?=$data['idProduit']?>" class="form-control border border-success" ><br>
 
                                             <label for="NomDuProduit" class="form-label">Nom Du Produit</label><br>
-                                            <input type="text" name="NomDuProduit" id="" value="<?=$data['NomDuProduit']?>" class="form-control" ><br>
+                                            <input type="text" name="NomDuProduit" id="" value="<?=$data['NomDuProduit']?>" class="form-control border border-success" ><br>
                                             
                                             
 
@@ -59,7 +59,7 @@
 
                                 </div>
 
-                                <div class="modal-footer">
+                                <div class="modal-footer border-top border-2 border-success">
                                     <input type="submit" value="Modifier" class=" btn btn-success" name="modifierProduit" >
                                 </div>
                                     </form>
@@ -69,24 +69,24 @@
 
                     <div class="modal fade" id="produitModalS<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
+                            <div class="modal-content border border-2 border-danger">
+                                <div class="modal-header bg-danger">
                                     <span><img src="../image/supprimer1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
 
                                 <div class="modal-body">
                                     <div class="form-group">
                                         <form action="../Back/produit.php" method="POST">
                                             <label for="idProduit" class="form-label" >N°Produit</label><br>
-                                            <input type="text" name="idProduit" id="" value="<?=$data['idProduit']?>" class="form-control" ><br>
+                                            <input type="text" name="idProduit" id="" value="<?=$data['idProduit']?>" class="form-control border border-danger" ><br>
 
                                     </div>
 
                                 </div>
 
-                                <div class="modal-footer">
-                                    <input type="submit" value="Supprimer" class=" btn btn-success" name="supprimerProduit" >
+                                <div class="modal-footer border-top border-2 border-danger">
+                                    <input type="submit" value="Supprimer" class=" btn btn-danger" name="supprimerProduit" >
                                 </div>
                                         </form>
                             </div>

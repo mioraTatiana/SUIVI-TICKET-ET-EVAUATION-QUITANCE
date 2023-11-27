@@ -49,33 +49,33 @@
 
                     <div class="modal fade" id="regisseurModalM<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog ">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <span><img src="../image/modifier.png" alt="Modifier" style=" width: 50px; height:50px"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                            <div class="modal-content border border-success">
+                                <div class="modal-header bg-success">
+                                    <span><img src="../image/modifier1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
 
                                 <div class="form-group">
 
                                     <form action="../Back/regisseur.php" method="POST">
                                         <div class="modal-body">
-                                            <label for="CIN" class="form-label" >CIN</label><br>
-                                            <input type="number" name="CIN" id="" value="<?=$data['CIN']?>" class="form-control" ><br>
+                                            <label for="CIN" class="form-label " >CIN</label><br>
+                                            <input type="number" name="CIN" id="" value="<?=$data['CIN']?>" class="form-control border border-success" ><br>
 
-                                            <label for="Nom" class="form-label">Nom</label><br>
-                                            <input type="text" name="Nom" id="" value="<?=$data['Nom']?>" class="form-control"><br>
+                                            <label for="Nom" class="form-label ">Nom</label><br>
+                                            <input type="text" name="Nom" id="" value="<?=$data['Nom']?>" class="form-control border border-success"><br>
 
-                                            <label for="Prenom" class="form-label">Prenom</label><br>
-                                            <input type="text" name="Prenom" id="" value="<?=$data['Prenom']?>" class="form-control" ><br>
+                                            <label for="Prenom" class="form-label ">Prenom</label><br>
+                                            <input type="text" name="Prenom" id="" value="<?=$data['Prenom']?>" class="form-control border border-success" ><br>
 
-                                            <label for="Adresse" class="form-label">Adresse</label><br>
-                                            <input type="text" name="Adresse" id="" value="<?=$data['Adresse']?>" class="form-control" ><br>
+                                            <label for="Adresse" class="form-label   ">Adresse</label><br>
+                                            <input type="text" name="Adresse" id="" value="<?=$data['Adresse']?>" class="form-control  border border-success" ><br>
 
                                             <label for="Telephone" class="form-label">Telephone</label><br>
-                                            <input type="tel" name="Telephone" id="" value="<?=$data['Telephone']?>" class="form-control"><br>
+                                            <input type="tel" name="Telephone" id="" value="<?=$data['Telephone']?>" class="form-control  border border-success"><br>
                                         </div>
 
-                                        <div class="modal-footer">
+                                        <div class="modal-footer border-top border-success border-2">
                                             <input type="submit" value="Modifier" name="modifierRegisseur" class="btn btn-success" >
                                         </div>
                                     </form>
@@ -89,9 +89,9 @@
 
                     <div class="modal fade " id="regisseurModalS<?php echo $i; ?>" aria-hidden="true">
                         <div class="modal-dialog ">
-                            <div class="modal-content border border-warning">
-                                <div class="modal-header">
-                                    <span><img src="../image/supprimer.png" alt="Modifier" style=" width: 50px; height:50px"></span>
+                            <div class="modal-content border border-danger">
+                                <div class="modal-header bg-danger">
+                                    <span><img src="../image/supprimer1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
                                     <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
 
@@ -99,10 +99,10 @@
                                     <form action="../Back/regisseur.php" method="POST">
                                         <div class="modal-body">
                                             <label for="CIN" class="form-label" >CIN</label><br>
-                                            <input type="number" name="CIN" id="" value="<?=$data['CIN']?>" class="form-control" ><br>
+                                            <input type="number" name="CIN" id="CIN" value="<?=$data['CIN']?>" class="form-control border border-danger"  ><br>
                                         </div>
 
-                                        <div class="modal-footer">
+                                        <div class="modal-footer border-top border-danger border-2">
                                             <input type="submit" value="Supprimer" name="supprimerRegisseur" class="btn btn-danger" >
                                         </div>
 

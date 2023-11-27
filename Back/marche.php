@@ -41,11 +41,11 @@
 
                     <div class="modal fade" id="marcheModalM<?php echo $i; ?>">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content border border-2 border-success ">
 
-                                <div class="modal-header">
-                                    <span><img src="../image/ajouter.png" alt="Ajouter marche" style="width: 40px; height: 40px;"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                <div class="modal-header bg-success">
+                                    <span><img src="../image/ajouter1.png" alt="Ajouter marche" style="width: 40px; height: 40px;"></span>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
 
                                 </div>
                                 
@@ -53,16 +53,18 @@
                                     <div class="form-group">
                                         <form action="../Back/marche.php" method="POST" >
                                             <label for="idMarche" class="form-label" >N°marche</label><br>
-                                            <input type="number" name="idMarche"  value="<?=$data['idMarche']?>" class="form-control" ><br> 
+                                            <input type="number" name="idMarche"  value="<?=$data['idMarche']?>" class="form-control border border-success" ><br> 
 
                                             <label for="PlaceDuMarche" class="form-label">PlaceDuMarche</label><br>
-                                            <input type="text" name="PlaceDuMarche"  value="<?=$data['PlaceDuMarche']?>" class="form-control" ><br>
+                                            <input type="text" name="PlaceDuMarche"  value="<?=$data['PlaceDuMarche']?>" class="form-control border border-success" ><br>
+                                            </div>
                                     </div>
+
                                 </div>
 
-                                <div class="modal-footer">
+                                <div class="modal-footer border border-2 border-success bg-light ">
                                     <input type="submit" value="Modifier" class="btn btn-success" name="modifierMarche">
-                                </div>
+                               
                                         </form>
                             </div>
                         </div>
@@ -70,11 +72,11 @@
 
                     <div class="modal fade" id="marcheModalS<?php echo $i; ?>">
                         <div class="modal-dialog">
-                            <div class="modal-content">
+                            <div class="modal-content border border-2 border-danger">
 
-                                <div class="modal-header">
-                                    <span><img src="../image/supprimer.png" alt="Ajouter marche" style="width: 40px; height: 40px;"></span>
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                <div class="modal-header bg-danger">
+                                    <span><img src="../image/supprimer1.png" alt="Ajouter marche" style="width: 40px; height: 40px;"></span>
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
 
                                 </div>
                                 
@@ -82,7 +84,7 @@
                                     <div class="form-group">
                                 <form action="../Back/marche.php" method="POST" >
                                             <label for="idMarche" class="form-label" >N°marche</label><br>
-                                            <input type="number" name="idMarche"  value="<?=$data['idMarche']?>" class="form-control" ><br> 
+                                            <input type="number" name="idMarche"  value="<?=$data['idMarche']?>" class="form-control border border-danger" ><br> 
 
 
                                         
@@ -90,7 +92,7 @@
                                     </div>
                                 </div>
 
-                                <div class="modal-footer">
+                                <div class="modal-footer border-top border-2 border-danger">
                                     <input type="submit" value="Supprimer" class="btn btn-danger" name="supprimerMarche">
                                 </div>
 

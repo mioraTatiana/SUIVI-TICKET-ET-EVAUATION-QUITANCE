@@ -11,7 +11,7 @@
 
     <title>produit front</title>
 </head>
-<body>
+<body class="bg-success" >
     <div class="container-fluid h-100">
             <div class="row">
                 <div class="col-3 bg-success p-3" >
@@ -73,26 +73,37 @@
                     </li>
                 </ul>
 
+                <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
+
+
                 </div>
 
 
                 <div class="col-9 bg-light">
-                <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+                    <div class="row border-bottom border-2 border-light p-2 bg-success" >
+                        <span class=" col-2 " >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="text-decoration-none" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
-                </div>
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
 
-                    <div class="row" >
-                        <div class="form-group col-3 border border-3 m-3 pb-2 rounded" style="background-color: #B0F2B6;">
+                            </div>
+                    </div>
+
+                    <div class="row  border-radius: 5px;" >
+                        <div class="form-group col-3 border  border-2 border-success m-3  pb-2 rounded" style="background-color: #B0F2B6;">
                             <form action="regisseurInterface.php" method="post" >
 
                                 <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
@@ -113,39 +124,39 @@
 
                             <div class="modal fade" id="regisseurModalA" aria-hidden="true" >
                                 <div class="modal-dialog ">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <span><img src="../image/supprimer.png" alt="Modifier" style=" width: 50px; height:50px"></span>
-                                            <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                    <div class="modal-content border border-primary">
+                                        <div class="modal-header bg-primary">
+                                            <span><img src="../image/ajouter1.png" alt="Ajouter" style=" width: 50px; height:50px"></span>
+                                            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                                         </div>
 
                                         <div class="form-group">
                                             <div class="modal-body">
                                                 <form action="../Back/regisseur.php" method="POST">
-                                                    <label for="CIN" class="form-label" >CIN</label><br>
-                                                    <input type="number" name="CIN" id="" class="form-control"><br>
+                                                    <label for="CIN" class="form-label " >CIN</label><br>
+                                                    <input type="number" name="CIN" id="" class="form-control border border-primary"><br>
                                         
                                                     <label for="Nom" class="form-label" >Nom</label><br>
-                                                    <input type="text" name="Nom" id="" class="form-control"><br>
+                                                    <input type="text" name="Nom" id="" class="form-control border border-primary"><br>
 
-                                                    <label for="Prenom" class="form-label">Prenom</label><br>
-                                                    <input type="text" name="Prenom" id="" class="form-control"><br>
+                                                    <label for="Prenom" class="form-label">Prénoms</label><br>
+                                                    <input type="text" name="Prenom" id="" class="form-control border border-primary"><br>
 
                                                     <label for="Adresse" class="form-label" >Adresse</label><br>
-                                                    <input type="text" name="Adresse" id="" class="form-control"><br>
+                                                    <input type="text" name="Adresse" id="" class="form-control border border-primary"><br>
 
-                                                    <label for="Telephone" class="form-label" >Telephone</label><br>
-                                                    <input type="tel" name="Telephone" id="" class="form-control"><br>
+                                                    <label for="Telephone" class="form-label" >Téléphone</label><br>
+                                                    <input type="tel" name="Telephone" id="" class="form-control border border-primary"><br>
 
                                                 
 
                                             </div>
 
-                                            <div class="modal-footer border">
-                                                    <div class="row border w-100">
+                                            <div class="modal-footer border border-top  border-primary">
+                                                    <div class="row  w-100">
                                                         <input type="submit" value="Ajouter" name="ajouterRegisseur" class="btn btn-primary col-5" >
                                                         <div class="col-2"></div>
-                                                        <input type="reset" value="Réinitialiser" class="col-5" >
+                                                        <input type="reset" value="Réinitialiser" class="col-5 rounded border border-primary" >
                                                     </div>
 
                                             </div>
@@ -158,7 +169,7 @@
 
                     </div>
 
-                    <div class="row">
+                    <div class="row ">
                             <?php
                                 include '../Back/regisseur.php';
                                 include '../Back/connexionBase.php';

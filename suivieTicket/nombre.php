@@ -5,7 +5,11 @@
     $Nombre=0;
     $requette=mysqli_query($con,"SELECT NombreDeTicket, sum(NombreDeTicket) as somme FROM registreTicket WHERE DateDeDistribution= '$rech' ;");
     while($row=mysqli_fetch_array($requette)){
-        $Nombre=$row['somme']. " " ;
+        if($Nombre==0){
+            $Nombre=0;
+        }else{
+            $Nombre=$row['somme'];
+        }
     }
 
     $quitance=0;

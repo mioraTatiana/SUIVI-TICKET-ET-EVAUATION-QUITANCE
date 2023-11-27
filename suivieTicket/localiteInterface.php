@@ -10,7 +10,7 @@
 
     <title>Interface</title>
 </head>
-<body>
+<body class="bg-success" >
     <div class="container-fluid  h-100">
         <div class="row">
             <div class="col-3 bg-success p-3" >
@@ -74,25 +74,36 @@
                     </li>
                     </ul>
 
+                    <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
+
+
                 </div>
 
             </div>
             <div class="col-9 bg-light">
-            <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+                <div class="row border-bottom border-2 border-light p-2  bg-success ">
+                        <span class=" col-2 " >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="text-decoration-none" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
+
+                            </div>
                 </div>
-                <div class="row ps-1">
-                    <div class="col-5 border border-2 rounded-start m-3 shadow" style="background-color: #b0f2b5d8;" >
+                <div class="row  rounded m-0" style=" border-radius: 30px;">
+                    <div class="col-5 border border-2 border-success rounded-start m-3 shadow" style="background-color: #b0f2b5d8;" >
                         <div >
                             <img src="../image/ajouter1.png"  alt="ajouter" style="width: 40px; height:40px;">
 
@@ -101,12 +112,12 @@
                             <form action="../Back/localite.php" method="post">
 
                                 <label for="Localite" class="form-label">Localite</label>
-                                <input type="text" name="Localite" id="" class="form-control  border border-2">
+                                <input type="text" name="Localite" id="" class="form-control border border-success border border-2">
 
                                 <div class="row p-2 ">
                                     <input type="submit" value="Ajouter" name="ajouterLocalite" class=" btn  btn-sm  btn-info d-inline float-start ms-1" style="width: 25%; ">
                                     <div style="width: 42%;"></div>
-                                    <input type="reset" value="Réinitialiser" class=" btn btn-info btn-sm d-inline  text-center" style="width: 30%;">
+                                    <input type="reset" value="Réinitialiser" class="  btn btn-info btn-sm d-inline  text-center" style="width: 30%;">
                                     <div style="width: 6%;"></div>
 
                                 </div>
@@ -115,14 +126,14 @@
                         </div>
                     </div>
                     <div class="col-1"></div>
-                    <div class="col-5 border border-2 rounded-end m-3 shadow" style="display:flex;   justify-content: center; align-items: center; background-color: #b0f2b5d8;" >
+                    <div class="col-5 border border-success border-2 rounded m-3 shadow" style="display:flex;   justify-content: center; align-items: center; background-color: #b0f2b5d8;" >
                         <form action="localiteInterface.php" method="post">
                             
                                 <div class="form-group  ">
                                     <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
                                     <div style="display:flex;  flex-direction: row;  ">
-                                        <input type="search" name="search" id="" placeholder=" localite " class="form-control d-inline">
-                                        <button type="submit"   name="rechercheLocalite" class=" btn  btn-sm d-inline border border-2 bg-light ms-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                        <input type="search" name="search" id="" placeholder=" localite " class="form-control d-inline border border-success border-2">
+                                        <button type="submit"   name="rechercheLocalite" class=" border border-success btn  btn-sm d-inline border border-2 bg-light ms-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                     </div>
                                 </div>

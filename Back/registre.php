@@ -63,11 +63,11 @@
 
                     <div class="modal fade" id="registreModalS<?=$i?>" aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <span><img src="../image/supprimer.png" alt="Modifier localite" style=" width: 50px; height:50px"></span>
+                            <div class="modal-content border border-danger">
+                                <div class="modal-header bg-danger">
+                                    <span><img src="../image/supprimer1.png" alt="Supprimer registre" style=" width: 50px; height:50px"></span>
 
-                                    <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
 
                                 </div>
 
@@ -75,11 +75,11 @@
                                     <form action="../Back/registre.php" method="POST">
                                         <div class="modal-body">
                                             <label for="numFiche">N°Fiche</label><br>
-                                            <input type="text" name="numFiche" id="" value="<?=$data['numFiche']?>" class="form-control"><br>
+                                            <input type="text" name="numFiche" id="" value="<?=$data['numFiche']?>" class="form-control border border-danger"><br>
 
                                         </div>
 
-                                        <div class="modal-footer">
+                                        <div class="modal-footer border-top border-danger">
                                             <input type="submit" value="Supprimer" name="supprimerRegistre" class="btn btn-danger" >
                                         </div>
                                         
