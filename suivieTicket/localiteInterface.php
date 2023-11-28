@@ -112,7 +112,7 @@
                             <form action="../Back/localite.php" method="post">
 
                                 <label for="Localite" class="form-label">Localite</label>
-                                <input type="text" name="Localite" id="" class="form-control border border-success border border-2">
+                                <input type="text" name="Localite" id="" class="form-control border border-success border border-1">
 
                                 <div class="row p-2 ">
                                     <input type="submit" value="Ajouter" name="ajouterLocalite" class=" btn  btn-sm  btn-info d-inline float-start ms-1" style="width: 25%; ">
@@ -132,8 +132,8 @@
                                 <div class="form-group  ">
                                     <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
                                     <div style="display:flex;  flex-direction: row;  ">
-                                        <input type="search" name="search" id="" placeholder=" localite " class="form-control d-inline border border-success border-2">
-                                        <button type="submit"   name="rechercheLocalite" class=" border border-success btn  btn-sm d-inline border border-2 bg-light ms-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                        <input type="search" name="search" id="" placeholder=" localite " class="form-control d-inline border border-success border-1">
+                                        <button type="submit"   name="rechercheLocalite" class=" border border-success btn  btn-sm d-inline border border-1 bg-light ms-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                     </div>
                                 </div>

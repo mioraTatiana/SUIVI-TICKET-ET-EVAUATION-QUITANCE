@@ -122,10 +122,6 @@
                 echo 'Ajout non effectué';
             }    
 
-        // }elseif(isset($_POST['rechercheLocalite'])){
-        //     $rec=$_POST['recherche'];
-        //     $reqRec=mysqli_query($con,"SELECT * FROM localite WHERE idLocalite=".$rec." OR Localite='$rec';");
-        //     tableaulocalite($reqRec);
 
         }elseif(isset($_POST["modifierLocalite"])){
             $idLocalite=$_POST['idLocalite'];

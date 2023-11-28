@@ -54,7 +54,7 @@ function body(){
 
     include 'connexionBase.php';
     $numPavillon=$_GET['numPavillon'];
-    $requette="SELECT `numFiche`, `Mois`, `Annee`, `DateDePaiement`, `Tarif`, vendeur.`CIN`, pavillon.numPavillon, `Localite`,`PlaceDuMarche`,TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, pavillon.`idProduit`,NomDuProduit, `Nom`, `Prenom`, `Telephone`, `Adresse`, vendeur.CarteProfessionnelle, registre.idMois, Mois, numQuitance FROM vendeur, pavillon, registre, produit, mois, localite,marche WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon' AND pavillon.`idProduit`= produit.`idProduit` AND registre.idMois=mois.idMois AND pavillon.idLocalite=localite.idLocalite AND pavillon.idMarche=marche.idMarche;";
+    $requette="SELECT `numFiche`, `Mois`, `Annee`, `DateDePaiement`, `Tarif`, vendeur.CIN_vendeur, pavillon.numPavillon, `Localite`,`PlaceDuMarche`,TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, pavillon.`idProduit`,NomDuProduit, `Nom_vendeur`, `Prenom_vendeur`, `Telephone_vendeur`, `Adresse_vendeur`, vendeur.CarteProfessionnelle, registre.idMois, Mois, numQuitance FROM vendeur, pavillon, registre, produit, mois, localite,marche WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon' AND pavillon.`idProduit`= produit.`idProduit` AND registre.idMois=mois.idMois AND pavillon.idLocalite=localite.idLocalite AND pavillon.idMarche=marche.idMarche;";
     $rec=mysqli_query($con, $requette);
    
 
@@ -65,15 +65,15 @@ function body(){
         $this->Annee =$data['Annee'];
         $this->DateDePaiement =$data['DateDePaiement']; 
         $this->Tarif =$data['Tarif']; 
-        $this->CIN=$data['CIN']; 
+        $this->CIN=$data['CIN_vendeur']; 
         $this->numPavillon=$data['numPavillon']; 
         $this->Localite =$data['Localite']; 
         $this->PlaceDuMarche =$data['PlaceDuMarche'];
         $this->NomDuProduit =$data['NomDuProduit']; 
-        $this->Nom=$data['Nom'];
-        $this->Prenom=$data['Prenom'];
-        $this->Telephone =$data['Telephone']; 
-        $this->Adresse=$data['Adresse']; 
+        $this->Nom=$data['Nom_vendeur'];
+        $this->Prenom=$data['Prenom_vendeur'];
+        $this->Telephone =$data['Telephone_vendeur']; 
+        $this->Adresse=$data['Adresse_vendeur']; 
         $this->CarteProfessionnelle=$data['CarteProfessionnelle']; 
         $this->TypeDePavillon=$data['TypeDePavillon'];
         $this->numAutorisation=$data['numAutorisation'];

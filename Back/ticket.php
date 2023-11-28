@@ -37,8 +37,8 @@
                 <tr>
                     <td><?=$data['numEnregistrement']?></td>
                     <td><?=$data['DateDeDistribution']?></td>
-                    <td><?=$data['Nom']?></td>
-                    <td><?=$data['Prenom']?></td>
+                    <td><?=$data['Nom_regisseur']?></td>
+                    <td><?=$data['Prenom_regisseur']?></td>
                     <td><?=$data['NombreDeTicket']?></td>
                     <td>
                             <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#ticketModalM<?php echo $i; ?>"><img src="../image/modifierTab.png" alt="modifier"></button>
@@ -69,14 +69,14 @@
                                         include "connexionBase.php";  
                                         $query3=mysqli_query($con,'SELECT * FROM regisseur');
                                         while($row=mysqli_fetch_array($query3)){
-                                            if($row['CIN']==$data['CIN']){
+                                            if($row['CIN_regisseur']==$data['CIN_regisseur']){
                             ?>
-                                                <option value="<?= $row['CIN']?>" selected><?= $row['Nom']?> <?= $row['Prenom']?> </option>
+                                                <option value="<?= $row['CIN_regisseur']?>" selected><?= $row['Nom_regisseur']?> <?= $row['Prenom_regisseur']?> </option>
                             <?php
                             
                                             }
                             ?>
-                                            <option value="<?= $row['CIN']?>"><?= $row['Nom']?> <?= $row['Prenom']?> </option>
+                                            <option value="<?= $row['CIN_regisseur']?>"><?= $row['Nom_regisseur']?> <?= $row['Prenom_regisseur']?> </option>
                             <?php
                                         }
                             ?>

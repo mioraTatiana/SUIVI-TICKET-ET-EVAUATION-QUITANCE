@@ -108,21 +108,21 @@
                     </div>
 
                         <form action="../Back/ticket.php" method="POST" >
-                            <div class="form-group row border  border-2 rounded m-2 ps-3 pe-3 pt-3   shadow " >
+                            <div class="form-group row  border border-success border-2 rounded m-2 ps-3 pe-3 pt-3   shadow " style="background-color: #B0F2B6;"> 
                                 <div>
                                     <h6><u>Formulaire</u></h6>
                                 </div>
                                 <div class="col-6  ">
                                     <label for="DateDeDistribution" class="form-label">Date De Distribution</label><br>
-                                    <input type="date" name="DateDeDistribution" id="" value="<?php echo date('y-m-d')?>" class="form-control"><br>
+                                    <input type="date" name="DateDeDistribution" id="" value="<?php echo date('y-m-d')?>" class="form-control border border-success border-1"><br>
 
                                     <label for="CIN" class="form-label">Regisseur</label><br>
-                                    <select name="CIN" id=""  class="form-select">
+                                    <select name="CIN" id=""  class="form-select border border-success border-1">
                                     <?php   
                                     $query3=mysqli_query($con,'SELECT * FROM regisseur');
                                     while($data=mysqli_fetch_array($query3)){
                         ?>
-                                        <option value="<?= $data['CIN']?>"><?= $data['Nom']?> <?= $data['Prenom']?> </option>
+                                        <option value="<?= $data['CIN_regisseur']?>"><?= $data['Nom_regisseur']?> <?= $data['Prenom_regisseur']?> </option>
                         <?php
                                     }
                         ?>
@@ -132,7 +132,7 @@
 
                                 <div class="col-6 p-3 ">
                                     <label for="NombreDeTicket" class="form-label" >Nombre De Tickets</label><br>
-                                    <input type="number" name="NombreDeTicket" id=""  class="form-control"><br>
+                                    <input type="number" name="NombreDeTicket" id=""  class="form-control border border-success border-1"><br>
 
                                     <input type="submit" value="Ajouter" name="ajouterTicket" class="btn btn-primary" >
                                     <input type="reset" value="Réinitialiser"  class="btn btn-light border border-dark">
@@ -177,10 +177,10 @@
                             include '../Back/connexionBase.php';
                         if(isset($_POST['rechercheTicket'])){ 
                             $rec=$_POST['search'];
-                            $lister="SELECT numEnregistrement ,DateDeDistribution, NombreDeTicket, Nom, Prenom,regisseur.CIN FROM registreticket, regisseur WHERE regisseur.CIN= registreticket.CIN AND (DateDeDistribution LIKE '%".$rec."%')";
+                            $lister="SELECT numEnregistrement ,DateDeDistribution, NombreDeTicket, Nom_regisseur, Prenom_regisseur,regisseur.CIN_regisseur FROM registreticket, regisseur WHERE regisseur.CIN_regisseur= registreticket.CIN_regisseur AND (DateDeDistribution LIKE '%".$rec."%')";
                             $req=mysqli_query($con,$lister);
                         }else{       
-                        $lister="SELECT DateDeDistribution, NombreDeTicket, Nom, Prenom, numEnregistrement,regisseur.CIN FROM registreticket, regisseur WHERE regisseur.CIN= registreticket.CIN ORDER BY numEnregistrement DESC";
+                        $lister="SELECT DateDeDistribution, NombreDeTicket, Nom_regisseur, Prenom_regisseur, numEnregistrement,regisseur.CIN_regisseur FROM registreticket, regisseur WHERE regisseur.CIN_regisseur= registreticket.CIN_regisseur ORDER BY numEnregistrement DESC";
                         $req=mysqli_query($con,$lister);
                         }
                         tableauTicket($req);

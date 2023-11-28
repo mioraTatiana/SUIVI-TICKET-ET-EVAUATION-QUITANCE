@@ -110,14 +110,14 @@
                             </span>
                             <form action="../Back/produit.php" method="POST">
                                 <label for="idProduit" class="form-label" >N°Produit</label><br>
-                                <input type="text" name="idProduit" id="" class="form-control  mb-3">
+                                <input type="text" name="idProduit" id="" class="form-control border border-success border-1  mb-3">
 
                                 <label for="NomDuProduit" class="form-label">Nom Du Produit</label><br>
-                                <input type="text" name="NomDuProduit" id="" class="form-control mb-3">
+                                <input type="text" name="NomDuProduit" id="" class="form-control border border-success border-1 mb-3">
                                 
-                                <div style="gap:40px;">
+                                <div style="gap:40px;" class="text-center">
                                     <button type="submit" class="btn bg-primary" style="width:55px;" name="ajouterProduit"><img src="../image/ajouter1.png" alt="ajouter"  ></button>
-                                    <input type="reset" value="Réinitialiser" class="btn btn-light border border-black " >
+                                    <input type="reset" value="Réinitialiser" class="btn border border-dark border-1 btn-light border border-black " >
 
                                 </div>
                             </form>
@@ -130,8 +130,8 @@
                             <div class="form-group  ">
                                 <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
                                 <div style="display:flex;  flex-direction: row;  ">
-                                    <input type="search" placeholder="Nom du Produit" name="search" id="" class="form-control d-inline me-1">
-                                    <button type="submit"   name="rechercheProduit"  class=" btn  btn-sm d-inline border border-2 bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                    <input type="search" placeholder="Nom du Produit" name="search" id="" class="form-control border border-success border-1 d-inline me-1">
+                                    <button type="submit"   name="rechercheProduit"  class=" btn border border-dark border-1  btn-sm d-inline bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                 </div>
                             </div>

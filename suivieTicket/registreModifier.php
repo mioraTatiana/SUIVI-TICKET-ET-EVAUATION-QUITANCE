@@ -12,7 +12,7 @@
 <?php
         include '../Back/connexionBase.php';
         $numFiche=$_GET['numFiche'];
-        $query=mysqli_query($con,"SELECT registre.numFiche, mois.Mois,registre.idMois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN, Nom, Prenom, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN=vendeur.CIN AND registre.idMois=mois.idMois AND  registre.numFiche ='".$numFiche."' ;");
+        $query=mysqli_query($con,"SELECT registre.numFiche, mois.Mois,registre.idMois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois AND  registre.numFiche ='".$numFiche."' ;");
         $row=mysqli_fetch_assoc($query);
 ?>
 
@@ -83,13 +83,13 @@
                 <?php   
                             $query3=mysqli_query($con,'SELECT * FROM vendeur');
                             while($data=mysqli_fetch_array($query3)){
-                                if ($row['CIN']== $data['CIN']) {
+                                if ($row['CIN_vendeur']== $data['CIN_vendeur']) {
                 ?>
-                                    <option value="<?= $data['CIN']?>" selected><?= $data['Nom']?> <?= $data['Prenom']?> </option>
+                                    <option value="<?= $data['CIN_vendeur']?>" selected><?= $data['Nom_vendeur']?> <?= $data['Prenom_vendeur']?> </option>
                 <?php
                                 }
                 ?>
-                                <option value="<?= $data['CIN']?>"><?= $data['Nom']?> <?= $data['Prenom']?> </option>
+                                <option value="<?= $data['CIN_vendeur']?>"><?= $data['Nom_vendeur']?> <?= $data['Prenom_vendeur']?> </option>
                 <?php
                             }
                 ?>

@@ -71,7 +71,7 @@
                                 <a href="marcheInterface.php" style="text-decoration: none; color: #1a237e ;">Marché</a>
                         </li>
                     </ul>
-                    <ul class="list-group mt-3 text-center" >
+                <ul class="list-group mt-3 text-center" >
                     <li>
                         <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
                                     <a href="../index.html" class="text-decoration-none" >
@@ -87,7 +87,7 @@
                 </div>
 
 
-                <div class="col-9 bg-light">
+                <div class="col-9 bg-light mb-3">
                     <div class="row border-bottom border-2 border-light p-2 bg-success" >
                         <span class=" col-2 " >
                             <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
@@ -106,8 +106,8 @@
                                 <form action="registreInterface.php" method="post">
                                     <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
                                     <div style="display:flex;  flex-direction: row;  ">
-                                        <input type="search" placeholder="CIN ou N°fiche" name="search" id="" class="form-control d-inline me-1">
-                                        <button type="submit"   name="rechercheRegistre"  class=" btn  btn-sm d-inline border border-2 bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                        <input type="search" placeholder="CIN ou N°fiche" name="search" id="" class="form-control d-inline me-1 border border-success border-1">
+                                        <button type="submit"   name="rechercheRegistre"  class=" btn  btn-sm d-inline border border-1 border-dark bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
                                     </div>
                                 </form>
                             </div>
@@ -115,7 +115,9 @@
                             <div style="height: 5px; " class=" border border-1 border-success bg-success  w-100 mb-3 mt-3"></div>
 
                             <div class="text-center ">
-                                 <a href="registreAjouter.php"  class="btn btn-primary postion-absolute bottom-0 end-0 mb-0" ><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter" >Nouveau</a>
+                                 <a href="registreAjouter.php"  class="btn btn-primary mb-0" ><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter" >Nouveau</a>
+                                 <a href="registreInterface.php" class="btn btn-primary" style="width: 100px;">Actualiser</a>
+
                             </div>
 
                         </div>
@@ -128,18 +130,17 @@
                            
                         if(isset($_POST['rechercheRegistre']) ){
                             $rec=$_POST['search'];
-                            $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN, Nom, Prenom, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN=vendeur.CIN AND registre.idMois=mois.idMois AND ( registre.CIN LIKE $rec OR registre.numFiche  LIKE '%".$rec."%' ) ;";
+                            $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois AND ( registre.CIN_vendeur LIKE $rec OR registre.numFiche  LIKE '%".$rec."%' ) ;";
                         }else{
-                            $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN, Nom, Prenom, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN=vendeur.CIN AND registre.idMois=mois.idMois GROUP BY registre.numPavillon, Annee, registre.idMois ORDER BY Annee DESC, registre.idMois ; ";
+                            $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois GROUP BY registre.numPavillon, Annee, registre.idMois ORDER BY Annee DESC, registre.idMois ; ";
                         }
                         tableauRegitre($lister1);
 
                 
                         ?>
                     </div>
-                    <div class="row bottom-0 end-0">
+                    <div class="row bottom-0 end-0 mb-2">
                             <div class="col-10"></div>
-                            <a href="registreInterface.php" class="btn btn-primary" style="width: 100px;">Actualiser</a>
                     </div>
 
 

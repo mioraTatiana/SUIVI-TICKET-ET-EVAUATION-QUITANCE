@@ -36,11 +36,11 @@
         ?>
                 
                     <tr>
-                        <td><?=$data['CIN']?></td>
-                        <td><?=$data['Nom']?></td>
-                        <td><?=$data['Prenom']?></td>
-                        <td><?=$data['Adresse']?></td>
-                        <td><?=$data['Telephone']?></td>
+                        <td><?=$data['CIN_regisseur']?></td>
+                        <td><?=$data['Nom_regisseur']?></td>
+                        <td><?=$data['Prenom_regisseur']?></td>
+                        <td><?=$data['Adresse_regisseur']?></td>
+                        <td><?=$data['Telephone_regisseur']?></td>
                         <td>
                             <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#regisseurModalM<?php echo $i; ?>"><img src="../image/modifierTab.png" alt="modifier"></button>
                             <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#regisseurModalS<?php echo $i; ?>"><img src="../image/supprimerTab.png" alt="supprimer"></button>
@@ -60,19 +60,19 @@
                                     <form action="../Back/regisseur.php" method="POST">
                                         <div class="modal-body">
                                             <label for="CIN" class="form-label " >CIN</label><br>
-                                            <input type="number" name="CIN" id="" value="<?=$data['CIN']?>" class="form-control border border-success" ><br>
+                                            <input type="number" name="CIN" id="" value="<?=$data['CIN_regisseur']?>" class="form-control border border-success" ><br>
 
                                             <label for="Nom" class="form-label ">Nom</label><br>
-                                            <input type="text" name="Nom" id="" value="<?=$data['Nom']?>" class="form-control border border-success"><br>
+                                            <input type="text" name="Nom" id="" value="<?=$data['Nom_regisseur']?>" class="form-control border border-success"><br>
 
                                             <label for="Prenom" class="form-label ">Prenom</label><br>
-                                            <input type="text" name="Prenom" id="" value="<?=$data['Prenom']?>" class="form-control border border-success" ><br>
+                                            <input type="text" name="Prenom" id="" value="<?=$data['Prenom_regisseur']?>" class="form-control border border-success" ><br>
 
                                             <label for="Adresse" class="form-label   ">Adresse</label><br>
-                                            <input type="text" name="Adresse" id="" value="<?=$data['Adresse']?>" class="form-control  border border-success" ><br>
+                                            <input type="text" name="Adresse" id="" value="<?=$data['Adresse_regisseur']?>" class="form-control  border border-success" ><br>
 
                                             <label for="Telephone" class="form-label">Telephone</label><br>
-                                            <input type="tel" name="Telephone" id="" value="<?=$data['Telephone']?>" class="form-control  border border-success"><br>
+                                            <input type="tel" name="Telephone" id="" value="<?=$data['Telephone_regisseur']?>" class="form-control  border border-success"><br>
                                         </div>
 
                                         <div class="modal-footer border-top border-success border-2">
@@ -99,7 +99,7 @@
                                     <form action="../Back/regisseur.php" method="POST">
                                         <div class="modal-body">
                                             <label for="CIN" class="form-label" >CIN</label><br>
-                                            <input type="number" name="CIN" id="CIN" value="<?=$data['CIN']?>" class="form-control border border-danger"  ><br>
+                                            <input type="number" name="CIN" id="CIN" value="<?=$data['CIN_regisseur']?>" class="form-control border border-danger"  ><br>
                                         </div>
 
                                         <div class="modal-footer border-top border-danger border-2">
@@ -133,7 +133,7 @@
             $Telephone=$_POST['Telephone'];
         
 
-            $inserer="INSERT INTO regisseur (CIN,Nom,Prenom,Adresse,Telephone) VALUES ($CIN, '$Nom','$Prenom','$Adresse',$Telephone);";
+            $inserer="INSERT INTO regisseur (CIN_regisseur,Nom_regisseur,Prenom_regisseur,Adresse_regisseur,Telephone_regisseur) VALUES ($CIN, '$Nom','$Prenom','$Adresse',$Telephone);";
             $req=mysqli_query($con,$inserer);
             if($req){
                 header ("location: ../suivieTicket/regisseurInterface.php");
@@ -150,7 +150,7 @@
             $Telephone=$_POST['Telephone'];
         
 
-            $modifier= "UPDATE regisseur SET CIN=$CIN, Nom='$Nom', Prenom='$Prenom', Adresse='$Adresse', Telephone=$Telephone WHERE CIN=$CIN;";
+            $modifier= "UPDATE regisseur SET CIN_regisseur=$CIN, Nom_regisseur='$Nom', Prenom_regisseur='$Prenom', Adresse_regisseur='$Adresse', Telephone_regisseur=$Telephone WHERE CIN_regisseur=$CIN;";
             $req=mysqli_query($con,$modifier);
             if($req){
                 header ("location: ../suivieTicket/regisseurInterface.php");
@@ -160,7 +160,7 @@
         
         }elseif(isset($_POST['supprimerRegisseur'])){
             $CIN=$_POST['CIN'];
-            $req=mysqli_query($con,"DELETE FROM regisseur WHERE CIN=$CIN ;");
+            $req=mysqli_query($con,"DELETE FROM regisseur WHERE CIN_regisseur=$CIN ;");
             if($req){
                 header ("location: ../suivieTicket/regisseurInterface.php");
             }else{

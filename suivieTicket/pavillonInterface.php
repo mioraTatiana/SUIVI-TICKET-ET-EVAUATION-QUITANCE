@@ -82,7 +82,7 @@
                         </span>
 
                     </li>
-               </ul>
+               </ul>z
 
 
                 </div>
@@ -107,8 +107,8 @@
 
                                     <div class=" border border-1 border-success  p-2"  style="display:flex;  flex-direction: row; background-color: #B0F2B6;" >
 
-                                        <input type="search" placeholder="N°pavillon" name="search" id="" class="form-control d-inline" style="width: 400px;" >
-                                        <button type="submit"   name="recherchePavillon" class=" btn  btn-sm d-inline bg-light ms-2" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                        <input type="search" placeholder="N°pavillon" name="search" id="" class="form-control d-inline border border-success border-1" style="width: 400px;" >
+                                        <button type="submit"   name="recherchePavillon" class=" btn  btn-sm d-inline bg-light ms-2 border border-dark border-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                     </div>
 

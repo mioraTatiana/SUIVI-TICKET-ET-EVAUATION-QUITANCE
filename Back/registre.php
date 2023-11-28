@@ -49,7 +49,7 @@
                         <td><?=$data['DateDePaiement'] ?></td>
                         <td><?=$data['Tarif']?></td> 
                         <td><?=$data['numPavillon'] ?></td> 
-                        <td><?php echo '' .$data['Nom']. ' ' .$data['Prenom'] ?></td>
+                        <td><?php echo '' .$data['Nom_vendeur']. ' ' .$data['Prenom_vendeur'] ?></td>
                         <td><?=$data['numQuitance']?></td>
                         <td >
                             <a class="btn m-0" href="../suivieTicket/registreModifier.php?numFiche=<?=$data['numFiche']?>"><img src="../image/modifierTab.png" alt="modifier"></a> 
@@ -103,7 +103,6 @@
         }
 
         if(isset($_POST["ajouterRegistre"])){
-            // $numFiche=$_POST['numFiche'];
             $Mois=$_POST['idMois'];
             $Annee=$_POST['Annee'];
             $DateDePaiement=$_POST['DateDePaiement'];
@@ -112,7 +111,7 @@
             $CIN=$_POST['CIN'];
             $numQuitance=$_POST['numQuitance'];
         
-            $req=mysqli_query($con,"INSERT INTO registre ( idMois, Annee, DateDePaiement, Tarif,numPavillon, CIN,numQuitance) VALUES ('$Mois',$Annee,'$DateDePaiement',$Tarif,'$numPavillon',$CIN,$numQuitance)");
+            $req=mysqli_query($con,"INSERT INTO registre ( idMois, Annee, DateDePaiement, Tarif,numPavillon, CIN_vendeur,numQuitance) VALUES ('$Mois',$Annee,'$DateDePaiement',$Tarif,'$numPavillon',$CIN,$numQuitance)");
         
             if($req){
                 header('location: ../suivieTicket/registreInterface.php') ;
@@ -131,7 +130,7 @@
             $CIN=$_POST['CIN'];
             $numQuitance=$_POST['numQuitance'];
         
-            $req=mysqli_query($con,"UPDATE registre SET numFiche=$numFiche, idMois='$Mois', Annee=$Annee, DateDePaiement='$DateDePaiement', Tarif=$Tarif,numPavillon='$numPavillon', CIN=$CIN, numQuitance=$numQuitance WHERE  numFiche='$numFiche' ;");
+            $req=mysqli_query($con,"UPDATE registre SET numFiche=$numFiche, idMois='$Mois', Annee=$Annee, DateDePaiement='$DateDePaiement', Tarif=$Tarif,numPavillon='$numPavillon', CIN_vendeur=$CIN, numQuitance=$numQuitance WHERE  numFiche='$numFiche' ;");
         
             if($req){
                 header('location: ../suivieTicket/registreInterface.php') ;

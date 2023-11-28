@@ -37,11 +37,11 @@
     ?>          
                 
                     <tr>
-                        <td><?=$data['CIN']?></td>
-                        <td><?=$data['Nom']?></td>
-                        <td><?=$data['Prenom']?></td>
-                        <td><?=$data['Telephone']?></td>
-                        <td><?=$data['Adresse']?></td>
+                        <td><?=$data['CIN_vendeur']?></td>
+                        <td><?=$data['Nom_vendeur']?></td>
+                        <td><?=$data['Prenom_vendeur']?></td>
+                        <td><?=$data['Telephone_vendeur']?></td>
+                        <td><?=$data['Adresse_vendeur']?></td>
                         <td><?=$data['CarteProfessionnelle']?></td>
                         <td><?=$data['numPavillon']?></td>
                         <td>
@@ -62,22 +62,22 @@
                                     <div class="form-group" >
                                         <form action="../Back/vendeur.php" method="POST" >
                                             <label class="form-label" for="CIN">CIN</label><br>
-                                            <input class="form-control border border-success" type="number" name="CIN" id="" value="<?=$data['CIN']?>"><br><br>
+                                            <input class="form-control border border-success" type="number" name="CIN" id="" value="<?=$data['CIN_vendeur']?>"><br><br>
 
                                             <label class="form-label" for="Nom">Nom</label><br>
-                                            <input class="form-control border border-success" type="text" name="Nom" id="" value="<?=$data['Nom']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="Nom" id="" value="<?=$data['Nom_vendeur']?>" ><br><br>
 
                                             <label class="form-label" for="Prenom">Prenom</label><br>
-                                            <input class="form-control border border-success" type="text" name="Prenom" id="" value="<?=$data['Prenom']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="Prenom" id="" value="<?=$data['Prenom_vendeur']?>" ><br><br>
 
                                             <label class="form-label" for="Adresse">Adresse</label><br>
-                                            <input class="form-control border border-success" type="text" name="Adresse" id="" value="<?=$data['Adresse']?>" ><br><br>
+                                            <input class="form-control border border-success" type="text" name="Adresse" id="" value="<?=$data['Adresse_vendeur']?>" ><br><br>
 
                                             <label class="form-label" for="CarteProfessionnelle">Carte Professionnelle</label><br>
                                             <input class="form-control border border-success" type="text" name="CarteProfessionnelle" id="" value="<?=$data['CarteProfessionnelle']?>" ><br><br>
 
                                             <label class="form-label" for="Telephone">Telephone</label><br>
-                                            <input class="form-control border border-success" type="tel" name="Telephone" id="" value="<?=$data['Telephone']?>" ><br><br>
+                                            <input class="form-control border border-success" type="tel" name="Telephone" id="" value="<?=$data['Telephone_vendeur']?>" ><br><br>
 
 
                                             <label class="form-label" for="numPavillon">numPavillon</label><br>
@@ -126,7 +126,7 @@
                                     <div class="form-group" >
                                         <form action="../Back/vendeur.php" method="POST" >
                                             <label class="form-label" for="CIN">CIN</label><br>
-                                            <input class="form-control border border-danger" type="number" name="CIN" id="" value="<?=$data['CIN']?>"><br><br>
+                                            <input class="form-control border border-danger" type="number" name="CIN" id="" value="<?=$data['CIN_vendeur']?>"><br><br>
                                             </div>
                                 </div>
 
@@ -162,7 +162,7 @@
             $Carte=$_POST['CarteProfessionnelle'];
             $numPavillon=$_POST['numPavillon'];
         
-            $req=mysqli_query($con,"INSERT INTO vendeur (CIN, Nom, Prenom, Telephone, Adresse, CarteProfessionnelle, numPavillon) VALUES ('$CIN','$Nom','$Prenom',$Telephone,'$Adresse','$Carte','$numPavillon')");
+            $req=mysqli_query($con,"INSERT INTO vendeur (CIN_vendeur, Nom_vendeur, Prenom_vendeur, Telephone_vendeur, Adresse_vendeur, CarteProfessionnelle, numPavillon) VALUES ('$CIN','$Nom','$Prenom',$Telephone,'$Adresse','$Carte','$numPavillon')");
         
             if($req){
                 header("location: ../suivieTicket/vendeurInterface.php");
@@ -180,7 +180,7 @@
             $Carte=$_POST['CarteProfessionnelle'];
             $numPavillon=$_POST['numPavillon'];
         
-            $req=mysqli_query($con,"UPDATE vendeur SET CIN='$CIN', Nom='$Nom', Prenom='$Prenom', Telephone=$Telephone, Adresse='$Adresse', CarteProfessionnelle='$Carte', numPavillon='$numPavillon' WHERE CIN='$CIN';");
+            $req=mysqli_query($con,"UPDATE vendeur SET CIN_vendeur='$CIN', Nom_vendeur='$Nom', Prenom_vendeur='$Prenom', Telephone_vendeur=$Telephone, Adresse_vendeur='$Adresse', CarteProfessionnelle='$Carte', numPavillon='$numPavillon' WHERE CIN_vendeur='$CIN';");
             if($req){
                 header("location: ../suivieTicket/vendeurInterface.php");
 
@@ -191,7 +191,7 @@
         }elseif(isset($_POST['supprimerVendeur'])){
 
             $CIN=$_POST['CIN'];
-            $req=mysqli_query($con,"DELETE FROM vendeur WHERE CIN='$CIN' ;");
+            $req=mysqli_query($con,"DELETE FROM vendeur WHERE CIN_vendeur='$CIN' ;");
             if($req){
                 header("location: ../suivieTicket/vendeurInterface.php");
 

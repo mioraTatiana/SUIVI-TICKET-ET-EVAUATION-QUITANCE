@@ -133,7 +133,7 @@
 
                                         <div class="modal-footer border border-2 border-success">
                                             <a href="../suivieTicket/pavillonInterface.php" class=""><img src="../image/retour.png" alt=""  style="width:30px ; height: 30px;"></a>
-                                            <input type="submit" value="Modifier" name="modifierPavillon" style="width:50px;"class="btn btn-success col-3 me-3">
+                                            <input type="submit" value="Modifier" name="modifierPavillon" style="width:80px;"class="btn btn-success col-3 me-3">
 
 
                                         </div>

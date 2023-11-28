@@ -108,8 +108,8 @@
 
                                 <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
                                 <div style="display:flex;  flex-direction: row;  ">
-                                    <input type="search" placeholder="CIN" name="search" id="" class="form-control d-inline me-1">
-                                    <button type="submit"   name="rechercheRegisseur"  class=" btn  btn-sm d-inline border border-2 bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                    <input type="search" placeholder="CIN" name="search" id="" class="form-control border border-success border-1 d-inline me-1">
+                                    <button type="submit"   name="rechercheRegisseur"  class=" btn  btn-sm d-inline border border-1 border-dark  bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
 
                                 </div>
 
@@ -176,7 +176,7 @@
 
                             if(isset($_POST['rechercheRegisseur'])){
                                 $rec=$_POST['search'];
-                                $lister="SELECT * FROM regisseur WHERE CIN LIKE ".$rec.";";
+                                $lister="SELECT * FROM regisseur WHERE CIN_regisseur LIKE ".$rec.";";
                                 $req=mysqli_query($con,$lister);
                             }else{
                                 $lister="SELECT * FROM regisseur;";

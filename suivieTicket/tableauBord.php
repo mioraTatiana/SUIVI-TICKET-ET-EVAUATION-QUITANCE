@@ -73,25 +73,30 @@
                    </li>
                </ul>
 
-               <!-- <span>
-                    <img src="" alt="">
-                    <h4><a href="../index.php" name="deconnexion">Deconnexion</a></h4>
-               </span> -->
+               <ul class="list-group mt-3 text-center" >
+                    <li>
+                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                    <a href="../index.html" class="text-decoration-none" >
+                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                    </a>
+                        </span>
+
+                    </li>
+               </ul>
             </div>
             <div class="col-9 bg-light">
-                <div class="row border-bottom border-2 border-light p-2 " style="background-color: #e1f5fe">
-                    <span class=" col-2 " >
-                        <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
+            <div class="row border-bottom border-2 border-light p-2 bg-success" >
+                        <span class=" col-2 " >
+                            <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
-                    </span>
-                        <blockquote class="blockquote bottom-0 end-0  col-7 pt-3  text-center"><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
-                        <span class="col-3 border border-primary border-2 rounded bg-light text-center" style="padding-top: 10px;" > 
-                            <a href="../index.html" class="" >
-                                <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                <h5 class="d-inline"><i>Deconnexion</i></h5>
-                            </a>
                         </span>
-                </div>
+                            <div class="col-7  text-center">
+                                <h6>COMMUNE URBAINE DE FIANARANTSOA</h6>
+                                <blockquote class="blockquote "><i>"Soa fianatsa ro mahavokatsa"</i> </blockquote>
+
+                            </div>
+                    </div>
                 <div class="row" style="display:flex; margin-top: 120px; justify-content: center; align-items:center; gap:20px;">
                     <div class="rounded text-muted " style="width: 350px; height: 150px; display:flex; flex-direction:column;
                     justify-content: center; align-items:center; background-color: #fff9c4;    border-top: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey; border-left:6px solid rgb(0, 140, 255)" >

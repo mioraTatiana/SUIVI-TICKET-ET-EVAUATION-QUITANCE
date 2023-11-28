@@ -107,8 +107,8 @@
                                 <form action="vendeurInterface.php" method="post">
                                     <label for="search" class="form-label text-decoration-underline">Recherche</label><br>
                                     <div style="display:flex;  flex-direction: row;  ">
-                                        <input type="search" placeholder="CIN" name="search" id="" class="form-control d-inline me-1">
-                                        <button type="submit"   name="rechercheVendeur"  class=" btn  btn-sm d-inline border border-2 bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                        <input type="search" placeholder="CIN" name="search" id="" class="form-control border border-1 border-primary  d-inline me-1 border border-success border-1">
+                                        <button type="submit"   name="rechercheVendeur"  class=" btn  btn-sm d-inline border border-1 border-dark bg-light " ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
                                     </div>
                                 </form>
                             </div>
@@ -124,32 +124,32 @@
                             <div class="modal fade"  id="vendeurModalA">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                    <div class="modal-header">
-                                            <span><img src="../image/supprimer.png" alt="Modifier" style=" width: 50px; height:50px"></span>
-                                            <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+                                    <div class="modal-header border-bottom border-1 border-primary bg-primary">
+                                            <span><img src="../image/ajouter1.png" alt="Modifier" style=" width: 50px; height:50px"></span>
+                                            <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close" ></button>
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="modal-body" style=" text-align: start;" >
+                                            <div class="modal-body border border-2 border-primary" style=" text-align: start;" >
                                                 <form action="../Back/vendeur.php" method="POST">
                                                     <label for="CIN" class="form-label " >CIN</label><br>
-                                                    <input type="number" name="CIN" id="" class="form-control"><br>
+                                                    <input type="number" name="CIN" id="" class="form-control border border-1 border-primary "><br>
                                         
                                                     <label for="Nom" class="form-label" >Nom</label><br>
-                                                    <input type="text" name="Nom" id="" class="form-control"><br>
+                                                    <input type="text" name="Nom" id="" class="form-control border border-1 border-primary "><br>
 
                                                     <label for="Prenom" class="form-label">Prenom</label><br>
-                                                    <input type="text" name="Prenom" id="" class="form-control"><br>
+                                                    <input type="text" name="Prenom" id="" class="form-control border border-1 border-primary "><br>
 
                                                     <label for="CarteProfessionnelle">Carte Professionnelle</label><br>
-                                                    <input type="text" name="CarteProfessionnelle" id=""  class="form-control"><br><br>
+                                                    <input type="text" name="CarteProfessionnelle" id=""  class="form-control border border-1 border-primary "><br><br>
 
 
                                                     <label for="Adresse" class="form-label" >Adresse</label><br>
-                                                    <input type="text" name="Adresse" id="" class="form-control"><br>
+                                                    <input type="text" name="Adresse" id="" class="form-control border border-1 border-primary "><br>
 
                                                     <label for="Telephone" class="form-label" >Telephone</label><br>
-                                                    <input type="tel" name="Telephone" id="" class="form-control"><br>
+                                                    <input type="tel" name="Telephone" id="" class="form-control border border-1 border-primary "><br>
 
                                                     <label for="numPavillon">numPavillon</label><br>
                                                     <select name="numPavillon" id=""  class="form-select">
@@ -166,8 +166,9 @@
                                                     </select><br><br>
 
                                             </div>
+                                            </div>
 
-                                            <div class="modal-footer border">
+                                            <div class="modal-footer border border-2 border-primary">
                                                     <div class="row border w-100">
                                                         <input type="submit" value="Ajouter" name="ajouterVendeur" class="btn btn-primary col-5" >
                                                         <div class="col-2"></div>
@@ -176,7 +177,7 @@
 
                                             </div>
                                                 </form>
-                                        </div>
+                                        
 
                                     </div>
                                 </div>
@@ -196,7 +197,7 @@
 
                         if(isset($_POST['rechercheVendeur'])){
                             $rec=$_POST['search'] ;
-                            $lister="SELECT * FROM vendeur WHERE (CIN= $rec  );";
+                            $lister="SELECT * FROM vendeur WHERE (CIN_vendeur= $rec  );";
                             $req=mysqli_query($con,$lister);
                         }else {
 
