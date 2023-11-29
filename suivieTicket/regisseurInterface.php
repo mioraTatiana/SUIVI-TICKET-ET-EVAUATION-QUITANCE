@@ -9,7 +9,7 @@
     <script src="../js/bootstrap.bundle.js"></script>
 
 
-    <title>regisseur interface</title>
+    <title>Regisseur interface</title>
 </head>
 <body class="bg-success" >
     <div class="container-fluid h-100">

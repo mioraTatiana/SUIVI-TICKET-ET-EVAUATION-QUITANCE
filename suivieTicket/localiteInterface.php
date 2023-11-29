@@ -8,7 +8,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
 
-    <title>Interface</title>
+    <title>Localite interface</title>
 </head>
 <body class="bg-success">
     <div class="container-fluid  h-100">

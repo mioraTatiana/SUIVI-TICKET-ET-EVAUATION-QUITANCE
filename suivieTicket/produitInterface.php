@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="../css/bootstrap.css">
 
-    <title>produit front</title>
+    <title>Produit interface</title>
 </head>
 <body class="bg-success" >
     <div class="container-fluid h-100">

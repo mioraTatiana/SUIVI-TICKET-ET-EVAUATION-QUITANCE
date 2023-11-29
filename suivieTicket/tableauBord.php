@@ -8,7 +8,7 @@
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
 
-    <title>Interface</title>
+    <title>Tableau de bord</title>
 </head>
 <body class="bg-success" >
    <div class="container-fluid  h-100">
@@ -91,8 +91,8 @@
                 </div>
 
             </div>
-            <div class="col-9  bg-light "  >
-                    <div class="row border-bottom border-2 border-light p-2 bg-success" >
+            <div class="col-9  bg-success "  >
+                    <div class="row  p-2 bg-success" >
                         <span class=" col-2 " >
                             <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
@@ -103,7 +103,7 @@
 
                             </div>
                     </div>
-                    <div class="row " style="display:flex; margin-top: 120px; justify-content: center; align-items:center; gap:20px; border-radius:20px;">
+                    <div class="row bg-light me-1" style="height:85%; border: radius 20px; display:flex; justify-content: center; align-items:center; gap:20px; border-radius:20px;">
                         <div class="rounded text-muted " style="width: 350px; height: 150px; display:flex; flex-direction:column;
                         justify-content: center; align-items:center; background-color: #fff9c4;    border-top: 1px solid grey; border-right: 1px solid grey; border-bottom: 1px solid grey; border-left:6px solid rgb(0, 140, 255)" >
                             <div class="lead "> <span class='m-3'>Nombre de tickets</span> <br> distribués aujourd'hui:</div> 

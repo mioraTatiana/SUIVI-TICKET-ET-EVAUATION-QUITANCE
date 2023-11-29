@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/cssConstruite/interface.css">
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
-    <title>produit front</title>
+    <title>Marché interface</title>
 </head>
 <body class="bg-success" >
     <div class="container-fluid h-100">
