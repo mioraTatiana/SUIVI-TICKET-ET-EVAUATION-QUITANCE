@@ -125,7 +125,7 @@
                             <div class="col-6"></div>
                             <div class="col-2 pt-4 pb-0 mb-3" >
                                 <div class="row" >
-                                    <button type="button"  class="btn btn-primary postion-absolute bottom-0 end-0 mb-0" data-bs-toggle="modal" data-bs-target="#regisseurModalA"><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter"> Nouveau</button>
+                                    <button type="button"  class="btn btn-primary position-absolute bottom-0 end-0 mb-0" data-bs-toggle="modal" data-bs-target="#regisseurModalA"><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter">Nouveau</button>
                                     <a href="regisseurInterface.php" class="btn btn-primary mt-3">Actualiser</a>
                                 </div>
 
@@ -154,6 +154,12 @@
 
                                                         <label for="Telephone" class="form-label" >Téléphone</label><br>
                                                         <input type="tel" name="Telephone" id="" class="form-control border border-primary"><br>
+
+                                                        <label for="name">Adresse mail</label><br>
+                                                        <input type="text" name="email" class="form-control border border-primary"><br>
+
+                                                        <label for="name">Mot de passe</label><br>
+                                                        <input type="text" name="MotPasse" class="form-control border border-primary"><br>
 
                                                     
 

@@ -25,7 +25,7 @@
                 <input type="email" name="email" class="email"  ><br>
     
                 <label for="name"  style="font-style: italic;" >Mot de passe</label><br>
-                <input type="password" name="passWord" class="passWord"  ><br><br>
+                <input type="password" name="MotPasse" class="passWord"  ><br><br>
                 
                 <div class="bouttonConnexion">
                     <input type="submit" value="Connecter" name="connecterButton" class=" btn btn-warning">
@@ -37,7 +37,31 @@
             
         </form>
 
-        <h4><a href="suivieTicket/login.html" class="pasInscrit">Vous n'êtes pas encore inscrit</a></h4>
+       <button type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#modalPetit1"> Vous n'êtes pas encore inscrit</button>
+
+
+       <div class="modal" id="modalPetit1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close" ></button>
+
+                    </div>
+
+                    <div class="modal-body">
+                        <h6>
+                            Veuillez vous adressez à un des régisseurs pour vous aider à vous inscrire
+                        </h6>
+
+                    </div>
+
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+       </div>
+
     </div>
     
 </body>

@@ -73,6 +73,13 @@
 
                                             <label for="Telephone" class="form-label">Telephone</label><br>
                                             <input type="tel" name="Telephone" id="" value="<?=$data['Telephone_regisseur']?>" class="form-control  border border-success"><br>
+
+                                            <label for="name" class="form-label">Adresse mail</label><br>
+                                            <input type="text" name="email"  class="form-control  border border-success" value="<?=$data['email']?>" ><br>
+
+                                            <label for="name" class="form-label">Mot de passe</label><br>
+                                            <input type="text" name="MotPasse"  class="form-control  border border-success" value="<?=$data['MotPasse']?>"><br>
+
                                         </div>
 
                                         <div class="modal-footer border-top border-success border-2">
@@ -131,9 +138,11 @@
             $Prenom=$_POST['Prenom'];
             $Adresse=$_POST['Adresse'];
             $Telephone=$_POST['Telephone'];
+            $email=$_POST['email'];
+            $MotPasse=$_POST['MotPasse'];
         
 
-            $inserer="INSERT INTO regisseur (CIN_regisseur,Nom_regisseur,Prenom_regisseur,Adresse_regisseur,Telephone_regisseur) VALUES ($CIN, '$Nom','$Prenom','$Adresse',$Telephone);";
+            $inserer="INSERT INTO regisseur (CIN_regisseur,Nom_regisseur,Prenom_regisseur,Adresse_regisseur,Telephone_regisseur,email, MotPasse) VALUES ($CIN, '$Nom','$Prenom','$Adresse',$Telephone,'$email', '$MotPasse');";
             $req=mysqli_query($con,$inserer);
             if($req){
                 header ("location: ../suivieTicket/regisseurInterface.php");
@@ -148,9 +157,13 @@
             $Prenom=$_POST['Prenom'];
             $Adresse=$_POST['Adresse'];
             $Telephone=$_POST['Telephone'];
+            $email=$_POST['email'];
+            $MotPasse=$_POST['MotPasse'];
+
         
 
-            $modifier= "UPDATE regisseur SET CIN_regisseur=$CIN, Nom_regisseur='$Nom', Prenom_regisseur='$Prenom', Adresse_regisseur='$Adresse', Telephone_regisseur=$Telephone WHERE CIN_regisseur=$CIN;";
+            $modifier= "UPDATE regisseur SET CIN_regisseur=$CIN, Nom_regisseur='$Nom', Prenom_regisseur='$Prenom', Adresse_regisseur='$Adresse', Telephone_regisseur=$Telephone, email='$email',
+            MotPasse='$MotPasse' WHERE CIN_regisseur=$CIN;";
             $req=mysqli_query($con,$modifier);
             if($req){
                 header ("location: ../suivieTicket/regisseurInterface.php");
