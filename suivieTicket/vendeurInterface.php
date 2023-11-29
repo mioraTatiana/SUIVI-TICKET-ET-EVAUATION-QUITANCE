@@ -106,7 +106,7 @@
                             </div>
                     </div>
 
-                    <div class="bg-light p-3" style="border-radius: 20px;" >
+                    <div class="bg-light p-3" style="border-radius: 20px; height:84%;" >
                         <div class=" row text-center   mt-3 mb-3 p-2 shadow  border border-1 border-success" style="width: 300px; margin-left: 250px;  border-radius: 5px; background-color: #B0F2B6; " >
                             <div class="w-100" >
                                 <div>

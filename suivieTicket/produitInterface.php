@@ -107,9 +107,9 @@
 
                             </div>
                     </div>
-                    <div class="row bg-light p-3" style=" border-radius: 20px;" >
-                        <div class="col-3 border border-success rounded border-2 m-2 p-3 " id="" style="background-color: #B0F2B6;">   
-                            <div>
+                    <div class="row bg-light p-3 pe-0 me-1" style=" border-radius: 20px; height:85%;" >
+                        <div class="col-3 border border-success rounded border-2 m-2 p-3 " id="" style=" height:80%; background-color: #B0F2B6;">   
+                            <div >
                                 <span>
                                     <h6 class="text-decoration-underline">Formulaire pour les nouveaux produits</h6>
                                 </span>

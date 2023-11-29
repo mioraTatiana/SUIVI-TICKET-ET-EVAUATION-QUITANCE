@@ -72,7 +72,7 @@
                                             <input type="text" name="Adresse" id="" value="<?=$data['Adresse_regisseur']?>" class="form-control  border border-success" ><br>
 
                                             <label for="Telephone" class="form-label">Telephone</label><br>
-                                            <input type="tel" name="Telephone" id="" value="<?=$data['Telephone_regisseur']?>" class="form-control  border border-success"><br>
+                                            <input type="tel" name="Telephone" pattern="[0-9]{10}" id="" value="<?=$data['Telephone_regisseur']?>" class="form-control  border border-success"><br>
 
                                             <label for="name" class="form-label">Adresse mail</label><br>
                                             <input type="text" name="email"  class="form-control  border border-success" value="<?=$data['email']?>" ><br>

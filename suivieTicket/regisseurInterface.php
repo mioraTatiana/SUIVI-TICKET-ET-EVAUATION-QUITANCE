@@ -107,7 +107,7 @@
                             </div>
                     </div>
 
-                    <div class="bg-light p-3 mt-2" style="border-radius: 20px;" >
+                    <div class="bg-light p-3 mt-2 h-75 " style="border-radius: 20px;" >
 
                         <div class="row  border-radius: 5px;" >
                             <div class="form-group col-3 border  border-2 border-success m-3  pb-2 rounded" style="background-color: #B0F2B6;">
@@ -125,7 +125,7 @@
                             <div class="col-6"></div>
                             <div class="col-2 pt-4 pb-0 mb-3" >
                                 <div class="row" >
-                                    <button type="button"  class="btn btn-primary position-absolute bottom-0 end-0 mb-0" data-bs-toggle="modal" data-bs-target="#regisseurModalA"><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter">Nouveau</button>
+                                    <button type="button"  class="btn btn-primary  bottom-0 end-0 mb-0" data-bs-toggle="modal" data-bs-target="#regisseurModalA"><img src="../bootstrap-icons-1.11.1/person-add.svg" alt="ajouter">Nouveau</button>
                                     <a href="regisseurInterface.php" class="btn btn-primary mt-3">Actualiser</a>
                                 </div>
 
@@ -153,7 +153,7 @@
                                                         <input type="text" name="Adresse" id="" class="form-control border border-primary"><br>
 
                                                         <label for="Telephone" class="form-label" >Téléphone</label><br>
-                                                        <input type="tel" name="Telephone" id="" class="form-control border border-primary"><br>
+                                                        <input type="tel" name="Telephone" pattern="[0-9]{10}" class="form-control border border-primary"><br>
 
                                                         <label for="name">Adresse mail</label><br>
                                                         <input type="text" name="email" class="form-control border border-primary"><br>

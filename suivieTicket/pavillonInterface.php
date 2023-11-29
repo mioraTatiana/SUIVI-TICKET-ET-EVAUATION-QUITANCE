@@ -107,7 +107,7 @@
                     </div>
 
 
-                    <div class="bg-light p-3"  style="border-radius:20px;">
+                    <div class="bg-light p-3 "  style="border-radius:20px; height:86%;">
 
                         
                         <div class="row " style=" border-radius: 5px;">
