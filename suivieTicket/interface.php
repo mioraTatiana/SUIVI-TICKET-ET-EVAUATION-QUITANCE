@@ -10,20 +10,25 @@
 
     <title>Interface</title>
 </head>
-<body class="bg-success">
+<body class="bg-success" >
     <div class="container-fluid  h-100">
         <div class="row">
             <div class="col-3 bg-success p-3" >
-            <p class="lead mt-2 text-center border rounded-pill" style="background-color: #fff9c4;"> 
-                
-                Bureau économique 
-            </p>
 
-                <div  class="pt-5">
+                <div>
+                    <p class="lead text-center border rounded-pill" style="background-color: #fff9c4;"> 
+                        
+                        Bureau économique 
+                    </p>
 
-                    <ul class="list-group rounded" >
-                        <li><span class="list-group-item rounded-top p-1 " style="background-color: #B0F2B6;">Tableau de bord</span></li>
-                        <li class="list-group-item p-1 text-center" style="background-color: #81d4fa;">
+
+                </div>
+
+                <div class="mt-5" style="background-color: #B0F2B6; border-radius:30px;" >
+                    <ul class="list-group " >
+                        <li><span class="list-group-item pt-3" style="background-color: #B0F2B6; border-top-right-radius: 30px; border-top-left-radius: 30px;
+ ">Tableau de bord</span></li>
+                        <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">
                         <img src="../image/tableau-de-bord-80.png" alt="">
                             <a href="tableauBord.php" style="text-decoration: none; color: #1a237e ;">Ticket et quitance</a>
 
@@ -35,11 +40,11 @@
                             <span class="list-group-item rounded-top p-1 " style="background-color: #B0F2B6;">Tickets de marché</span>
                         </li>
 
-                        <li class="list-group-item p-1 text-center" style="background-color: #81d4fa;" >
+                        <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;" >
                             <img src="../image/ticket.png" alt="">
                             <a href="ticketInterface.php" style="text-decoration: none; color: #1a237e ;">Registre</a>
                         </li>
-                        <li class="list-group-item p-1 text-center" style="background-color: #81d4fa;" >
+                        <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;" >
                             <img src="../image/regisseur.png" alt="regisseur">
                             <a href="regisseurInterface.php" style="text-decoration: none; color: #1a237e ;">Regisseur</a>
                         </li>
@@ -49,33 +54,33 @@
                     <li >
                             <span class="list-group-item rounded-top p-1 " style="background-color: #B0F2B6;">Loyers de pavillons</span>
                     </li>
-                    <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
+                    <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">
                             <img src="../image/registre.png" alt="">
                             <a href="registreInterface.php" style="text-decoration: none; color: #1a237e ;">Registre</a>
                     </li>
-                    <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
+                    <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">
                             <img src="../image/vendeur.png" alt="">
                             <a href="vendeurInterface.php" style="text-decoration: none; color: #1a237e ;">Vendeur</a>
                     </li>
-                    <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
+                    <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">
                             <img src="../image/pavillon.png" alt="">
                             <a href="pavillonInterface.php" style="text-decoration: none; color: #1a237e ;">Pavillons</a>
                     </li>
-                    <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
+                    <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">
                             <img src="../image/produit.png" alt="">
                             <a href="produitInterface.php" style="text-decoration: none; color: #1a237e ;">Produits</a>
                     </li>
-                    <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">                   
+                    <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">                   
                             <img src="../image/localite1.png" alt="">
                             <a href="localiteInterface.php" style="text-decoration: none; color: #1a237e ;">Localité</a>
                     </li>
-                    <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
+                    <li class="list-group-item p-1 text-center" style="background-color: #B0F2B6;">
                             <img src="../image/marche.png" alt="">
                             <a href="marcheInterface.php" style="text-decoration: none; color: #1a237e ;">Marché</a>
                     </li>
                     </ul>
 
-                    <ul class="list-group mt-3 text-center" >
+                    <ul class="list-group text-center" >
                     <li>
                         <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
                                     <a href="../index.html" class="text-decoration-none" >
@@ -85,14 +90,14 @@
                         </span>
 
                     </li>
-                    </ul>
+               </ul>
 
 
                 </div>
 
             </div>
             <div class="col-9  bg-success">
-                <div class="row  pt-3  bg-success ">
+                <div class="row  mt-2  bg-success ">
                         <span class=" col-2 " >
                             <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
@@ -103,7 +108,7 @@
 
                             </div>
                 </div>
-                <div class="row  m-0 bg-light" style=" border-radius: 20px;">
+                <div class="row  m-0 bg-light" style=" border-radius: 30px;">
                     <div class="col-5 border border-2 border-success rounded-start m-3 shadow" style="background-color: #b0f2b5d8;" >
                         <div >
                             <img src="../image/ajouter1.png"  alt="ajouter" style="width: 40px; height:40px;">

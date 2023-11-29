@@ -149,7 +149,7 @@
         $DateDeDistribution=$_POST['DateDeDistribution'];
         $NombreDeTicket=$_POST['NombreDeTicket'];
 
-        $inserer="INSERT INTO registreTicket (DateDeDistribution, CIN, NombreDeTicket) VALUES ('$DateDeDistribution', $CIN, '$NombreDeTicket');";
+        $inserer="INSERT INTO registreTicket (DateDeDistribution, CIN_regisseur, NombreDeTicket) VALUES ('$DateDeDistribution', $CIN, '$NombreDeTicket');";
         $req=mysqli_query($con,$inserer);
         if($req){
             header ("location: ../suivieTicket/ticketInterface.php");
@@ -167,7 +167,7 @@
         $DateDeDistribution=$_POST['DateDeDistribution'];
         $NombreDeTicket=$_POST['NombreDeTicket'];
 
-        $modifier= "UPDATE registreTicket SET  NombreDeTicket=$NombreDeTicket, CIN=$CIN, DateDeDistribution='$DateDeDistribution' WHERE numEnregistrement='$numEnregistrement' ;";
+        $modifier= "UPDATE registreTicket SET  NombreDeTicket=$NombreDeTicket, CIN_regisseur=$CIN, DateDeDistribution='$DateDeDistribution' WHERE numEnregistrement='$numEnregistrement' ;";
         $req=mysqli_query($con,$modifier);
         if($req){
             header ("location: ../suivieTicket/ticketInterface.php");

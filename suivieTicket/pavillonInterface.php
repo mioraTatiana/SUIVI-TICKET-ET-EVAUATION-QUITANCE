@@ -14,20 +14,23 @@
     <div class="container-fluid h-100">
             <div class="row">
                 <div class="col-3 bg-success p-3" >
-                    <p class="lead text-center border rounded-pill"  style="background-color: #fff9c4;"> 
-        
+                        <p class="lead mt-2 text-center border rounded-pill" style="background-color: #fff9c4;"> 
+                            
                             Bureau économique 
-                    </p>
+                        </p>
 
-                    <ul class="list-group rounded" >
+                    <div  class="pt-5">
+
+                        <ul class="list-group rounded" >
                             <li><span class="list-group-item rounded-top p-1 " style="background-color: #B0F2B6;">Tableau de bord</span></li>
                             <li class="list-group-item p-1 text-center" style="background-color: #81d4fa;">
-                                <img src="../image/tableau-de-bord-80.png" alt="">
+                            <img src="../image/tableau-de-bord-80.png" alt="">
                                 <a href="tableauBord.php" style="text-decoration: none; color: #1a237e ;">Ticket et quitance</a>
+
                             </li>
-                    </ul>
-                    
-                    <ul class="list-group mt-3 rounded">
+                        </ul>
+
+                        <ul class="list-group mt-3 rounded">
                             <li>
                                 <span class="list-group-item rounded-top p-1 " style="background-color: #B0F2B6;">Tickets de marché</span>
                             </li>
@@ -40,9 +43,9 @@
                                 <img src="../image/regisseur.png" alt="regisseur">
                                 <a href="regisseurInterface.php" style="text-decoration: none; color: #1a237e ;">Regisseur</a>
                             </li>
-                    </ul>
+                        </ul>
 
-                    <ul class="list-group mt-3 ">
+                        <ul class="list-group mt-3 ">
                         <li >
                                 <span class="list-group-item rounded-top p-1 " style="background-color: #B0F2B6;">Loyers de pavillons</span>
                         </li>
@@ -70,26 +73,28 @@
                                 <img src="../image/marche.png" alt="">
                                 <a href="marcheInterface.php" style="text-decoration: none; color: #1a237e ;">Marché</a>
                         </li>
-                    </ul>
+                        </ul>
 
-                    <ul class="list-group mt-3 text-center" >
-                    <li>
-                        <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
-                                    <a href="../index.html" class="text-decoration-none" >
-                                        <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
-                                        <h5 class="d-inline"><i>Deconnexion</i></h5>
-                                    </a>
-                        </span>
+                        <ul class="list-group mt-3 text-center" >
+                        <li>
+                            <span class=" rounded bg-light   m-3 p-2" style=" width:60px;" > 
+                                        <a href="../index.html" class="text-decoration-none" >
+                                            <img src="../image/deconnexionBleu.png" alt="" class="d-inline">
+                                            <h5 class="d-inline"><i>Deconnexion</i></h5>
+                                        </a>
+                            </span>
 
-                    </li>
-               </ul>z
+                        </li>
+                        </ul>
 
+
+                    </div>
 
                 </div>
 
 
-                <div class="col-9 bg-light">
-                    <div class="row border-bottom border-2 border-light p-2 bg-success">
+                <div class="col-9 bg-success">
+                    <div class="row  p-2 bg-success">
                         <span class=" col-2 " >
                             <img src="../image/LOGO ARMOIRIE DE FIANARANTSOA.jpg" alt=""  style="height: 60px; width: 50px; ">
 
@@ -101,26 +106,35 @@
                             </div>
                     </div>
 
+
+                    <div class="bg-light p-3"  style="border-radius:20px;">
+
+                        
                         <div class="row " style=" border-radius: 5px;">
-                            <div style="display:flex;   flex-direction:row ; justify-content:center; align-items:center; " class=" col-9 pt-2 pb-2 form-group">
-                                <form action="pavillonInterface.php" method="post" >
+                            <div style="display:flex;   flex-direction:column ; justify-content:center; align-items:center; " class=" pt-2 pb-2 form-group">
 
-                                    <div class=" border border-1 border-success  p-2"  style="display:flex;  flex-direction: row; background-color: #B0F2B6;" >
+                                    <div class="border border-2 border-success p-3 rounded mb-3" style="background-color: #B0F2B6;">
+                                        <form action="pavillonInterface.php" method="post" >
 
-                                        <input type="search" placeholder="N°pavillon" name="search" id="" class="form-control d-inline border border-success border-1" style="width: 400px;" >
-                                        <button type="submit"   name="recherchePavillon" class=" btn  btn-sm d-inline bg-light ms-2 border border-dark border-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+                                            <div class=""  style="display:flex;  flex-direction: row; " >
+
+                                                <input type="search" placeholder="N°pavillon" name="search" id="" class="form-control d-inline border border-success border-1" style="width: 400px;" >
+                                                <button type="submit"   name="recherchePavillon" class=" btn  btn-sm d-inline bg-light ms-2 border border-dark border-1" ><img src="../bootstrap-icons-1.11.1/search.svg" alt="recherche"></button>
+
+                                            </div>
+
+                                        </form>
+
+                                        <div class="text-center  "  ;>
+                                            <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#pavillonModalAjouter" >
+                                                <img src="../bootstrap-icons-1.11.1/person-add.svg" alt="">
+                                                Nouveau
+                                            </button>
+                                            <a href="pavillonInterface.php" class="btn btn-primary m-2" style="width: 100px;">Actualiser</a>
+
+                                        </div>
 
                                     </div>
-
-                                </form>
-
-                                <div class="text-center border border-success col-3 "  style="background-color:#B0F2B6;" ;>
-                                        <button type="button" class="btn btn-primary m-2" data-bs-toggle="modal" data-bs-target="#pavillonModalAjouter" >
-                                            <img src="../bootstrap-icons-1.11.1/person-add.svg" alt="">
-                                            Nouveau
-                                        </button>
-                                    </div>
-
                             </div>
 
                             <div>
@@ -233,13 +247,8 @@
 
                         </div>
 
-                        <div class="row text-end position-relative bottom-0 end-0">
-                            <div class="col-10">
-            
-                            </div>
 
-                            <a href="pavillonInterface.php" class="btn btn-primary mb-3" style="width: 100px;">Actualiser</a>
-                        </div>
+                    </div>
 
 
 
