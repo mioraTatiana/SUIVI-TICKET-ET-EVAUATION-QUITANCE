@@ -106,12 +106,11 @@
             $Mois=$_POST['idMois'];
             $Annee=$_POST['Annee'];
             $DateDePaiement=$_POST['DateDePaiement'];
-            $Tarif=$_POST['Tarif'];
             $numPavillon=$_POST['numPavillon'];
             $CIN=$_POST['CIN'];
             $numQuitance=$_POST['numQuitance'];
         
-            $req=mysqli_query($con,"INSERT INTO registre ( idMois, Annee, DateDePaiement, Tarif,numPavillon, CIN_vendeur,numQuitance) VALUES ('$Mois',$Annee,'$DateDePaiement',$Tarif,'$numPavillon',$CIN,$numQuitance)");
+            $req=mysqli_query($con,"INSERT INTO registre ( idMois, Annee, DateDePaiement, numPavillon, CIN_vendeur,numQuitance) VALUES ('$Mois',$Annee,'$DateDePaiement','$numPavillon',$CIN,$numQuitance)");
         
             if($req){
                 header('location: ../suivieTicket/registreInterface.php') ;
@@ -125,12 +124,11 @@
             $Mois=$_POST['idMois'];
             $Annee=$_POST['Annee'];
             $DateDePaiement=$_POST['DateDePaiement'];
-            $Tarif=$_POST['Tarif'];
             $numPavillon=$_POST['numPavillon'];
             $CIN=$_POST['CIN'];
             $numQuitance=$_POST['numQuitance'];
         
-            $req=mysqli_query($con,"UPDATE registre SET numFiche=$numFiche, idMois='$Mois', Annee=$Annee, DateDePaiement='$DateDePaiement', Tarif=$Tarif,numPavillon='$numPavillon', CIN_vendeur=$CIN, numQuitance=$numQuitance WHERE  numFiche='$numFiche' ;");
+            $req=mysqli_query($con,"UPDATE registre SET numFiche=$numFiche, idMois='$Mois', Annee=$Annee, DateDePaiement='$DateDePaiement', numPavillon='$numPavillon', CIN_vendeur=$CIN, numQuitance=$numQuitance WHERE  numFiche='$numFiche' ;");
         
             if($req){
                 header('location: ../suivieTicket/registreInterface.php') ;

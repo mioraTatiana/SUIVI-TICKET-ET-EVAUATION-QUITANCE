@@ -49,8 +49,6 @@
                                                                 <label for="DateDePaiement" class="form-label">Date De paiement</label><br>
                                                                 <input type="date" name="DateDePaiement" id="" class="form-control border border-primary"><br>
 
-                                                                <label for="Tarif" class="form-label">Tarif</label><br>
-                                                                <input type="number" name="Tarif" id="" class="form-control border border-primary" ><br>
 
                                                         </div>
 
@@ -67,13 +65,13 @@
                                                             ?>                
                                                                 </select><br>
 
-                                                                <label for="CIN" class="form-label">Vendeur</label><br>
+                                                                <label for="CIN_vendeur" class="form-label">Vendeur</label><br>
                                                                 <select name="CIN" id="" class="form-control border border-primary">
                                                             <?php   
                                                                 $query3=mysqli_query($con,'SELECT * FROM vendeur');
                                                                 while($data=mysqli_fetch_array($query3)){
                                                             ?>
-                                                                    <option value="<?= $data['CIN']?>"><?= $data['Nom']?> <?= $data['Prenom']?> </option>
+                                                                    <option value="<?= $data['CIN_vendeur']?>"><?= $data['Nom_vendeur']?> <?= $data['Prenom_vendeur']?> </option>
                                                             <?php
                                                                 }
                                                             ?>

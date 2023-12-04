@@ -61,10 +61,6 @@
                                 <img src="../image/pavillon.png" alt="">
                                 <a href="pavillonInterface.php" style="text-decoration: none; color: #1a237e ;">Pavillons</a>
                         </li>
-                        <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
-                                <img src="../image/produit.png" alt="">
-                                <a href="produitInterface.php" style="text-decoration: none; color: #1a237e ;">Produits</a>
-                        </li>
                         <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">                   
                                 <img src="../image/localite1.png" alt="">
                                 <a href="localiteInterface.php" style="text-decoration: none; color: #1a237e ;">Localité</a>
@@ -141,10 +137,10 @@
 
                                 <div class=" modal fade" id="pavillonModalAjouter" aria-hidden="true" tabindex="-1">
                                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-center" id="pavillonModalA" aria-hidden="true">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <img src="../image/ajouter.png" alt="Ajouter" style=" width: 50px; height:50px" >
-                                                <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <div class="modal-content border border-2 border-primary">
+                                            <div class="modal-header border-bottom border-1 border-primary bg-primary">
+                                                <img src="../image/ajouter1.png" alt="Ajouter" style=" width: 50px; height:50px" >
+                                                <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
 
                                             </div>
 
@@ -152,12 +148,12 @@
                                                 <div class="modal-body">
                                                     <form action="" method="post">
                                                     <label for="numPavillon" class="form-label" >N°pavillon</label><br>
-                                                    <input type="text" name="numPavillon" id="" class="form-control"><br>
+                                                    <input type="text" name="numPavillon" id="" class="form-control border border-1 border-primary"><br>
 
                                                     <label for="idLocalite"  class="form-label">Localite</label><br>
-                                                    <select name="idLocalite" id="" class="form-select" >
+                                                    <select name="idLocalite" id="" class="form-select border border-1 border-primary" >
         <?php
-                                                    $req=mysqli_query($con,'SELECT * FROM localite');
+                                                    $req=mysqli_query($con,'SELECT * FROM localite ORDER BY Localite');
                                                     while ($data=mysqli_fetch_array($req)){
         ?>
                                                     <option value="<?=$data['idLocalite'] ?>"><?=$data['Localite'] ?></option>
@@ -168,7 +164,7 @@
                                                     </select><br>
 
                                                     <label for="idMarche" class="form-label" >Place Du Marche</label><br>
-                                                    <select name="idMarche" id="" class="form-select" >
+                                                    <select name="idMarche" id="" class="form-select border border-1 border-primary" >
         <?php
                                                     $requette=mysqli_query($con,'SELECT * FROM marche');
                                                     while($data=mysqli_fetch_array($requette)){
@@ -180,43 +176,37 @@
                             
                                                     </select><br>
                                                     
-                                                    <label for="idProduit" class="form-label" >Produits</label><br>
-                                                    <select name="idProduit" id="" class="form-select" >
-        <?php
-                    
-                                                    $query=mysqli_query($con,'SELECT * FROM produit');
-                                                    while ($data=mysqli_fetch_array($query)) {
-        ?>
-                                                    <option value="<?=$data['idProduit'] ?>"> <?=$data['NomDuProduit']?></option>
-        <?php                
-                                                    }
-
-        ?>               
-                                                    </select><br>
+                                                    <label for="TypeDeProduit" class="form-label" > Type De Produits</label><br>
+                                                    <input type="text" name="TypeDeProduit" id="" class="form-control border border-1 border-primary" >
+                                                    
                                                     
                                                     <label for="TypeDePavillon" class="form-label">Type De Pavillon</label><br>
-                                                    <select name="TypeDePavillon" id="" class="form-select" >
+                                                    <select name="TypeDePavillon" id="" class="form-select border border-1 border-primary" >
                                                         <option value="Bois">Bois</option>
                                                         <option value="Brique">Brique</option>
                                                         <option value="Tôle">Tôle</option>
                                                         <option value="autre">autre</option>
                                                     </select>
 
+                                                    <label for="Tarif" class="form-label" > Tarif</label><br>
+                                                    <input type="number" name="Tarif" id="" class="form-control border border-1 border-primary" >
+
+
                                                     <label for="numAutorisation" class="form-label">N°Autorisation</label><br>
-                                                    <input type="text" name="numAutorisation" id="" class="form-control"><br>
+                                                    <input type="text" name="numAutorisation" id="" class="form-control border border-1 border-primary"><br>
 
                                                     <label for="DateDautorisation" class="form-label">Date d' autorisation</label><br>
-                                                    <input type="date" name="DateDautorisation" id="" class="form-control"><br>
+                                                    <input type="date" name="DateDautorisation" id="" class="form-control border border-1 border-primary"><br>
 
                                                     <label for="numDeliberation" class="form-label">N°Deliberation</label><br>
-                                                    <input type="text" name="numDeliberation" id="" class="form-control"><br>
+                                                    <input type="text" name="numDeliberation" id="" class="form-control border border-1 border-primary"><br>
 
                                                     <label for="DateDeDeliberation" class="form-label">Date de Deliberation</label><br>
-                                                    <input type="date" name="DateDeDeliberation" id="" class="form-control" ><br>
+                                                    <input type="date" name="DateDeDeliberation" id="" class="form-control border border-1 border-primary" ><br>
 
                                                 </div>
 
-                                                <div class="modal-footer">
+                                                <div class="modal-footer border-top border-2 border-primary">
                                                     <input type="submit" value="Ajouter" name="ajouterPavillon" class="btn btn-primary" >
                                                     <input type="reset" value="Réinitialiser" class="btn btn-light" >
 
@@ -234,10 +224,10 @@
                                 include '../Back/pavillon.php';
                             if(isset($_POST['recherchePavillon'])){
                                 $rec=$_POST['search'];
-                                $lister="SELECT numPavillon,pavillon.idLocalite, Localite, pavillon.idMarche, PlaceDuMarche, pavillon.idProduit, TypeDePavillon, NomDuProduit,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation FROM pavillon, produit, marche, localite WHERE pavillon.idProduit=produit.idProduit AND pavillon.idMarche=marche.IdMarche AND pavillon.idLocalite=Localite.idLocalite AND pavillon.numPavillon LIKE '%".$rec."%';";
+                                $lister="SELECT numPavillon,pavillon.idLocalite, Localite, pavillon.idMarche, PlaceDuMarche, TypeDeProduit, TypeDePavillon, numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation,Tarif FROM pavillon, marche, localite WHERE pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=Localite.idLocalite AND pavillon.numPavillon LIKE '%".$rec."%';";
                                 $reqRec=mysqli_query($con,$lister);
                             }else{
-                                $lister="SELECT numPavillon, Localite, pavillon.idLocalite, pavillon.idMarche , PlaceDuMarche, pavillon.idProduit, TypeDePavillon, NomDuProduit,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation  FROM pavillon, produit,marche, localite WHERE pavillon.idProduit=produit.idProduit AND pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=localite.idLocalite;";
+                                $lister="SELECT numPavillon, Localite, pavillon.idLocalite, pavillon.idMarche , PlaceDuMarche, TypeDePavillon, numAutorisation, DateDautorisation,numDeliberation,DateDeDeliberation, Tarif, TypeDeProduit FROM pavillon, marche, localite WHERE pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=localite.idLocalite;";
                                 $reqRec=mysqli_query($con,$lister);
 
                             }

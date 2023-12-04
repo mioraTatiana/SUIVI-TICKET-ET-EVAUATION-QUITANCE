@@ -137,9 +137,9 @@
                             
                             if(isset($_POST['rechercheRegistre']) ){
                                 $rec=$_POST['search'];
-                                $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois AND ( registre.CIN_vendeur LIKE $rec OR registre.numFiche  LIKE '%".$rec."%' ) ;";
+                                $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, pavillon.Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois, pavillon WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.numPavillon=pavillon.numPavillon AND registre.idMois=mois.idMois AND ( registre.CIN_vendeur LIKE $rec OR registre.numFiche  LIKE '%".$rec."%' ) ;";
                             }else{
-                                $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois GROUP BY registre.numPavillon, Annee, registre.idMois ORDER BY Annee DESC, registre.idMois ; ";
+                                $lister1="SELECT registre.numFiche, mois.Mois, Annee, DateDePaiement, pavillon.Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois, pavillon WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.numPavillon=pavillon.numPavillon AND registre.idMois=mois.idMois GROUP BY registre.numPavillon, Annee, registre.idMois ORDER BY Annee DESC, registre.idMois ; ";
                             }
                             tableauRegitre($lister1);
 

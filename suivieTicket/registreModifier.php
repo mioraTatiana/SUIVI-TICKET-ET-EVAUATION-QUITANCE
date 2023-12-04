@@ -12,7 +12,7 @@
 <?php
         include '../Back/connexionBase.php';
         $numFiche=$_GET['numFiche'];
-        $query=mysqli_query($con,"SELECT registre.numFiche, mois.Mois,registre.idMois, Annee, DateDePaiement, Tarif,registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois AND  registre.numFiche ='".$numFiche."' ;");
+        $query=mysqli_query($con,"SELECT registre.numFiche, mois.Mois,registre.idMois, Annee, DateDePaiement, registre.numPavillon, registre.CIN_vendeur, Nom_vendeur, Prenom_vendeur, numQuitance FROM `registre`, vendeur, mois WHERE registre.CIN_vendeur=vendeur.CIN_vendeur AND registre.idMois=mois.idMois AND  registre.numFiche ='".$numFiche."' ;");
         $row=mysqli_fetch_assoc($query);
 ?>
 
@@ -58,8 +58,6 @@
                             <label for="DateDePaiement" class="form-label">Date De paiement</label><br>
                             <input type="date" name="DateDePaiement" id="" value="<?=$row['DateDePaiement']?>" class="form-control  border border-success"><br>
 
-                            <label for="Tarif" class="form-label">Tarif</label><br>
-                            <input type="number" name="Tarif" id="" value="<?=$row['Tarif']?>" class="form-control  border border-success"><br>
 
                             <label for="numPavillon" class="form-label">N°pavillon</label><br>
                             <select name="numPavillon" id="" class="form-select  border border-success" >
