@@ -61,10 +61,6 @@
                                 <img src="../image/pavillon.png" alt="">
                                 <a href="pavillonInterface.php" style="text-decoration: none; color: #1a237e ;">Pavillons</a>
                         </li>
-                        <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">
-                                <img src="../image/produit.png" alt="">
-                                <a href="produitInterface.php" style="text-decoration: none; color: #1a237e ;">Produits</a>
-                        </li>
                         <li class="list-group-item p-1 text-center" style="background-color: #81d4fa">                   
                                 <img src="../image/localite1.png" alt="">
                                 <a href="localiteInterface.php" style="text-decoration: none; color: #1a237e ;">Localité</a>

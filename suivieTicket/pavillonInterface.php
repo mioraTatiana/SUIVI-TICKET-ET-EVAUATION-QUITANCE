@@ -175,10 +175,7 @@
         ?>
                             
                                                     </select><br>
-                                                    
-                                                    <label for="TypeDeProduit" class="form-label" > Type De Produits</label><br>
-                                                    <input type="text" name="TypeDeProduit" value="aucun" class="form-control border border-1 border-primary" >
-                                                    
+*                                                    
                                                     
                                                     <label for="TypeDePavillon" class="form-label">Type De Pavillon</label><br>
                                                     <select name="TypeDePavillon" id="" class="form-select border border-1 border-primary" >

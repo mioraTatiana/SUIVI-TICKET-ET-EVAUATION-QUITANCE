@@ -25,7 +25,6 @@
                     <th scope="col">Telephone</th>
                     <th scope="col">Adresse</th> 
                     <th scope="col">Carte Professionnelle</th>
-                    <th scope="col">N°pavillon</th>
                     <th scope="col">Actions</th>
                 </thead>
                 <tbody>

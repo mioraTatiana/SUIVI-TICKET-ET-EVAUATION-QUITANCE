@@ -54,10 +54,9 @@ function body(){
 
     include 'connexionBase.php';
     $numPavillon=$_GET['numPavillon'];
-    $requette="SELECT 'numFiche', `Mois`, `Annee`, 'DateDePaiement', `Tarif`,'TypeDeProduit', vendeur.CIN_vendeur, 'pavillon.numPavillon', 'Localite','PlaceDuMarche','TypeDePavillon', 'numAutorisation',' DateDautorisation', 'numDeliberation', 'DateDeDeliberation', 'Nom_vendeur', 'Prenom_vendeur', `Telephone_vendeur`, 'Adresse_vendeur', 'vendeur.CarteProfessionnelle', registre.idMois, numQuitance FROM vendeur, pavillon, registre, mois, localite,marche WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND vendeur.numPavillon='$numPavillon' AND registre.idMois=mois.idMois AND pavillon.idLocalite=localite.idLocalite AND pavillon.idMarche=marche.idMarche;";
+    $requette="SELECT 'numFiche', `Mois`, `Annee`, 'DateDePaiement', `Tarif`,'TypeDeProduit', vendeur.CIN_vendeur, 'numPavillon', 'Localite','PlaceDuMarche','TypeDePavillon', 'numAutorisation',' DateDautorisation', 'numDeliberation', 'DateDeDeliberation', 'Nom_vendeur', 'Prenom_vendeur', `Telephone_vendeur`, 'Adresse_vendeur', 'CarteProfessionnelle', registre.idMois, numQuitance FROM vendeur, pavillon, registre, mois, localite,marche WHERE pavillon.numPavillon='$numPavillon' AND registre.numPavillon='$numPavillon' AND registre.idMois=mois.idMois AND pavillon.idLocalite=localite.idLocalite AND pavillon.idMarche=marche.idMarche AND vendeur.CIN_vendeur=pavillon.CIN_vendeur; ";
     $rec=mysqli_query($con, $requette);
    
-
 
     while($data=mysqli_fetch_assoc($rec)){
         $this->numFiche=$data['numFiche'];
@@ -222,13 +221,15 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->body();
 $pdf->SetFont('Times','',12);
-$pdf->Output('C:\Users\WINDOWS 10\Desktop\FicheDeControle.pdf','F');
-// if( ($pdf->Output('C:\Users\WINDOWS 10\Desktop\FicheDeControle.pdf','F'))>0){
-//     echo 'Bien Imprimer';
-// }else{
-//     echo 'Non';
-// }
-echo 'Bien Imprimer';
+$req=$pdf->Output('FicheDeControle.pdf','F');
+
+if ($req) {
+    header ('location: FicheDeControle.pdf') ;
+
+}else{
+    echo 'Non Imprimé';
+}
+
 
 
 ?>
