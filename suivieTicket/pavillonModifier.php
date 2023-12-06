@@ -91,12 +91,34 @@
 
                                                 </select>
 
+                                                <label for="Tarif" class="form-label" > Tarif</label><br>
+                                                <input type="number" name="Tarif" value="<?=$data['Tarif']?>" class="form-control border border-1 border-success " ><br>
+
+
+
 
                                             </div>
 
                                             <div class="col-6">
-                                                <label for="Tarif" class="form-label" > Tarif</label><br>
-                                                <input type="number" name="Tarif" value="<?=$data['Tarif']?>" class="form-control border border-1 border-success " ><br>
+                                                <label for="CIN_vendeur" class="form-label">Propriétaire</label><br>
+                                                <select  class="form-select border border-success" name="CIN_vendeur" id="">
+                                                    <?php
+                                                $requette=mysqli_query($con,'SELECT CIN_vendeur,Nom_vendeur,Prenom_vendeur FROM vendeur');
+                                                while($row=mysqli_fetch_assoc($requette)){
+                                                    if ($row['CIN_vendeur']==$data['CIN_vendeur']) {
+    ?>
+                                                <option value="<?=$row['CIN_vendeur']?>" selected><?=$row['Nom_vendeur'] ?> <?=$row['Prenom_vendeur'] ?></option>
+    <?php
+                                    
+                                                }
+    ?>
+                                                <option value="<?=$row['CIN_vendeur']?>"><?=$row['Nom_vendeur'] ?> <?=$row['Prenom_vendeur'] ?></option>
+    <?php
+                    }      
+    ?>
+                                                </select><br>
+
+
 
 
                                                 <label for="numAutorisation" class="form-label">N°Autorisation</label><br>
@@ -111,16 +133,16 @@
                                                 <label for="DateDeDeliberation" class="form-label">Date de Deliberation</label><br>
                                                 <input type="text" class="form-control border border-success" name="DateDeDeliberation" id="" value="<?=$data['DateDeDeliberation']?>"><br>
 
+                                                <div class="text-center pt-1">
+                                                    <input type="submit" value="Modifier" name="modifierPavillon" style="width:80px;"class="btn btn-success col-3 me-3 ">
+
+                                                </div>
+
                                             </div>
                                             
 
                                         </div>
 
-                                        <div class="modal-footer border border-2 border-success">
-                                            <input type="submit" value="Modifier" name="modifierPavillon" style="width:80px;"class="btn btn-success col-3 me-3">
-
-
-                                        </div>
 
                                     </form>
                                 </div>

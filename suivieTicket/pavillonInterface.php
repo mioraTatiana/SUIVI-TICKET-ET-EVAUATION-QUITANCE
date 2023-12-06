@@ -177,7 +177,7 @@
                                                     </select><br>
                                                     
                                                     <label for="TypeDeProduit" class="form-label" > Type De Produits</label><br>
-                                                    <input type="text" name="TypeDeProduit" id="" class="form-control border border-1 border-primary" >
+                                                    <input type="text" name="TypeDeProduit" value="aucun" class="form-control border border-1 border-primary" >
                                                     
                                                     
                                                     <label for="TypeDePavillon" class="form-label">Type De Pavillon</label><br>
@@ -186,10 +186,26 @@
                                                         <option value="Brique">Brique</option>
                                                         <option value="Tôle">Tôle</option>
                                                         <option value="autre">autre</option>
-                                                    </select>
+                                                    </select><br>
 
                                                     <label for="Tarif" class="form-label" > Tarif</label><br>
-                                                    <input type="number" name="Tarif" id="" class="form-control border border-1 border-primary" >
+                                                    <input type="number" name="Tarif" id="" class="form-control border border-1 border-primary" ><br>
+
+                                                <label for="CIN_vendeur" class="form-label">Propriétaire</label><br>
+                                                <select  class="form-select border border-primary" name="CIN_vendeur" id="">
+                                                <option value="aucun">aucun</option>
+
+                                                    <?php
+                                                $requette=mysqli_query($con,'SELECT CIN_vendeur,Nom_vendeur,Prenom_vendeur FROM vendeur');
+                                                while($row=mysqli_fetch_assoc($requette)){
+                                    
+                                                
+    ?>
+                                                <option value="<?=$row['CIN_vendeur']?>"><?=$row['Nom_vendeur'] ?> <?=$row['Prenom_vendeur'] ?></option>
+    <?php
+                    }      
+    ?>
+                                                </select><br>
 
 
                                                     <label for="numAutorisation" class="form-label">N°Autorisation</label><br>
@@ -224,10 +240,10 @@
                                 include '../Back/pavillon.php';
                             if(isset($_POST['recherchePavillon'])){
                                 $rec=$_POST['search'];
-                                $lister="SELECT numPavillon,pavillon.idLocalite, Localite, pavillon.idMarche, PlaceDuMarche, TypeDeProduit, TypeDePavillon, numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation,Tarif FROM pavillon, marche, localite WHERE pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=Localite.idLocalite AND pavillon.numPavillon LIKE '%".$rec."%';";
+                                $lister="SELECT numPavillon,pavillon.idLocalite, Localite, pavillon.idMarche, PlaceDuMarche, TypeDeProduit, TypeDePavillon, numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation,Tarif, pavillon.CIN_vendeur FROM pavillon, marche,vendeur, localite WHERE pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=Localite.idLocalite AND pavillon.numPavillon AND pavillon.CIN_vendeur=vendeur.CIN_vendeur LIKE '%".$rec."%';";
                                 $reqRec=mysqli_query($con,$lister);
                             }else{
-                                $lister="SELECT numPavillon, Localite, pavillon.idLocalite, pavillon.idMarche , PlaceDuMarche, TypeDePavillon, numAutorisation, DateDautorisation,numDeliberation,DateDeDeliberation, Tarif, TypeDeProduit FROM pavillon, marche, localite WHERE pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=localite.idLocalite;";
+                                $lister="SELECT numPavillon, Localite, pavillon.idLocalite, pavillon.idMarche , PlaceDuMarche, TypeDePavillon, numAutorisation, DateDautorisation,numDeliberation,DateDeDeliberation, Tarif, TypeDeProduit, pavillon.CIN_vendeur FROM pavillon, vendeur,marche, localite WHERE pavillon.idMarche=marche.idMarche AND pavillon.idLocalite=localite.idLocalite AND pavillon.CIN_vendeur = vendeur.CIN_vendeur ;";
                                 $reqRec=mysqli_query($con,$lister);
 
                             }

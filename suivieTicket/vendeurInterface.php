@@ -157,18 +157,6 @@
                                                         <label for="Telephone" class="form-label" >Telephone</label><br>
                                                         <input type="tel" name="Telephone" id="" class="form-control border border-1 border-primary "><br>
 
-                                                        <label for="numPavillon">numPavillon</label><br>
-                                                        <select name="numPavillon" id=""  class="form-select">
-                                            <?php
-                                                        include("../Back/connexionBase.php");
-                                                        $query2=mysqli_query($con,"SELECT numPavillon FROM `pavillon` WHERE numPavillon NOT IN ( SELECT numPavillon FROM vendeur ); ");
-                                                        while ($row2 = mysqli_fetch_assoc($query2)) {
-
-                                            ?>
-                                                            <option value="<?=$row2['numPavillon']?>"><?=$row2['numPavillon']?></option>
-    <?php
-                }
-    ?>
                                                         </select><br><br>
 
                                                 </div>

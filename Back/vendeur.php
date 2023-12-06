@@ -43,7 +43,6 @@
                         <td><?=$data['Telephone_vendeur']?></td>
                         <td><?=$data['Adresse_vendeur']?></td>
                         <td><?=$data['CarteProfessionnelle']?></td>
-                        <td><?=$data['numPavillon']?></td>
                         <td>
                             <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#vendeurModalM<?php echo $i; ?>"><img src="../image/modifierTab.png" alt="modifier"></button>
                             <button  class="btn"type="button" data-bs-toggle="modal" data-bs-target="#vendeurModalS<?php echo $i; ?>"><img src="../image/supprimerTab.png" alt="supprimer"></button>
@@ -80,26 +79,6 @@
                                             <input class="form-control border border-success" type="tel" name="Telephone" id="" value="<?=$data['Telephone_vendeur']?>" ><br><br>
 
 
-                                            <label class="form-label" for="numPavillon">numPavillon</label><br>
-                                            <select class="form-select border border-success" name="numPavillon" id="">
-                                <?php
-                                            include 'connexionBase.php';
-                                            $query2=mysqli_query($con,"SELECT numPavillon FROM pavillon ");
-                                            while ($row2 = mysqli_fetch_assoc($query2)) {
-                                                if ( $row2["numPavillon"]==$data["numPavillon"]) {
-                                ?>
-                                                    <option value="<?=$row2['numPavillon']?>" selected ><?=$row2['numPavillon']?></option>
-                                    
-                                <?php
-                                                    }
-
-                                ?>
-
-                                <?php
-                                            }
-
-                                ?>
-                                            </select>
                                 </div>
                                 </div>
 
@@ -160,9 +139,8 @@
             $Telephone=$_POST['Telephone'];
             $Adresse=$_POST['Adresse'];
             $Carte=$_POST['CarteProfessionnelle'];
-            $numPavillon=$_POST['numPavillon'];
         
-            $req=mysqli_query($con,"INSERT INTO vendeur (CIN_vendeur, Nom_vendeur, Prenom_vendeur, Telephone_vendeur, Adresse_vendeur, CarteProfessionnelle, numPavillon) VALUES ('$CIN','$Nom','$Prenom',$Telephone,'$Adresse','$Carte','$numPavillon')");
+            $req=mysqli_query($con,"INSERT INTO vendeur (CIN_vendeur, Nom_vendeur, Prenom_vendeur, Telephone_vendeur, Adresse_vendeur, CarteProfessionnelle) VALUES ('$CIN','$Nom','$Prenom',$Telephone,'$Adresse','$Carte')");
         
             if($req){
                 header("location: ../suivieTicket/vendeurInterface.php");
@@ -178,11 +156,10 @@
             $Telephone=$_POST['Telephone'];
             $Adresse=$_POST['Adresse'];
             $Carte=$_POST['CarteProfessionnelle'];
-            $numPavillon=$_POST['numPavillon'];
         
-            $req=mysqli_query($con,"UPDATE vendeur SET CIN_vendeur='$CIN', Nom_vendeur='$Nom', Prenom_vendeur='$Prenom', Telephone_vendeur=$Telephone, Adresse_vendeur='$Adresse', CarteProfessionnelle='$Carte', numPavillon='$numPavillon' WHERE CIN_vendeur='$CIN';");
+            $req=mysqli_query($con,"UPDATE vendeur SET CIN_vendeur='$CIN', Nom_vendeur='$Nom', Prenom_vendeur='$Prenom', Telephone_vendeur=$Telephone, Adresse_vendeur='$Adresse', CarteProfessionnelle='$Carte'WHERE CIN_vendeur='$CIN';");
             if($req){
-                header("location: ../suivieTicket/vendeurInterface.php");
+                header("location: ../suivieTicket/PavillonInterface.php");
 
             }else{
                 echo 'Modification annulée';

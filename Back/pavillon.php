@@ -23,6 +23,7 @@
                     <th scope="col">Type de pavillon</th>
                     <th scope="col">Produits</th>
                     <th scope="col">Tarif</th>
+                    <th scope="col">Propriétaire</th>
                     <th scope="col">Actions</th>
                 </thead>
                 <tbody>
@@ -39,6 +40,7 @@
                             <td><?=$data['TypeDePavillon']?></td> 
                             <td><?=$data['TypeDeProduit']?></td>
                             <td><?=$data['Tarif']?></td>
+                            <td><?=$data['CIN_vendeur']?></td>
                             <td>
                                 <a href="../suivieTicket/pavillonModifier.php?numPavillon=<?php echo $data['numPavillon'] ?> " class="btn"><img src="../image/modifierTab.png" alt=""></a>
                                 <button type="button" data-bs-toggle="modal" data-bs-target="#pavillonModalS<?php echo $i; ?>" class="btn"><img src="../image/supprimerTab.png" alt="supprimer" ></button>
@@ -94,9 +96,10 @@
             $numDeDeliberation=$_POST['numDeliberation'];
             $DateDeDeliberation=$_POST['DateDeDeliberation'];
             $Tarif=$_POST['Tarif'];
+            $CIN_vendeur=$_POST['CIN_vendeur'];
             
         
-            $inserer="INSERT INTO pavillon (numPavillon, idLocalite, idMarche, TypeDeProduit, TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, Tarif) VALUES ('$numPavillon', '$idLocalite', $idMarche, '$TypeDeProduit' , '$TypeDePavillon',' $numAutorisation',' $DateDautorisation','$numDeDeliberation',' $DateDeDeliberation',$Tarif);";
+            $inserer="INSERT INTO pavillon (numPavillon, idLocalite, idMarche, TypeDeProduit, TypeDePavillon,numAutorisation,DateDautorisation,numDeliberation,DateDeDeliberation, Tarif,CIN_vendeur) VALUES ('$numPavillon', '$idLocalite', $idMarche, '$TypeDeProduit' , '$TypeDePavillon',' $numAutorisation',' $DateDautorisation','$numDeDeliberation',' $DateDeDeliberation',$Tarif,'$CIN_vendeur');";
             $req=mysqli_query($con,$inserer);
             if($req){
                 header ('location: ../suivieTicket/pavillonInterface.php') ;
@@ -117,8 +120,9 @@
             $numDeDeliberation=$_POST['numDeliberation'];
             $DateDeDeliberation=$_POST['DateDeDeliberation'];
             $Tarif=$_POST['Tarif'];
+            $CIN_vendeur=$_POST['CIN_vendeur'];
     
-            $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', idLocalite='$idLocalite', idMarche='$idMarche', TypeDeProduit='$TypeDeProduit', TypeDePavillon='$TypeDePavillon', numAutorisation='$numAutorisation',DateDautorisation='$DateDautorisation',numDeliberation='$numDeDeliberation', Tarif=$Tarif WHERE numPavillon='$numPavillon';";
+            $modifier= "UPDATE pavillon SET numPavillon='$numPavillon', idLocalite='$idLocalite', idMarche='$idMarche', TypeDeProduit='$TypeDeProduit', TypeDePavillon='$TypeDePavillon', numAutorisation='$numAutorisation',DateDautorisation='$DateDautorisation',numDeliberation='$numDeDeliberation', Tarif=$Tarif, CIN_vendeur='$CIN_vendeur' WHERE numPavillon='$numPavillon';";
             $req=mysqli_query($con,$modifier);
             if($req){
                 header ('location: ../suivieTicket/pavillonInterface.php') ;
